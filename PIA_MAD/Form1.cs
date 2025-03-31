@@ -10,6 +10,12 @@ namespace PIA_MAD
     {
         public Form1()
         {
+
+            using (var context = new ApplicationDbContext())
+            {
+                context.Database.OpenConnection(); 
+            }
+
             InitializeComponent();
         }
 

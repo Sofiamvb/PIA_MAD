@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PIA_MAD.Modelos
 {
@@ -15,7 +18,21 @@ namespace PIA_MAD.Modelos
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-EB9COQ9;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;");
+            var connectionString = "Server=DESKTOP-EB9COQ9;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
+            optionsBuilder.UseSqlServer(connectionString);
+
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con la base de datos:\n" + ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Environment.Exit(1); // Cierra la aplicación completamente con código de error
+            }
         }
     }
 }
