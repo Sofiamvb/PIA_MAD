@@ -41,6 +41,8 @@ namespace PIA_MAD
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            
             string Nombre = TB_NomRegEmp.Text;
             string AP = TB_APRegEmp.Text;
             string AM = TB_AMRegEmp.Text;
@@ -102,6 +104,9 @@ namespace PIA_MAD
 
             }
 
+            Form1 IniSesion = new Form1();
+            IniSesion.Show();
+            this.Hide();
 
             Debug.WriteLine(Nombre);
         }

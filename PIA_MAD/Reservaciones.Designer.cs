@@ -187,6 +187,7 @@
             button2.TabIndex = 21;
             button2.Text = "Reservar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -252,6 +253,7 @@
             Controls.Add(dateTimePicker1);
             Name = "Reservaciones";
             Text = "Reservaciones";
+            Load += Reservaciones_Load;
             ResumeLayout(false);
             PerformLayout();
         }

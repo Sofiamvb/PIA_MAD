@@ -38,6 +38,8 @@ namespace PIA_MAD
 
         private void BTN_IngIni_Click(object sender, EventArgs e)
         {
+
+
             string Correo = TB_IniCorreo.Text;
             string Contra = TB_IniContra.Text;
 
@@ -52,6 +54,11 @@ namespace PIA_MAD
                     if (admin != null)
                     {
                         MessageBox.Show("Has iniciado sesion");
+
+                        Registro_de_hoteles RigHotel = new Registro_de_hoteles();
+                        RigHotel.Show();
+                        this.Hide();
+
                     }
                     else
                     {
@@ -60,6 +67,10 @@ namespace PIA_MAD
 
 
                 }
+
+
+
+
 
             }
 
@@ -77,6 +88,11 @@ namespace PIA_MAD
                     if (Op != null)
                     {
                         MessageBox.Show("Has iniciado sesion");
+
+                        Registro_de_clientes RigCliente = new Registro_de_clientes();
+                        RigCliente.Show();
+                        this.Hide();
+
                     }
                     else
                     {
@@ -85,6 +101,11 @@ namespace PIA_MAD
 
 
                 }
+
+
+
+
+
 
             }
         }

@@ -74,7 +74,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 145);
+            label2.Location = new Point(44, 187);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 2;
@@ -84,7 +84,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(44, 179);
+            label3.Location = new Point(44, 144);
             label3.Name = "label3";
             label3.Size = new Size(98, 15);
             label3.TabIndex = 3;
@@ -100,14 +100,14 @@
             // 
             // TB_AMRegEmp
             // 
-            TB_AMRegEmp.Location = new Point(152, 142);
+            TB_AMRegEmp.Location = new Point(152, 184);
             TB_AMRegEmp.Name = "TB_AMRegEmp";
             TB_AMRegEmp.Size = new Size(235, 23);
             TB_AMRegEmp.TabIndex = 5;
             // 
             // TB_APRegEmp
             // 
-            TB_APRegEmp.Location = new Point(152, 179);
+            TB_APRegEmp.Location = new Point(152, 144);
             TB_APRegEmp.Name = "TB_APRegEmp";
             TB_APRegEmp.Size = new Size(235, 23);
             TB_APRegEmp.TabIndex = 6;
@@ -289,7 +289,7 @@
             Controls.Add(label1);
             Controls.Add(linkLabel1);
             Name = "Registro";
-            Text = "Registro";
+            Text = "Registro Empleados";
             Load += Registro_Load;
             ResumeLayout(false);
             PerformLayout();

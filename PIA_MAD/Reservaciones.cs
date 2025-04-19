@@ -15,6 +15,8 @@ namespace PIA_MAD
         public Reservaciones()
         {
             InitializeComponent();
+            MenuSuperior menu = new MenuSuperior();
+            this.Controls.Add(menu);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -23,6 +25,16 @@ namespace PIA_MAD
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reservaciones_Load(object sender, EventArgs e)
         {
 
         }

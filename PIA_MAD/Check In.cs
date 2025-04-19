@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PIA_MAD
 {
-    public partial class Check_In: Form
+    public partial class Check_In : Form
     {
         public Check_In()
         {
             InitializeComponent();
+            MenuSuperior menu = new MenuSuperior();
+            this.Controls.Add(menu);
+        }
+
+        private void Check_In_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

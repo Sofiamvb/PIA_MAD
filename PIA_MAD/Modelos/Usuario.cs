@@ -25,8 +25,6 @@ namespace PIA_MAD.Modelos
 
         public DateTime fechaNa { get; set; }
 
-        public string Contra { get; set; }
-
         public string EstadoCivil { get; set; }
 
         public string Pais { get; set; }
