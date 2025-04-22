@@ -50,6 +50,7 @@
             CB_RegHotelDHb = new ComboBox();
             TB_RegCantHhb = new TextBox();
             label1 = new Label();
+            LBL_CantHabDisponible = new Label();
             SuspendLayout();
             // 
             // label2
@@ -57,7 +58,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(41, 188);
             label2.Name = "label2";
-            label2.Size = new Size(81, 15);
+            label2.Size = new Size(82, 15);
             label2.TabIndex = 2;
             label2.Text = "Tipo de cama:";
             // 
@@ -225,6 +226,7 @@
             TB_RegCantHhb.Name = "TB_RegCantHhb";
             TB_RegCantHhb.Size = new Size(82, 23);
             TB_RegCantHhb.TabIndex = 1;
+            TB_RegCantHhb.TextChanged += TB_RegCantHhb_TextChanged;
             // 
             // label1
             // 
@@ -235,11 +237,20 @@
             label1.TabIndex = 0;
             label1.Text = "Cantidad de habitaciones:";
             // 
+            // LBL_CantHabDisponible
+            // 
+            LBL_CantHabDisponible.AutoSize = true;
+            LBL_CantHabDisponible.Location = new Point(299, 125);
+            LBL_CantHabDisponible.Name = "LBL_CantHabDisponible";
+            LBL_CantHabDisponible.Size = new Size(0, 15);
+            LBL_CantHabDisponible.TabIndex = 24;
+            // 
             // Registro_de_habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(378, 487);
+            Controls.Add(LBL_CantHabDisponible);
             Controls.Add(CB_RegHotelDHb);
             Controls.Add(label10);
             Controls.Add(TB_RegCaractHb);
@@ -264,6 +275,7 @@
             Controls.Add(label1);
             Name = "Registro_de_habitaciones";
             Text = "Registro de habitaciones";
+            Load += Registro_de_habitaciones_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,5 +303,6 @@
         private ComboBox CB_RegHotelDHb;
         private TextBox TB_RegCantHhb;
         private Label label1;
+        private Label LBL_CantHabDisponible;
     }
 }

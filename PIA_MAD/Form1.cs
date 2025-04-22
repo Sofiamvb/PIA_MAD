@@ -13,7 +13,7 @@ namespace PIA_MAD
 
             using (var context = new ApplicationDbContext())
             {
-                context.Database.OpenConnection(); 
+                context.Database.EnsureCreated();
             }
 
             InitializeComponent();

@@ -14,8 +14,6 @@ namespace PIA_MAD.Modelos
 
         public Hoteles Hotel { get; set; }
 
-        public int CantHab { get; set; }
-
         public int NoCamas { get; set; }
 
         public string tipoCama { get; set; }
@@ -26,7 +24,7 @@ namespace PIA_MAD.Modelos
 
         public string nivelHab { get; set; }
 
-        public string Visita { get; set; }
+        public string Vista { get; set; }
 
         public string caracteristicas { get; set; }
 

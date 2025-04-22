@@ -80,9 +80,20 @@ namespace PIA_MAD
             string ServAd = TB_RegServAdH.Text;
             string CantPiscinas = TB_RegCantPisH.Text;
             DateTime FechNaH = DTP_RegHotel.Value;
-            //Traer 
+            bool ChZonaT = ChB_RegZTH.Checked;
+            bool ChFrentePlaya = ChB_RegFrentePlayaH.Checked;
+            bool RBSEvent = false;
+            if (RB_SEventSi.Checked)
+            {
+                RBSEvent = true;
+            }
+            if (RB_SEventNo.Checked)
+            {
+                RBSEvent = false;
+            }
             try
             {
+
                 int PisoH = Int32.Parse(NumPiso);
                 int CantHabitacion = Int32.Parse(CantHabH);
                 int CantPiscina = Int32.Parse(CantPiscinaH);
@@ -102,14 +113,16 @@ namespace PIA_MAD
                         caracteristicas = CaractH,
                         amenidades = AmeH,
                         serviciosAd = ServAd,
-                        FechNaH = FechNaH
-
+                        FechNaH = FechNaH,
+                        ZonaTur = ChZonaT,
+                        FrentePlaya = ChFrentePlaya,
+                        SalonEv = RBSEvent
                     };
 
                     context.Hoteles.Add(Hotel);
                     context.SaveChanges();
 
-                    Debug.WriteLine("Hotel agregado correctamente.");
+                    MessageBox.Show("Felicidades! Has creado un Hotel");
                 }
 
             }

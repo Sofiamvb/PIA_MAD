@@ -57,8 +57,8 @@
             label17 = new Label();
             TB_RegChabH = new TextBox();
             label8 = new Label();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
+            RB_SEventSi = new RadioButton();
+            RB_SEventNo = new RadioButton();
             ChB_RegZTH = new CheckBox();
             ChB_RegFrentePlayaH = new CheckBox();
             SuspendLayout();
@@ -304,28 +304,28 @@
             label8.TabIndex = 44;
             label8.Text = "Salón de eventos";
             // 
-            // radioButton3
+            // RB_SEventSi
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(131, 543);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(34, 19);
-            radioButton3.TabIndex = 43;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Sí";
-            radioButton3.UseVisualStyleBackColor = true;
-            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
+            RB_SEventSi.AutoSize = true;
+            RB_SEventSi.Location = new Point(131, 543);
+            RB_SEventSi.Name = "RB_SEventSi";
+            RB_SEventSi.Size = new Size(34, 19);
+            RB_SEventSi.TabIndex = 43;
+            RB_SEventSi.TabStop = true;
+            RB_SEventSi.Text = "Sí";
+            RB_SEventSi.UseVisualStyleBackColor = true;
+            RB_SEventSi.CheckedChanged += radioButton3_CheckedChanged;
             // 
-            // radioButton4
+            // RB_SEventNo
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(195, 543);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(41, 19);
-            radioButton4.TabIndex = 45;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "No";
-            radioButton4.UseVisualStyleBackColor = true;
+            RB_SEventNo.AutoSize = true;
+            RB_SEventNo.Location = new Point(195, 543);
+            RB_SEventNo.Name = "RB_SEventNo";
+            RB_SEventNo.Size = new Size(41, 19);
+            RB_SEventNo.TabIndex = 45;
+            RB_SEventNo.TabStop = true;
+            RB_SEventNo.Text = "No";
+            RB_SEventNo.UseVisualStyleBackColor = true;
             // 
             // ChB_RegZTH
             // 
@@ -352,9 +352,9 @@
             ClientSize = new Size(555, 625);
             Controls.Add(ChB_RegFrentePlayaH);
             Controls.Add(ChB_RegZTH);
-            Controls.Add(radioButton4);
+            Controls.Add(RB_SEventNo);
             Controls.Add(label8);
-            Controls.Add(radioButton3);
+            Controls.Add(RB_SEventSi);
             Controls.Add(TB_RegChabH);
             Controls.Add(label17);
             Controls.Add(TB_RegAmeH);
@@ -424,5 +424,7 @@
         private RadioButton radioButton4;
         private CheckBox ChB_RegZTH;
         private CheckBox ChB_RegFrentePlayaH;
+        private RadioButton RB_SEventSi;
+        private RadioButton RB_SEventNo;
     }
 }
