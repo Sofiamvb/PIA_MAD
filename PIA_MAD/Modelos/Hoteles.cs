@@ -25,7 +25,7 @@ namespace PIA_MAD.Modelos
 
         public string caracteristicas { get; set; }
 
-        public string amennidades { get; set; }
+        public string amenidades { get; set; }
 
         public int cantHab { get; set; }
 
@@ -36,5 +36,7 @@ namespace PIA_MAD.Modelos
         public int CantPiscina { get; set; }
 
         public bool SalonEv { get; set; }
+
+        public DateTime FechNaH { get; set; }
     }
 }

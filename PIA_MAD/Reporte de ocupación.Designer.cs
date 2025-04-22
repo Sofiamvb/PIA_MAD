@@ -174,6 +174,7 @@
             Controls.Add(label1);
             Name = "Reporte_de_ocupación";
             Text = "Reporte de ocupación";
+            Load += Reporte_de_ocupación_Load;
             ResumeLayout(false);
             PerformLayout();
         }

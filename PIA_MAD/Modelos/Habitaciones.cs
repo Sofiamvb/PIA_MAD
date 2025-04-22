@@ -10,7 +10,9 @@ namespace PIA_MAD.Modelos
     {
         public int id { get; set; }
 
-        public List<Hoteles> Hotel { get; set; }
+        public int HotelId { get; set; }
+
+        public Hoteles Hotel { get; set; }
 
         public int CantHab { get; set; }
 
@@ -29,5 +31,7 @@ namespace PIA_MAD.Modelos
         public string caracteristicas { get; set; }
 
         public string Amenidades { get; set; }
+
+        public DateTime fechNaHab { get; set; }
     }
 }

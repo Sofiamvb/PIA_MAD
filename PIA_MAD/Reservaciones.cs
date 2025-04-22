@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PIA_MAD
 {
@@ -15,8 +16,16 @@ namespace PIA_MAD
         public Reservaciones()
         {
             InitializeComponent();
-            MenuSuperior menu = new MenuSuperior();
+            this.FormClosed += FormClosedHandler;
+            MenuSuperior menu = new MenuSuperior(); 
+            menu.Location = new Point((this.ClientSize.Width - menu.Width) / 2, 0); 
             this.Controls.Add(menu);
+           
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanas.VentanaClientes = null;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)

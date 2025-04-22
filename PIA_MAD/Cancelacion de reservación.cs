@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace PIA_MAD
 {
-    public partial class Cancelacion_de_reservación: Form
+    public partial class Cancelacion_de_reservación : Form
     {
         public Cancelacion_de_reservación()
         {
             InitializeComponent();
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuAdministrador());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanasAdm.VentanaHoteles = null;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

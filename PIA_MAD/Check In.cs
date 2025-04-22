@@ -15,11 +15,22 @@ namespace PIA_MAD
         public Check_In()
         {
             InitializeComponent();
-            MenuSuperior menu = new MenuSuperior();
-            this.Controls.Add(menu);
+           
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuSuperior());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanas.VentanaClientes = null;
         }
 
         private void Check_In_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

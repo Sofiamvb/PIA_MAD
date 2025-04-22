@@ -1,6 +1,6 @@
 ﻿namespace PIA_MAD
 {
-    partial class Cancelacion_de_reservación
+    partial class Modificar_Habitaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -29,55 +29,67 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            button2 = new Button();
+            listBox1 = new ListBox();
             textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
             button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(25, 88);
+            label1.Location = new Point(32, 40);
             label1.Name = "label1";
-            label1.Size = new Size(128, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Código de reservación:";
+            label1.Size = new Size(35, 15);
+            label1.TabIndex = 14;
+            label1.Text = "Dato:";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(368, 104);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 13;
+            button2.Text = "Modificar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(80, 72);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(272, 94);
+            listBox1.TabIndex = 12;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(160, 85);
+            textBox1.Location = new Point(80, 32);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(160, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(220, 23);
-            dateTimePicker1.TabIndex = 2;
+            textBox1.Size = new Size(272, 23);
+            textBox1.TabIndex = 11;
             // 
             // button1
             // 
-            button1.Location = new Point(160, 153);
+            button1.Location = new Point(368, 32);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Cancelar";
+            button1.TabIndex = 10;
+            button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
-            // Cancelacion_de_reservación
+            // Modificar_Habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(404, 193);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(476, 198);
             Controls.Add(label1);
-            Name = "Cancelacion_de_reservación";
-            Text = "Cancelacion de reservación";
+            Controls.Add(button2);
+            Controls.Add(listBox1);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
+            Name = "Modificar_Habitaciones";
+            Text = "Modificar Habitaciones";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -85,8 +97,9 @@
         #endregion
 
         private Label label1;
+        private Button button2;
+        private ListBox listBox1;
         private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
         private Button button1;
     }
 }

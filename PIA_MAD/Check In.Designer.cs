@@ -31,7 +31,6 @@
             textBox1 = new TextBox();
             label1 = new Label();
             button1 = new Button();
-            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // textBox1
@@ -58,20 +57,13 @@
             button1.TabIndex = 4;
             button1.Text = "Check In";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // menuSuperior1
-            // 
-            menuSuperior1.Location = new Point(8, 0);
-            menuSuperior1.Name = "menuSuperior1";
-            menuSuperior1.Size = new Size(376, 24);
-            menuSuperior1.TabIndex = 5;
+            button1.Click += button1_Click;
             // 
             // Check_In
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(397, 166);
-            Controls.Add(menuSuperior1);
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label1);

@@ -10,11 +10,28 @@ using System.Windows.Forms;
 
 namespace PIA_MAD
 {
-    public partial class Reporte_de_ventas: Form
+    public partial class Reporte_de_ventas : Form
     {
         public Reporte_de_ventas()
         {
             InitializeComponent();
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuAdministrador());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanasAdm.VentanaHoteles = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reporte_de_ventas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

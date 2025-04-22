@@ -7,103 +7,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PIA_MAD
 {
     public partial class MenuSuperior : UserControl
     {
-
-        private Form RegistroCli;
-       
-        public MenuSuperior(Form RegistroCliente = null)
+        public MenuSuperior()
         {
             InitializeComponent();
-
-            RegistroCli = RegistroCliente;
         }
 
         private void registroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form C in Application.OpenForms)
-            {
-                if (C is Registro_de_clientes)
-                {
-                    C.Focus(); 
-                    return;
-                }
-            }
+            if (GestorVentanas.VentanaClientes == null || GestorVentanas.VentanaClientes.IsDisposed)
+                GestorVentanas.VentanaClientes = new Registro_de_clientes();
 
-
-            Registro_de_clientes VregC = new Registro_de_clientes();
-            VregC.Show();
-            RegistroCli.Hide();
-            this.Hide();
-
-
-        }
-
-        private void Menu_VModCli_Click(object sender, EventArgs e)
-        {
-            //Registro_de_clientes MenuCli = new Registro_de_clientes();
-            //MenuCli.Show();
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaClientes);
+            GestorVentanas.VentanaClientes.Show();
+            GestorVentanas.VentanaClientes.Focus();
         }
 
         private void Menu_VReservacion_Click(object sender, EventArgs e)
         {
-            foreach (Form R in Application.OpenForms)
-            {
-                if (R is Reservaciones)
-                {
-                    R.Focus();
-                    
-                    return;
-                }
-            }
+            if (GestorVentanas.VentanaReservaciones == null || GestorVentanas.VentanaReservaciones.IsDisposed)
+                GestorVentanas.VentanaReservaciones = new Reservaciones();
 
-            Reservaciones VRv = new Reservaciones();
-            VRv.Show();
-            RegistroCli.Hide();
-            this.Hide();
-
-
-
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaReservaciones);
+            GestorVentanas.VentanaReservaciones.Show();
+            GestorVentanas.VentanaReservaciones.Focus();
         }
 
         private void Menu_VCheckIn_Click(object sender, EventArgs e)
         {
-            foreach (Form I in Application.OpenForms)
-            {
-                if (I is Check_In)
-                {
-                    I.Focus();
-                    return;
-                }
-            }
+            if (GestorVentanas.VentanaCheckIn == null || GestorVentanas.VentanaCheckIn.IsDisposed)
+                GestorVentanas.VentanaCheckIn = new Check_In();
 
-            Check_In VCI = new Check_In();
-            VCI.Show();
-            RegistroCli.Hide();
-            this.Hide();
-
-
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaCheckIn);
+            GestorVentanas.VentanaCheckIn.Show();
+            GestorVentanas.VentanaCheckIn.Focus();
         }
 
         private void Menu_VCheckOut_Click(object sender, EventArgs e)
         {
-            foreach (Form O in Application.OpenForms)
-            {
-                if (O is Check_Out)
-                {
-                    O.Focus();
-                    return;
-                }
-            }
+            if (GestorVentanas.VentanaCheckOut == null || GestorVentanas.VentanaCheckOut.IsDisposed)
+                GestorVentanas.VentanaCheckOut = new Check_Out();
 
-            Check_Out VCOut = new Check_Out();
-            VCOut.Show();
-            RegistroCli.Hide();
-            this.Hide();
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaCheckOut);
+            GestorVentanas.VentanaCheckOut.Show();
+            GestorVentanas.VentanaCheckOut.Focus();
+        }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void modificarRegistroDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanas.VentanaModCliente == null || GestorVentanas.VentanaModCliente.IsDisposed)
+                GestorVentanas.VentanaModCliente = new Mod_Clientes();
+
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaModCliente);
+            GestorVentanas.VentanaModCliente.Show();
+            GestorVentanas.VentanaModCliente.Focus();
         }
     }
 }

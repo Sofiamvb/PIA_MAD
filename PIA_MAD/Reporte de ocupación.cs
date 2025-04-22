@@ -15,9 +15,20 @@ namespace PIA_MAD
         public Reporte_de_ocupación()
         {
             InitializeComponent();
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuAdministrador());
         }
 
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanasAdm.VentanaHoteles = null;
+        }
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reporte_de_ocupación_Load(object sender, EventArgs e)
         {
 
         }

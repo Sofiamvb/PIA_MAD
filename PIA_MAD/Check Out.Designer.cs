@@ -51,7 +51,6 @@
             button2 = new Button();
             label10 = new Label();
             textBox6 = new TextBox();
-            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // label1
@@ -224,6 +223,7 @@
             button1.TabIndex = 19;
             button1.Text = "Check Out";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -251,19 +251,11 @@
             textBox6.Size = new Size(308, 23);
             textBox6.TabIndex = 22;
             // 
-            // menuSuperior1
-            // 
-            menuSuperior1.Location = new Point(40, 0);
-            menuSuperior1.Name = "menuSuperior1";
-            menuSuperior1.Size = new Size(376, 24);
-            menuSuperior1.TabIndex = 23;
-            // 
             // Check_Out
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(464, 571);
-            Controls.Add(menuSuperior1);
             Controls.Add(textBox6);
             Controls.Add(label10);
             Controls.Add(button2);

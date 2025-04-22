@@ -15,8 +15,13 @@ namespace PIA_MAD
         public Check_Out()
         {
             InitializeComponent();
-            MenuSuperior menu = new MenuSuperior();
-            this.Controls.Add(menu);
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuSuperior());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanas.VentanaClientes = null;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -30,6 +35,11 @@ namespace PIA_MAD
         }
 
         private void Check_Out_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -49,6 +49,7 @@
             button1.TabIndex = 17;
             button1.Text = "Filtrar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // comboBox1
             // 
@@ -137,7 +138,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 354);
+            ClientSize = new Size(880, 347);
             Controls.Add(label5);
             Controls.Add(listBox1);
             Controls.Add(button1);
@@ -151,6 +152,7 @@
             Controls.Add(label1);
             Name = "Reporte_de_ventas";
             Text = "Reporte de ventas";
+            Load += Reporte_de_ventas_Load;
             ResumeLayout(false);
             PerformLayout();
         }

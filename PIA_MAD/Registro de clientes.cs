@@ -20,8 +20,13 @@ namespace PIA_MAD
         public Registro_de_clientes()
         {
             InitializeComponent();
-            MenuSuperior menu = new MenuSuperior(this);
-            this.Controls.Add(menu);
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuSuperior());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanas.VentanaClientes = null;
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)

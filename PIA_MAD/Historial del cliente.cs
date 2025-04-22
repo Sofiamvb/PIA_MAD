@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace PIA_MAD
 {
-    public partial class Historial_del_cliente: Form
+    public partial class Historial_del_cliente : Form
     {
         public Historial_del_cliente()
         {
             InitializeComponent();
+            this.FormClosed += FormClosedHandler;
+            this.Controls.Add(new MenuAdministrador());
+        }
+
+        private void FormClosedHandler(object sender, FormClosedEventArgs e)
+        {
+            GestorVentanasAdm.VentanaHoteles = null;
+        }
+
+        private void Historial_del_cliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

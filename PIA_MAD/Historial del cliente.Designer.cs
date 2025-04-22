@@ -122,6 +122,7 @@
             Controls.Add(label1);
             Name = "Historial_del_cliente";
             Text = "Historial del cliente";
+            Load += Historial_del_cliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }

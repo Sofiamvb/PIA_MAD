@@ -55,7 +55,7 @@
             label11 = new Label();
             label12 = new Label();
             CB_RegEstCivilC = new ComboBox();
-            menuSuperior1 = new MenuSuperior(this);
+            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // dateTimePicker2
@@ -289,7 +289,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(410, 552);
+            ClientSize = new Size(410, 540);
             Controls.Add(menuSuperior1);
             Controls.Add(CB_RegEstCivilC);
             Controls.Add(TB_RegPaisC);

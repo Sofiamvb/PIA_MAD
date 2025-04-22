@@ -30,7 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             Menu_VRegCli = new ToolStripMenuItem();
-            Menu_VModCli = new ToolStripMenuItem();
+            modificarRegistroDeClienteToolStripMenuItem = new ToolStripMenuItem();
             Menu_VReservacion = new ToolStripMenuItem();
             Menu_VCheckIn = new ToolStripMenuItem();
             Menu_VCheckOut = new ToolStripMenuItem();
@@ -45,21 +45,22 @@
             menuStrip1.Size = new Size(437, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // Menu_VRegCli
             // 
-            Menu_VRegCli.DropDownItems.AddRange(new ToolStripItem[] { Menu_VModCli });
+            Menu_VRegCli.DropDownItems.AddRange(new ToolStripItem[] { modificarRegistroDeClienteToolStripMenuItem });
             Menu_VRegCli.Name = "Menu_VRegCli";
             Menu_VRegCli.Size = new Size(121, 20);
             Menu_VRegCli.Text = "Registro de clientes";
             Menu_VRegCli.Click += registroDeClientesToolStripMenuItem_Click;
             // 
-            // Menu_VModCli
+            // modificarRegistroDeClienteToolStripMenuItem
             // 
-            Menu_VModCli.Name = "Menu_VModCli";
-            Menu_VModCli.Size = new Size(165, 22);
-            Menu_VModCli.Text = "Modificar Cliente";
-            Menu_VModCli.Click += Menu_VModCli_Click;
+            modificarRegistroDeClienteToolStripMenuItem.Name = "modificarRegistroDeClienteToolStripMenuItem";
+            modificarRegistroDeClienteToolStripMenuItem.Size = new Size(222, 22);
+            modificarRegistroDeClienteToolStripMenuItem.Text = "Modificar registro de cliente";
+            modificarRegistroDeClienteToolStripMenuItem.Click += modificarRegistroDeClienteToolStripMenuItem_Click;
             // 
             // Menu_VReservacion
             // 
@@ -88,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(menuStrip1);
             Name = "MenuSuperior";
-            Size = new Size(437, 39);
+            Size = new Size(437, 33);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -103,5 +104,6 @@
         private ToolStripMenuItem Menu_VCheckIn;
         private ToolStripMenuItem Menu_VCheckOut;
         private ToolStripMenuItem Menu_VModCli;
+        private ToolStripMenuItem modificarRegistroDeClienteToolStripMenuItem;
     }
 }
