@@ -16,6 +16,26 @@ namespace PIA_MAD.Modelos
         public DbSet<Reservacion> Reservaciones { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Evitar ruta de cascada múltiple: Reservacion → HabitacionReservada
+            modelBuilder.Entity<HabitacionReservada>()
+                .HasOne(hr => hr.Reservacion)
+                .WithMany(r => r.HabitacionesReservadas)
+                .HasForeignKey(hr => hr.ReservacionId)
+                .OnDelete(DeleteBehavior.Restrict); // 👈 Esto rompe la cascada
+
+            // (Opcional) También puedes restringir del otro lado si quieres más control
+            modelBuilder.Entity<HabitacionReservada>()
+                .HasOne(hr => hr.Habitacion)
+                .WithMany()
+                .HasForeignKey(hr => hr.HabitacionId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=LAPTOP-2JLT5J0B\\MSSQLSERVER01;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
