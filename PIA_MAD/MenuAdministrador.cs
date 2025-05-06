@@ -96,7 +96,7 @@ namespace PIA_MAD
             GestorVentanasAdm.VentanaRepoOcupacion.Focus();
         }
 
-        private void historialDelClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (GestorVentanasAdm.VentanaHistorialCliente == null || GestorVentanasAdm.VentanaHistorialCliente.IsDisposed)
                 GestorVentanasAdm.VentanaHistorialCliente = new Historial_del_cliente();
@@ -104,6 +104,16 @@ namespace PIA_MAD
             GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaHistorialCliente);
             GestorVentanasAdm.VentanaHistorialCliente.Show();
             GestorVentanasAdm.VentanaHistorialCliente.Focus();
+        }
+
+        private void registroEmpleadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (GestorVentanasAdm.VentanaRegEmpl == null || GestorVentanasAdm.VentanaRegEmpl.IsDisposed)
+                GestorVentanasAdm.VentanaRegEmpl = new RegistroAdministradores();
+
+            GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaRegEmpl);
+            GestorVentanasAdm.VentanaRegEmpl.Show();
+            GestorVentanasAdm.VentanaRegEmpl.Focus();
         }
     }
 }

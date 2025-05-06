@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dateTimePicker2 = new DateTimePicker();
+            DTP_RegClientes = new DateTimePicker();
             button1 = new Button();
             TB_RegRFCCli = new TextBox();
             label9 = new Label();
@@ -58,12 +58,12 @@
             menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
-            // dateTimePicker2
+            // DTP_RegClientes
             // 
-            dateTimePicker2.Location = new Point(144, 40);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(232, 23);
-            dateTimePicker2.TabIndex = 46;
+            DTP_RegClientes.Location = new Point(144, 40);
+            DTP_RegClientes.Name = "DTP_RegClientes";
+            DTP_RegClientes.Size = new Size(232, 23);
+            DTP_RegClientes.TabIndex = 46;
             // 
             // button1
             // 
@@ -144,7 +144,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(38, 299);
             label5.Name = "label5";
-            label5.Size = new Size(55, 15);
+            label5.Size = new Size(56, 15);
             label5.TabIndex = 32;
             label5.Text = "Teléfono:";
             // 
@@ -298,7 +298,7 @@
             Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(label12);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(DTP_RegClientes);
             Controls.Add(button1);
             Controls.Add(TB_RegRFCCli);
             Controls.Add(label9);
@@ -327,7 +327,7 @@
 
         #endregion
 
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker DTP_RegClientes;
         private Button button1;
         private TextBox TB_RegRFCCli;
         private Label label9;

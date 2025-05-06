@@ -17,6 +17,7 @@ namespace PIA_MAD
             public static Historial_del_cliente VentanaHistorialCliente;
             public static Mod_Hotel VentanaModHotel;
             public static Modificar_Habitaciones VentanaModHab;
+        public static RegistroAdministradores VentanaRegEmpl;
 
 
 

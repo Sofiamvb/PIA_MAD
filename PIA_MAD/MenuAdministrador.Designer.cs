@@ -36,16 +36,17 @@
             cancelarReservaciónToolStripMenuItem = new ToolStripMenuItem();
             reporteDeVentasToolStripMenuItem = new ToolStripMenuItem();
             reporteDeOcupaciónToolStripMenuItem = new ToolStripMenuItem();
-            historialDelClienteToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            registroEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, historialDelClienteToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, toolStripMenuItem2, registroEmpleadoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(777, 24);
+            menuStrip1.Size = new Size(999, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -82,8 +83,8 @@
             // cancelarReservaciónToolStripMenuItem
             // 
             cancelarReservaciónToolStripMenuItem.Name = "cancelarReservaciónToolStripMenuItem";
-            cancelarReservaciónToolStripMenuItem.Size = new Size(128, 20);
-            cancelarReservaciónToolStripMenuItem.Text = "Cancelar reservación";
+            cancelarReservaciónToolStripMenuItem.Size = new Size(22, 20);
+            cancelarReservaciónToolStripMenuItem.Text = " ";
             cancelarReservaciónToolStripMenuItem.Click += cancelarReservaciónToolStripMenuItem_Click;
             // 
             // reporteDeVentasToolStripMenuItem
@@ -100,12 +101,19 @@
             reporteDeOcupaciónToolStripMenuItem.Text = "Reporte de ocupación";
             reporteDeOcupaciónToolStripMenuItem.Click += reporteDeOcupaciónToolStripMenuItem_Click;
             // 
-            // historialDelClienteToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            historialDelClienteToolStripMenuItem.Name = "historialDelClienteToolStripMenuItem";
-            historialDelClienteToolStripMenuItem.Size = new Size(120, 20);
-            historialDelClienteToolStripMenuItem.Text = "Historial del cliente";
-            historialDelClienteToolStripMenuItem.Click += historialDelClienteToolStripMenuItem_Click;
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(120, 20);
+            toolStripMenuItem2.Text = "Historial del cliente";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
+            // 
+            // registroEmpleadoToolStripMenuItem
+            // 
+            registroEmpleadoToolStripMenuItem.Name = "registroEmpleadoToolStripMenuItem";
+            registroEmpleadoToolStripMenuItem.Size = new Size(118, 20);
+            registroEmpleadoToolStripMenuItem.Text = "Registro Empleado";
+            registroEmpleadoToolStripMenuItem.Click += registroEmpleadoToolStripMenuItem_Click_1;
             // 
             // MenuAdministrador
             // 
@@ -113,7 +121,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(menuStrip1);
             Name = "MenuAdministrador";
-            Size = new Size(777, 37);
+            Size = new Size(999, 47);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -131,5 +139,7 @@
         private ToolStripMenuItem historialDelClienteToolStripMenuItem;
         private ToolStripMenuItem modificarRegistroDeHotelToolStripMenuItem;
         private ToolStripMenuItem modificarRegistroDeHabitaciónToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem registroEmpleadoToolStripMenuItem;
     }
 }

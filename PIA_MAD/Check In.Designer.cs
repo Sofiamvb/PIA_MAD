@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            TB_CheckIn = new TextBox();
             label1 = new Label();
-            button1 = new Button();
+            BTN_CheckIn = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // TB_CheckIn
             // 
-            textBox1.Location = new Point(167, 52);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 23);
-            textBox1.TabIndex = 3;
+            TB_CheckIn.Location = new Point(167, 52);
+            TB_CheckIn.Name = "TB_CheckIn";
+            TB_CheckIn.Size = new Size(201, 23);
+            TB_CheckIn.TabIndex = 3;
+            TB_CheckIn.TextChanged += TB_CheckIn_TextChanged;
             // 
             // label1
             // 
@@ -49,23 +50,23 @@
             label1.TabIndex = 2;
             label1.Text = "Código de reservación:";
             // 
-            // button1
+            // BTN_CheckIn
             // 
-            button1.Location = new Point(155, 119);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Check In";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BTN_CheckIn.Location = new Point(155, 119);
+            BTN_CheckIn.Name = "BTN_CheckIn";
+            BTN_CheckIn.Size = new Size(75, 23);
+            BTN_CheckIn.TabIndex = 4;
+            BTN_CheckIn.Text = "Check In";
+            BTN_CheckIn.UseVisualStyleBackColor = true;
+            BTN_CheckIn.Click += BTN_CheckIn_Click;
             // 
             // Check_In
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(397, 166);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(BTN_CheckIn);
+            Controls.Add(TB_CheckIn);
             Controls.Add(label1);
             Name = "Check_In";
             Text = "Check In";
@@ -76,9 +77,9 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox TB_CheckIn;
         private Label label1;
-        private Button button1;
+        private Button BTN_CheckIn;
         private MenuSuperior menuSuperior1;
     }
 }

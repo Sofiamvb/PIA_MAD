@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Data.SqlClient;
-using System.Windows.Forms;
+using System.Linq;
 
 namespace PIA_MAD.Modelos
 {
@@ -15,26 +14,93 @@ namespace PIA_MAD.Modelos
         public DbSet<ReporteVentas> ReporteVentas { get; set; }
         public DbSet<Reservacion> Reservaciones { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
+        public DbSet<Cancelaciones> Cancelaciones { get; set; }
+        public DbSet<HabitacionReservada> HabitacionReservada { get; set; }
+        public DbSet<ServicioAdicionalHotel> ServiciosAdicionalesHotel { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Evitar ruta de cascada múltiple: Reservacion → HabitacionReservada
+            // --- Usuarios ---
+            modelBuilder.Entity<Usuario>()
+               .HasOne(h => h.Creador)
+               .WithMany()
+               .HasForeignKey(h => h.CreadorAdministradorId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Usuario>()
+                .HasOne(h => h.Modificador)
+                .WithMany()
+                .HasForeignKey(h => h.ModificadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // --- Operativos ---
+            modelBuilder.Entity<Operativos>()
+               .HasOne(h => h.Creador)
+               .WithMany()
+               .HasForeignKey(h => h.CreadorAdministradorId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Operativos>()
+                .HasOne(h => h.Modificador)
+                .WithMany()
+                .HasForeignKey(h => h.ModificadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            // --- Habitaciones ---
+            modelBuilder.Entity<Habitaciones>()
+                .HasOne(h => h.Creador)
+                .WithMany()
+                .HasForeignKey(h => h.CreadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Habitaciones>()
+                .HasOne(h => h.Modificador)
+                .WithMany()
+                .HasForeignKey(h => h.ModificadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            // --- Hoteles ---
+            modelBuilder.Entity<Hoteles>()
+                .HasOne(h => h.Creador)
+                .WithMany()
+                .HasForeignKey(h => h.CreadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Hoteles>()
+                .HasOne(h => h.Modificador)
+                .WithMany()
+                .HasForeignKey(h => h.ModificadorAdministradorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // --- HabitacionReservada ---
             modelBuilder.Entity<HabitacionReservada>()
                 .HasOne(hr => hr.Reservacion)
-                .WithMany(r => r.HabitacionesReservadas)
+                .WithMany(r => r.HabitacionReservada)
                 .HasForeignKey(hr => hr.ReservacionId)
-                .OnDelete(DeleteBehavior.Restrict); // 👈 Esto rompe la cascada
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // (Opcional) También puedes restringir del otro lado si quieres más control
             modelBuilder.Entity<HabitacionReservada>()
                 .HasOne(hr => hr.Habitacion)
                 .WithMany()
                 .HasForeignKey(hr => hr.HabitacionId)
                 .OnDelete(DeleteBehavior.Restrict);
-        }
 
+            // --- Cancelaciones ---
+            modelBuilder.Entity<Cancelaciones>()
+                .Property(c => c.AnticipoADevolver)
+                .HasPrecision(10, 2);
+
+            // --- Opcional: Si quieres que todas las demás relaciones también sean Restrict ---
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -51,7 +117,7 @@ namespace PIA_MAD.Modelos
             catch (Exception ex)
             {
                 MessageBox.Show("Error al conectar con la base de datos:\n" + ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Environment.Exit(1); // Cierra la aplicación completamente con código de error
+                Environment.Exit(1);
             }
         }
     }

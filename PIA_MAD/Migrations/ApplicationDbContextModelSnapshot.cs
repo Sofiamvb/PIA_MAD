@@ -50,13 +50,18 @@ namespace PIA_MAD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("FechaModificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nomina")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Nomina")
+                        .HasColumnType("int");
 
                     b.Property<string>("Telefono")
                         .IsRequired()
@@ -70,6 +75,63 @@ namespace PIA_MAD.Migrations
                     b.ToTable("Administradores");
                 });
 
+            modelBuilder.Entity("PIA_MAD.Modelos.Cancelaciones", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("AdministradorId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("AnticipoADevolver")
+                        .HasPrecision(10, 2)
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<int>("CantPersonas")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("CheckInRealizado")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("CodigoReserva")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("FechaCancelacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaEnt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaReserva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaSal")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoCancelacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("AdministradorId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("Cancelaciones");
+                });
+
             modelBuilder.Entity("PIA_MAD.Modelos.HabitacionReservada", b =>
                 {
                     b.Property<int>("Id")
@@ -78,6 +140,9 @@ namespace PIA_MAD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("Cancelacionesid")
+                        .HasColumnType("int");
+
                     b.Property<int>("HabitacionId")
                         .HasColumnType("int");
 
@@ -85,6 +150,8 @@ namespace PIA_MAD.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cancelacionesid");
 
                     b.HasIndex("HabitacionId");
 
@@ -108,14 +175,29 @@ namespace PIA_MAD.Migrations
                     b.Property<int>("Capacidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("CreadorAdministradorId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Disponible")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("FechaModificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ModificadorAdministradorId")
                         .HasColumnType("int");
 
                     b.Property<int>("NoCamas")
                         .HasColumnType("int");
 
-                    b.Property<int>("PrecioNoche")
-                        .HasColumnType("int");
+                    b.Property<decimal>("PrecioNoche")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Vista")
                         .IsRequired()
@@ -124,9 +206,6 @@ namespace PIA_MAD.Migrations
                     b.Property<string>("caracteristicas")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("fechNaHab")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("nivelHab")
                         .IsRequired()
@@ -138,7 +217,11 @@ namespace PIA_MAD.Migrations
 
                     b.HasKey("id");
 
+                    b.HasIndex("CreadorAdministradorId");
+
                     b.HasIndex("HotelId");
+
+                    b.HasIndex("ModificadorAdministradorId");
 
                     b.ToTable("Habitaciones");
                 });
@@ -154,11 +237,20 @@ namespace PIA_MAD.Migrations
                     b.Property<int>("CantPiscina")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("FechNaH")
+                    b.Property<int>("CreadorAdministradorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaModificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("FrentePlaya")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("ModificadorAdministradorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -200,11 +292,11 @@ namespace PIA_MAD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("serviciosAd")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("id");
+
+                    b.HasIndex("CreadorAdministradorId");
+
+                    b.HasIndex("ModificadorAdministradorId");
 
                     b.ToTable("Hoteles");
                 });
@@ -237,13 +329,24 @@ namespace PIA_MAD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CreadorAdministradorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaModificacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ModificadorAdministradorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nomina")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Nomina")
+                        .HasColumnType("int");
 
                     b.Property<string>("Telefono")
                         .IsRequired()
@@ -253,6 +356,10 @@ namespace PIA_MAD.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("id");
+
+                    b.HasIndex("CreadorAdministradorId");
+
+                    b.HasIndex("ModificadorAdministradorId");
 
                     b.ToTable("Operativos");
                 });
@@ -269,7 +376,12 @@ namespace PIA_MAD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("RegistroContra");
                 });
@@ -282,6 +394,9 @@ namespace PIA_MAD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
+                    b.Property<int>("AdministradorId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("FechaGen")
                         .HasColumnType("datetime2");
 
@@ -289,6 +404,8 @@ namespace PIA_MAD.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id");
+
+                    b.HasIndex("AdministradorId");
 
                     b.ToTable("ReporteVentas");
                 });
@@ -306,6 +423,9 @@ namespace PIA_MAD.Migrations
 
                     b.Property<int>("CantPersonas")
                         .HasColumnType("int");
+
+                    b.Property<bool>("CheckInRealizado")
+                        .HasColumnType("bit");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
@@ -325,6 +445,9 @@ namespace PIA_MAD.Migrations
                     b.Property<int>("HotelId")
                         .HasColumnType("int");
 
+                    b.Property<int>("OperativoId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ReporteVentasid")
                         .HasColumnType("int");
 
@@ -334,9 +457,36 @@ namespace PIA_MAD.Migrations
 
                     b.HasIndex("HotelId");
 
+                    b.HasIndex("OperativoId");
+
                     b.HasIndex("ReporteVentasid");
 
                     b.ToTable("Reservaciones");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.ServicioAdicionalHotel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Precio")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("HotelId");
+
+                    b.ToTable("ServiciosAdicionalesHotel");
                 });
 
             modelBuilder.Entity("PIA_MAD.Modelos.Usuario", b =>
@@ -367,6 +517,9 @@ namespace PIA_MAD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CreadorAdministradorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -374,6 +527,15 @@ namespace PIA_MAD.Migrations
                     b.Property<string>("EstadoCivil")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaModifacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ModificadorAdministradorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -396,11 +558,47 @@ namespace PIA_MAD.Migrations
 
                     b.HasKey("id");
 
+                    b.HasIndex("CreadorAdministradorId");
+
+                    b.HasIndex("ModificadorAdministradorId");
+
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Cancelaciones", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Administrador")
+                        .WithMany()
+                        .HasForeignKey("AdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Usuario", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Hoteles", "Hotel")
+                        .WithMany()
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Administrador");
+
+                    b.Navigation("Cliente");
+
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("PIA_MAD.Modelos.HabitacionReservada", b =>
                 {
+                    b.HasOne("PIA_MAD.Modelos.Cancelaciones", null)
+                        .WithMany("HabitacionesReservadas")
+                        .HasForeignKey("Cancelacionesid")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("PIA_MAD.Modelos.Habitaciones", "Habitacion")
                         .WithMany()
                         .HasForeignKey("HabitacionId")
@@ -408,7 +606,7 @@ namespace PIA_MAD.Migrations
                         .IsRequired();
 
                     b.HasOne("PIA_MAD.Modelos.Reservacion", "Reservacion")
-                        .WithMany("HabitacionesReservadas")
+                        .WithMany("HabitacionReservada")
                         .HasForeignKey("ReservacionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -420,13 +618,86 @@ namespace PIA_MAD.Migrations
 
             modelBuilder.Entity("PIA_MAD.Modelos.Habitaciones", b =>
                 {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Creador")
+                        .WithMany()
+                        .HasForeignKey("CreadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("PIA_MAD.Modelos.Hoteles", "Hotel")
                         .WithMany()
                         .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Modificador")
+                        .WithMany()
+                        .HasForeignKey("ModificadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Creador");
+
                     b.Navigation("Hotel");
+
+                    b.Navigation("Modificador");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Hoteles", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Creador")
+                        .WithMany()
+                        .HasForeignKey("CreadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Modificador")
+                        .WithMany()
+                        .HasForeignKey("ModificadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Creador");
+
+                    b.Navigation("Modificador");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Operativos", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Creador")
+                        .WithMany()
+                        .HasForeignKey("CreadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Modificador")
+                        .WithMany()
+                        .HasForeignKey("ModificadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Creador");
+
+                    b.Navigation("Modificador");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.RegistroContra", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.ReporteVentas", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Administrador")
+                        .WithMany()
+                        .HasForeignKey("AdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Administrador");
                 });
 
             modelBuilder.Entity("PIA_MAD.Modelos.Reservacion", b =>
@@ -434,22 +705,70 @@ namespace PIA_MAD.Migrations
                     b.HasOne("PIA_MAD.Modelos.Usuario", "Cliente")
                         .WithMany()
                         .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("PIA_MAD.Modelos.Hoteles", "Hotel")
                         .WithMany()
                         .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Operativos", "Operativo")
+                        .WithMany()
+                        .HasForeignKey("OperativoId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("PIA_MAD.Modelos.ReporteVentas", null)
                         .WithMany("reservaciones")
-                        .HasForeignKey("ReporteVentasid");
+                        .HasForeignKey("ReporteVentasid")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Cliente");
 
                     b.Navigation("Hotel");
+
+                    b.Navigation("Operativo");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.ServicioAdicionalHotel", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Hoteles", "Hotel")
+                        .WithMany("ServiciosAdicionales")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Hotel");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Usuario", b =>
+                {
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Creador")
+                        .WithMany()
+                        .HasForeignKey("CreadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PIA_MAD.Modelos.Administrador", "Modificador")
+                        .WithMany()
+                        .HasForeignKey("ModificadorAdministradorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Creador");
+
+                    b.Navigation("Modificador");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Cancelaciones", b =>
+                {
+                    b.Navigation("HabitacionesReservadas");
+                });
+
+            modelBuilder.Entity("PIA_MAD.Modelos.Hoteles", b =>
+                {
+                    b.Navigation("ServiciosAdicionales");
                 });
 
             modelBuilder.Entity("PIA_MAD.Modelos.ReporteVentas", b =>
@@ -459,7 +778,7 @@ namespace PIA_MAD.Migrations
 
             modelBuilder.Entity("PIA_MAD.Modelos.Reservacion", b =>
                 {
-                    b.Navigation("HabitacionesReservadas");
+                    b.Navigation("HabitacionReservada");
                 });
 #pragma warning restore 612, 618
         }

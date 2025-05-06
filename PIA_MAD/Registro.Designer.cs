@@ -45,11 +45,9 @@
             TB_CelRegEmp = new TextBox();
             label9 = new Label();
             TB_ContraRegEmp = new TextBox();
-            RB_AdmRegEmp = new RadioButton();
             label10 = new Label();
-            RB_OpRegEmp = new RadioButton();
             button1 = new Button();
-            dateTimePicker2 = new DateTimePicker();
+            DTP_RegEmpl = new DateTimePicker();
             label7 = new Label();
             TB_NumNoRegEmp = new TextBox();
             SuspendLayout();
@@ -127,7 +125,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(46, 257);
             label5.Name = "label5";
-            label5.Size = new Size(55, 15);
+            label5.Size = new Size(56, 15);
             label5.TabIndex = 8;
             label5.Text = "Teléfono:";
             // 
@@ -194,17 +192,6 @@
             TB_ContraRegEmp.Size = new Size(265, 23);
             TB_ContraRegEmp.TabIndex = 18;
             // 
-            // RB_AdmRegEmp
-            // 
-            RB_AdmRegEmp.AutoSize = true;
-            RB_AdmRegEmp.Location = new Point(45, 445);
-            RB_AdmRegEmp.Name = "RB_AdmRegEmp";
-            RB_AdmRegEmp.Size = new Size(101, 19);
-            RB_AdmRegEmp.TabIndex = 19;
-            RB_AdmRegEmp.TabStop = true;
-            RB_AdmRegEmp.Text = "Administrador";
-            RB_AdmRegEmp.UseVisualStyleBackColor = true;
-            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -212,17 +199,6 @@
             label10.Name = "label10";
             label10.Size = new Size(0, 15);
             label10.TabIndex = 20;
-            // 
-            // RB_OpRegEmp
-            // 
-            RB_OpRegEmp.AutoSize = true;
-            RB_OpRegEmp.Location = new Point(310, 445);
-            RB_OpRegEmp.Name = "RB_OpRegEmp";
-            RB_OpRegEmp.Size = new Size(77, 19);
-            RB_OpRegEmp.TabIndex = 21;
-            RB_OpRegEmp.TabStop = true;
-            RB_OpRegEmp.Text = "Operativo";
-            RB_OpRegEmp.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -235,12 +211,12 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // dateTimePicker2
+            // DTP_RegEmpl
             // 
-            dateTimePicker2.Location = new Point(152, 12);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(232, 23);
-            dateTimePicker2.TabIndex = 23;
+            DTP_RegEmpl.Location = new Point(152, 12);
+            DTP_RegEmpl.Name = "DTP_RegEmpl";
+            DTP_RegEmpl.Size = new Size(232, 23);
+            DTP_RegEmpl.TabIndex = 23;
             // 
             // label7
             // 
@@ -264,11 +240,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(422, 546);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(DTP_RegEmpl);
             Controls.Add(button1);
-            Controls.Add(RB_OpRegEmp);
             Controls.Add(label10);
-            Controls.Add(RB_AdmRegEmp);
             Controls.Add(TB_ContraRegEmp);
             Controls.Add(label9);
             Controls.Add(TB_NumNoRegEmp);
@@ -314,12 +288,11 @@
         private TextBox TB_CelRegEmp;
         private Label label9;
         private TextBox TB_ContraRegEmp;
-        private RadioButton RB_AdmRegEmp;
         private Label label10;
-        private RadioButton RB_OpRegEmp;
         private Button button1;
         private DateTimePicker dateTimePicker2;
         private Label label7;
         private TextBox TB_NumNoRegEmp;
+        private DateTimePicker DTP_RegEmpl;
     }
 }

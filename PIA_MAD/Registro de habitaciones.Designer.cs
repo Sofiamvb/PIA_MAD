@@ -51,6 +51,12 @@
             TB_RegCantHhb = new TextBox();
             label1 = new Label();
             LBL_CantHabDisponible = new Label();
+            LV_MostrarAm = new ListView();
+            BTN_AgregarAm = new Button();
+            BTN_EliminarAm = new Button();
+            LV_MostrarChar = new ListView();
+            BTN_AgregarChar = new Button();
+            BTN_EliminarChar = new Button();
             SuspendLayout();
             // 
             // label2
@@ -77,6 +83,7 @@
             TB_RegPNHb.Name = "TB_RegPNHb";
             TB_RegPNHb.Size = new Size(82, 23);
             TB_RegPNHb.TabIndex = 5;
+            TB_RegPNHb.TextChanged += TB_RegPNHb_TextChanged;
             // 
             // label4
             // 
@@ -143,7 +150,6 @@
             label6.Size = new Size(35, 15);
             label6.TabIndex = 11;
             label6.Text = "Vista:";
-            label6.Click += label6_Click;
             // 
             // TB_RegVistaHb
             // 
@@ -155,7 +161,7 @@
             // button1
             // 
             button1.BackColor = Color.Thistle;
-            button1.Location = new Point(161, 437);
+            button1.Location = new Point(154, 619);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 16;
@@ -181,15 +187,16 @@
             // 
             // TB_RegAmeHb
             // 
-            TB_RegAmeHb.Location = new Point(123, 354);
+            TB_RegAmeHb.Location = new Point(41, 375);
             TB_RegAmeHb.Name = "TB_RegAmeHb";
-            TB_RegAmeHb.Size = new Size(163, 23);
+            TB_RegAmeHb.Size = new Size(195, 23);
             TB_RegAmeHb.TabIndex = 19;
+            TB_RegAmeHb.KeyDown += TB_RegAmeHb_KeyDown;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(41, 389);
+            label9.Location = new Point(40, 490);
             label9.Name = "label9";
             label9.Size = new Size(86, 15);
             label9.TabIndex = 20;
@@ -197,10 +204,11 @@
             // 
             // TB_RegCaractHb
             // 
-            TB_RegCaractHb.Location = new Point(128, 386);
+            TB_RegCaractHb.Location = new Point(41, 511);
             TB_RegCaractHb.Name = "TB_RegCaractHb";
-            TB_RegCaractHb.Size = new Size(233, 23);
+            TB_RegCaractHb.Size = new Size(196, 23);
             TB_RegCaractHb.TabIndex = 21;
+            TB_RegCaractHb.KeyDown += TB_RegCaractHb_KeyDown;
             // 
             // label10
             // 
@@ -245,11 +253,75 @@
             LBL_CantHabDisponible.Size = new Size(0, 15);
             LBL_CantHabDisponible.TabIndex = 24;
             // 
+            // LV_MostrarAm
+            // 
+            LV_MostrarAm.Location = new Point(41, 404);
+            LV_MostrarAm.Name = "LV_MostrarAm";
+            LV_MostrarAm.Size = new Size(195, 73);
+            LV_MostrarAm.TabIndex = 25;
+            LV_MostrarAm.UseCompatibleStateImageBehavior = false;
+            LV_MostrarAm.SelectedIndexChanged += LV_MostrarAm_SelectedIndexChanged;
+            // 
+            // BTN_AgregarAm
+            // 
+            BTN_AgregarAm.Location = new Point(242, 404);
+            BTN_AgregarAm.Name = "BTN_AgregarAm";
+            BTN_AgregarAm.Size = new Size(75, 23);
+            BTN_AgregarAm.TabIndex = 26;
+            BTN_AgregarAm.Text = "Agregar";
+            BTN_AgregarAm.UseVisualStyleBackColor = true;
+            BTN_AgregarAm.Click += BTN_AgregarAm_Click;
+            // 
+            // BTN_EliminarAm
+            // 
+            BTN_EliminarAm.Location = new Point(242, 433);
+            BTN_EliminarAm.Name = "BTN_EliminarAm";
+            BTN_EliminarAm.Size = new Size(75, 23);
+            BTN_EliminarAm.TabIndex = 27;
+            BTN_EliminarAm.Text = "Eliminar";
+            BTN_EliminarAm.UseVisualStyleBackColor = true;
+            BTN_EliminarAm.Click += BTN_EliminarAm_Click;
+            // 
+            // LV_MostrarChar
+            // 
+            LV_MostrarChar.Location = new Point(41, 540);
+            LV_MostrarChar.Name = "LV_MostrarChar";
+            LV_MostrarChar.Size = new Size(195, 73);
+            LV_MostrarChar.TabIndex = 28;
+            LV_MostrarChar.UseCompatibleStateImageBehavior = false;
+            LV_MostrarChar.SelectedIndexChanged += LV_MostrarChar_SelectedIndexChanged;
+            // 
+            // BTN_AgregarChar
+            // 
+            BTN_AgregarChar.Location = new Point(242, 540);
+            BTN_AgregarChar.Name = "BTN_AgregarChar";
+            BTN_AgregarChar.Size = new Size(75, 23);
+            BTN_AgregarChar.TabIndex = 29;
+            BTN_AgregarChar.Text = "Agregar";
+            BTN_AgregarChar.UseVisualStyleBackColor = true;
+            BTN_AgregarChar.Click += BTN_AgregarChar_Click;
+            // 
+            // BTN_EliminarChar
+            // 
+            BTN_EliminarChar.Location = new Point(242, 569);
+            BTN_EliminarChar.Name = "BTN_EliminarChar";
+            BTN_EliminarChar.Size = new Size(75, 23);
+            BTN_EliminarChar.TabIndex = 30;
+            BTN_EliminarChar.Text = "Eliminar";
+            BTN_EliminarChar.UseVisualStyleBackColor = true;
+            BTN_EliminarChar.Click += BTN_EliminarChar_Click;
+            // 
             // Registro_de_habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(378, 487);
+            ClientSize = new Size(404, 654);
+            Controls.Add(BTN_EliminarChar);
+            Controls.Add(BTN_AgregarChar);
+            Controls.Add(LV_MostrarChar);
+            Controls.Add(BTN_EliminarAm);
+            Controls.Add(BTN_AgregarAm);
+            Controls.Add(LV_MostrarAm);
             Controls.Add(LBL_CantHabDisponible);
             Controls.Add(CB_RegHotelDHb);
             Controls.Add(label10);
@@ -304,5 +376,11 @@
         private TextBox TB_RegCantHhb;
         private Label label1;
         private Label LBL_CantHabDisponible;
+        private ListView LV_MostrarAm;
+        private Button BTN_AgregarAm;
+        private Button BTN_EliminarAm;
+        private ListView LV_MostrarChar;
+        private Button BTN_AgregarChar;
+        private Button BTN_EliminarChar;
     }
 }

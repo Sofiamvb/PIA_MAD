@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            button1 = new Button();
+            TB_CodigoCancelacion = new TextBox();
+            DTP_CancelarReservacion = new DateTimePicker();
+            BTN_CancelarReservacion = new Button();
             SuspendLayout();
             // 
             // label1
@@ -43,38 +43,40 @@
             label1.TabIndex = 0;
             label1.Text = "Código de reservación:";
             // 
-            // textBox1
+            // TB_CodigoCancelacion
             // 
-            textBox1.Location = new Point(160, 85);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 23);
-            textBox1.TabIndex = 1;
+            TB_CodigoCancelacion.Location = new Point(160, 85);
+            TB_CodigoCancelacion.Name = "TB_CodigoCancelacion";
+            TB_CodigoCancelacion.Size = new Size(201, 23);
+            TB_CodigoCancelacion.TabIndex = 1;
+            TB_CodigoCancelacion.TextChanged += TB_CodigoCancelacion_TextChanged;
+            TB_CodigoCancelacion.KeyDown += TB_CodigoCancelacion_KeyDown;
             // 
-            // dateTimePicker1
+            // DTP_CancelarReservacion
             // 
-            dateTimePicker1.Location = new Point(160, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(220, 23);
-            dateTimePicker1.TabIndex = 2;
+            DTP_CancelarReservacion.Location = new Point(160, 12);
+            DTP_CancelarReservacion.Name = "DTP_CancelarReservacion";
+            DTP_CancelarReservacion.Size = new Size(220, 23);
+            DTP_CancelarReservacion.TabIndex = 2;
             // 
-            // button1
+            // BTN_CancelarReservacion
             // 
-            button1.Location = new Point(160, 153);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BTN_CancelarReservacion.Location = new Point(171, 143);
+            BTN_CancelarReservacion.Name = "BTN_CancelarReservacion";
+            BTN_CancelarReservacion.Size = new Size(75, 23);
+            BTN_CancelarReservacion.TabIndex = 3;
+            BTN_CancelarReservacion.Text = "Cancelar";
+            BTN_CancelarReservacion.UseVisualStyleBackColor = true;
+            BTN_CancelarReservacion.Click += BTN_CancelarReservacion_Click;
             // 
             // Cancelacion_de_reservación
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(404, 193);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
+            Controls.Add(BTN_CancelarReservacion);
+            Controls.Add(DTP_CancelarReservacion);
+            Controls.Add(TB_CodigoCancelacion);
             Controls.Add(label1);
             Name = "Cancelacion_de_reservación";
             Text = "Cancelacion de reservación";
@@ -85,8 +87,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
-        private Button button1;
+        private TextBox TB_CodigoCancelacion;
+        private DateTimePicker DTP_CancelarReservacion;
+        private Button BTN_CancelarReservacion;
     }
 }

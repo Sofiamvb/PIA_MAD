@@ -9,12 +9,14 @@ namespace PIA_MAD.Modelos
     public class Reservacion
     {
         public int id { get; set; }
-
+        public int OperativoId { get; set; }
+        
+        public Operativos Operativo { get; set; }
         public int ClienteId { get; set; }
         public Usuario Cliente { get; set; }
 
         public Hoteles Hotel { get; set; }
-        public int HotelId { get; set; } // Clave foránea
+        public int HotelId { get; set; }
 
         public int CantPersonas { get; set; }
 
@@ -28,7 +30,9 @@ namespace PIA_MAD.Modelos
 
         public DateTime FechaReserva { get; set; } = DateTime.Now;
 
-        public List<HabitacionReservada> HabitacionesReservadas { get; set; }
+        public bool CheckInRealizado { get; set; } = false;
+
+        public List<HabitacionReservada> HabitacionReservada { get; set; }
     }
 }
 

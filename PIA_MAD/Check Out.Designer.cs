@@ -29,28 +29,25 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
+            DTP_CheckOut = new DateTimePicker();
+            TB_NumReserva = new TextBox();
             label3 = new Label();
-            radioButton1 = new RadioButton();
+            RB_DescuentoSi = new RadioButton();
             label4 = new Label();
             label5 = new Label();
-            radioButton2 = new RadioButton();
-            textBox3 = new TextBox();
+            RB_DescuentoNo = new RadioButton();
+            TB_CantDescuento = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
+            TB_MontoTotal = new TextBox();
             label7 = new Label();
-            textBox5 = new TextBox();
-            listBox1 = new ListBox();
-            listBox2 = new ListBox();
-            label8 = new Label();
-            label9 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            TB_AnticipoCO = new TextBox();
+            BTN_CheckOut = new Button();
+            BTN_Factura = new Button();
             label10 = new Label();
-            textBox6 = new TextBox();
+            LV_ServiciosAgregados = new ListView();
+            BTN_AgregarServicio = new Button();
+            BTN_EliminarServicio = new Button();
+            LV_ServiciosAdicionales = new ListView();
             SuspendLayout();
             // 
             // label1
@@ -62,60 +59,45 @@
             label1.TabIndex = 0;
             label1.Text = "Número de reservación:";
             // 
-            // dateTimePicker1
+            // DTP_CheckOut
             // 
-            dateTimePicker1.Location = new Point(32, 40);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(230, 23);
-            dateTimePicker1.TabIndex = 1;
+            DTP_CheckOut.Location = new Point(32, 40);
+            DTP_CheckOut.Name = "DTP_CheckOut";
+            DTP_CheckOut.Size = new Size(230, 23);
+            DTP_CheckOut.TabIndex = 1;
             // 
-            // textBox1
+            // TB_NumReserva
             // 
-            textBox1.Location = new Point(171, 87);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(251, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 131);
-            label2.Name = "label2";
-            label2.Size = new Size(110, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Numero de factura:";
-            label2.Click += label2_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(148, 128);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(274, 23);
-            textBox2.TabIndex = 4;
+            TB_NumReserva.Location = new Point(171, 87);
+            TB_NumReserva.Name = "TB_NumReserva";
+            TB_NumReserva.Size = new Size(251, 23);
+            TB_NumReserva.TabIndex = 2;
+            TB_NumReserva.KeyDown += TB_NumReserva_KeyDown;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 167);
+            label3.Location = new Point(32, 125);
             label3.Name = "label3";
             label3.Size = new Size(66, 15);
             label3.TabIndex = 5;
             label3.Text = "Descuento:";
             // 
-            // radioButton1
+            // RB_DescuentoSi
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(151, 169);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(14, 13);
-            radioButton1.TabIndex = 6;
-            radioButton1.TabStop = true;
-            radioButton1.UseVisualStyleBackColor = true;
+            RB_DescuentoSi.AutoSize = true;
+            RB_DescuentoSi.Location = new Point(151, 127);
+            RB_DescuentoSi.Name = "RB_DescuentoSi";
+            RB_DescuentoSi.Size = new Size(14, 13);
+            RB_DescuentoSi.TabIndex = 6;
+            RB_DescuentoSi.TabStop = true;
+            RB_DescuentoSi.UseVisualStyleBackColor = true;
+            RB_DescuentoSi.CheckedChanged += RB_DescuentoSi_CheckedChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(126, 169);
+            label4.Location = new Point(126, 127);
             label4.Name = "label4";
             label4.Size = new Size(16, 15);
             label4.TabIndex = 7;
@@ -124,160 +106,153 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(283, 169);
+            label5.Location = new Point(283, 127);
             label5.Name = "label5";
             label5.Size = new Size(23, 15);
             label5.TabIndex = 8;
             label5.Text = "No";
             // 
-            // radioButton2
+            // RB_DescuentoNo
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(312, 171);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(14, 13);
-            radioButton2.TabIndex = 9;
-            radioButton2.TabStop = true;
-            radioButton2.UseVisualStyleBackColor = true;
+            RB_DescuentoNo.AutoSize = true;
+            RB_DescuentoNo.Location = new Point(312, 129);
+            RB_DescuentoNo.Name = "RB_DescuentoNo";
+            RB_DescuentoNo.Size = new Size(14, 13);
+            RB_DescuentoNo.TabIndex = 9;
+            RB_DescuentoNo.TabStop = true;
+            RB_DescuentoNo.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // TB_CantDescuento
             // 
-            textBox3.Location = new Point(173, 164);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(89, 23);
-            textBox3.TabIndex = 10;
+            TB_CantDescuento.Location = new Point(173, 122);
+            TB_CantDescuento.Name = "TB_CantDescuento";
+            TB_CantDescuento.Size = new Size(89, 23);
+            TB_CantDescuento.TabIndex = 10;
+            TB_CantDescuento.KeyDown += TB_CantDescuento_KeyDown;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(32, 208);
+            label6.Location = new Point(46, 405);
             label6.Name = "label6";
             label6.Size = new Size(73, 15);
             label6.TabIndex = 11;
             label6.Text = "Monto total:";
             // 
-            // textBox4
+            // TB_MontoTotal
             // 
-            textBox4.Location = new Point(111, 205);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(89, 23);
-            textBox4.TabIndex = 12;
+            TB_MontoTotal.Location = new Point(126, 402);
+            TB_MontoTotal.Name = "TB_MontoTotal";
+            TB_MontoTotal.Size = new Size(89, 23);
+            TB_MontoTotal.TabIndex = 12;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(32, 244);
+            label7.Location = new Point(32, 160);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 13;
             label7.Text = "Anticipo:";
             // 
-            // textBox5
+            // TB_AnticipoCO
             // 
-            textBox5.Location = new Point(93, 241);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(89, 23);
-            textBox5.TabIndex = 14;
+            TB_AnticipoCO.Location = new Point(93, 157);
+            TB_AnticipoCO.Name = "TB_AnticipoCO";
+            TB_AnticipoCO.Size = new Size(89, 23);
+            TB_AnticipoCO.TabIndex = 14;
             // 
-            // listBox1
+            // BTN_CheckOut
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(32, 367);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(150, 124);
-            listBox1.TabIndex = 15;
+            BTN_CheckOut.Location = new Point(326, 436);
+            BTN_CheckOut.Name = "BTN_CheckOut";
+            BTN_CheckOut.Size = new Size(75, 23);
+            BTN_CheckOut.TabIndex = 19;
+            BTN_CheckOut.Text = "Check Out";
+            BTN_CheckOut.UseVisualStyleBackColor = true;
+            BTN_CheckOut.Click += BTN_CheckOut_Click;
             // 
-            // listBox2
+            // BTN_Factura
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(272, 367);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(150, 124);
-            listBox2.TabIndex = 16;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(65, 338);
-            label8.Name = "label8";
-            label8.Size = new Size(86, 15);
-            label8.TabIndex = 17;
-            label8.Text = "Datos del hotel";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(303, 338);
-            label9.Name = "label9";
-            label9.Size = new Size(94, 15);
-            label9.TabIndex = 18;
-            label9.Text = "Datos del cliente";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(221, 529);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 19;
-            button1.Text = "Check Out";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(312, 529);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 23);
-            button2.TabIndex = 20;
-            button2.Text = "Generar factura";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Factura.Location = new Point(410, 436);
+            BTN_Factura.Name = "BTN_Factura";
+            BTN_Factura.Size = new Size(121, 23);
+            BTN_Factura.TabIndex = 20;
+            BTN_Factura.Text = "Generar factura";
+            BTN_Factura.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(32, 284);
+            label10.Location = new Point(32, 200);
             label10.Name = "label10";
             label10.Size = new Size(56, 15);
             label10.TabIndex = 21;
             label10.Text = "Servicios:";
             label10.Click += label10_Click;
             // 
-            // textBox6
+            // LV_ServiciosAgregados
             // 
-            textBox6.Location = new Point(114, 281);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(308, 23);
-            textBox6.TabIndex = 22;
+            LV_ServiciosAgregados.Location = new Point(322, 230);
+            LV_ServiciosAgregados.Name = "LV_ServiciosAgregados";
+            LV_ServiciosAgregados.Size = new Size(195, 109);
+            LV_ServiciosAgregados.TabIndex = 23;
+            LV_ServiciosAgregados.UseCompatibleStateImageBehavior = false;
+            LV_ServiciosAgregados.SelectedIndexChanged += LV_ServiciosAgregados_SelectedIndexChanged;
+            // 
+            // BTN_AgregarServicio
+            // 
+            BTN_AgregarServicio.Location = new Point(93, 345);
+            BTN_AgregarServicio.Name = "BTN_AgregarServicio";
+            BTN_AgregarServicio.Size = new Size(108, 23);
+            BTN_AgregarServicio.TabIndex = 24;
+            BTN_AgregarServicio.Text = "Agregar servicio";
+            BTN_AgregarServicio.UseVisualStyleBackColor = true;
+            BTN_AgregarServicio.Click += BTN_AgregarServicio_Click;
+            // 
+            // BTN_EliminarServicio
+            // 
+            BTN_EliminarServicio.Location = new Point(366, 345);
+            BTN_EliminarServicio.Name = "BTN_EliminarServicio";
+            BTN_EliminarServicio.Size = new Size(110, 23);
+            BTN_EliminarServicio.TabIndex = 25;
+            BTN_EliminarServicio.Text = "Eliminar Servicio";
+            BTN_EliminarServicio.UseVisualStyleBackColor = true;
+            BTN_EliminarServicio.Click += BTN_EliminarServicio_Click;
+            // 
+            // LV_ServiciosAdicionales
+            // 
+            LV_ServiciosAdicionales.Location = new Point(32, 230);
+            LV_ServiciosAdicionales.Name = "LV_ServiciosAdicionales";
+            LV_ServiciosAdicionales.Size = new Size(253, 109);
+            LV_ServiciosAdicionales.TabIndex = 26;
+            LV_ServiciosAdicionales.UseCompatibleStateImageBehavior = false;
+            LV_ServiciosAdicionales.SelectedIndexChanged += LV_ServiciosAdicionales_SelectedIndexChanged;
             // 
             // Check_Out
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(464, 571);
-            Controls.Add(textBox6);
+            ClientSize = new Size(625, 470);
+            Controls.Add(LV_ServiciosAdicionales);
+            Controls.Add(BTN_EliminarServicio);
+            Controls.Add(BTN_AgregarServicio);
+            Controls.Add(LV_ServiciosAgregados);
             Controls.Add(label10);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(listBox2);
-            Controls.Add(listBox1);
-            Controls.Add(textBox5);
+            Controls.Add(BTN_Factura);
+            Controls.Add(BTN_CheckOut);
+            Controls.Add(TB_AnticipoCO);
             Controls.Add(label7);
-            Controls.Add(textBox4);
+            Controls.Add(TB_MontoTotal);
             Controls.Add(label6);
-            Controls.Add(textBox3);
-            Controls.Add(radioButton2);
+            Controls.Add(TB_CantDescuento);
+            Controls.Add(RB_DescuentoNo);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(radioButton1);
+            Controls.Add(RB_DescuentoSi);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(TB_NumReserva);
+            Controls.Add(DTP_CheckOut);
             Controls.Add(label1);
             Name = "Check_Out";
             Text = "Check Out";
@@ -303,14 +278,26 @@
         private TextBox textBox4;
         private Label label7;
         private TextBox textBox5;
-        private ListBox listBox1;
         private ListBox listBox2;
         private Label label8;
         private Label label9;
-        private Button button1;
+        private Button BTN_AgregarServicio;
         private Button button2;
         private Label label10;
         private TextBox textBox6;
         private MenuSuperior menuSuperior1;
+        private TextBox TB_NumReserva;
+        private TextBox TB_NumFactura;
+        private RadioButton RB_DescuentoSi;
+        private RadioButton RB_DescuentoNo;
+        private TextBox TB_CantDescuento;
+        private TextBox TB_MontoTotal;
+        private TextBox TB_AnticipoCO;
+        private DateTimePicker DTP_CheckOut;
+        private Button BTN_CheckOut;
+        private Button BTN_Factura;
+        private ListView LV_ServiciosAgregados;
+        private Button BTN_EliminarServicio;
+        private ListView LV_ServiciosAdicionales;
     }
 }

@@ -10,6 +10,10 @@ namespace PIA_MAD.Modelos
     {
         public int id { get; set; }
 
+        public int UsuarioId { get; set; }
+
+        public Usuario Usuario { get; set; }
+
         public string ContraPasada { get; set; }
 
        
