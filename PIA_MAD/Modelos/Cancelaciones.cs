@@ -38,6 +38,6 @@ namespace PIA_MAD.Modelos
 
         public bool CheckInRealizado { get; set; } = false;
 
-        public List<HabitacionReservada> HabitacionesReservadas { get; set; }
+        public List<HabitacionCancelacion> HabitacionesCanceladas { get; set; }
     }
 }

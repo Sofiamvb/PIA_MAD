@@ -29,67 +29,72 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            button2 = new Button();
-            listBox1 = new ListBox();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            BTN_Modificar = new Button();
+            TB_Busqueda = new TextBox();
+            BTN_Busqueda = new Button();
+            LV_Hoteles = new ListView();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 40);
+            label1.Location = new Point(80, 40);
             label1.Name = "label1";
             label1.Size = new Size(35, 15);
             label1.TabIndex = 9;
             label1.Text = "Dato:";
             // 
-            // button2
+            // BTN_Modificar
             // 
-            button2.Location = new Point(368, 104);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 8;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Modificar.Location = new Point(846, 36);
+            BTN_Modificar.Name = "BTN_Modificar";
+            BTN_Modificar.Size = new Size(75, 23);
+            BTN_Modificar.TabIndex = 8;
+            BTN_Modificar.Text = "Modificar";
+            BTN_Modificar.UseVisualStyleBackColor = true;
+            BTN_Modificar.Click += BTN_Modificar_Click;
             // 
-            // listBox1
+            // TB_Busqueda
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(80, 72);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(272, 94);
-            listBox1.TabIndex = 7;
+            TB_Busqueda.Location = new Point(121, 36);
+            TB_Busqueda.Name = "TB_Busqueda";
+            TB_Busqueda.Size = new Size(272, 23);
+            TB_Busqueda.TabIndex = 6;
+            TB_Busqueda.TextChanged += TB_Busqueda_TextChanged;
             // 
-            // textBox1
+            // BTN_Busqueda
             // 
-            textBox1.Location = new Point(80, 32);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(272, 23);
-            textBox1.TabIndex = 6;
+            BTN_Busqueda.Location = new Point(765, 36);
+            BTN_Busqueda.Name = "BTN_Busqueda";
+            BTN_Busqueda.Size = new Size(75, 23);
+            BTN_Busqueda.TabIndex = 5;
+            BTN_Busqueda.Text = "Buscar";
+            BTN_Busqueda.UseVisualStyleBackColor = true;
+            BTN_Busqueda.Click += BTN_Busqueda_Click;
             // 
-            // button1
+            // LV_Hoteles
             // 
-            button1.Location = new Point(368, 32);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            LV_Hoteles.Location = new Point(80, 72);
+            LV_Hoteles.MultiSelect = false;
+            LV_Hoteles.Name = "LV_Hoteles";
+            LV_Hoteles.Size = new Size(841, 287);
+            LV_Hoteles.TabIndex = 10;
+            LV_Hoteles.UseCompatibleStateImageBehavior = false;
+            LV_Hoteles.SelectedIndexChanged += LV_Hoteles_SelectedIndexChanged;
             // 
             // Mod_Hotel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(474, 193);
+            ClientSize = new Size(1001, 398);
+            Controls.Add(LV_Hoteles);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(listBox1);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(BTN_Modificar);
+            Controls.Add(TB_Busqueda);
+            Controls.Add(BTN_Busqueda);
             Name = "Mod_Hotel";
             Text = "Modificar Hotel";
+            Load += Mod_Hotel_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -97,9 +102,9 @@
         #endregion
 
         private Label label1;
-        private Button button2;
-        private ListBox listBox1;
-        private TextBox textBox1;
-        private Button button1;
+        private Button BTN_Modificar;
+        private TextBox TB_Busqueda;
+        private Button BTN_Busqueda;
+        private ListView LV_Hoteles;
     }
 }

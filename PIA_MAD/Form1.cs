@@ -16,6 +16,12 @@ namespace PIA_MAD
             using (var context = new ApplicationDbContext())
             {
                 var servicio = new ReservacionService(context);
+                bool adminExistente = servicio.RevisarOCrearUsuarioSistema();
+                if(adminExistente == false)
+                {
+                    MessageBox.Show("El admin no existe y no se pudo crear, intenta de nuevo en otro momento.");
+                    this.Close();
+                }
                 servicio.CancelarReservacionesNoCheckIn();
                 context.Database.EnsureCreated();
             }
@@ -66,7 +72,7 @@ namespace PIA_MAD
                     }
                     else
                     {
-                        MessageBox.Show("Intetar de nuevo");
+                        MessageBox.Show("Intentar de nuevo");
                     }
                 }
             }
@@ -90,7 +96,7 @@ namespace PIA_MAD
                     }
                     else
                     {
-                        MessageBox.Show("Intetar de nuevo");
+                        MessageBox.Show("Intentar de nuevo");
                     }
                 }
             }

@@ -56,6 +56,14 @@
             label12 = new Label();
             CB_RegEstCivilC = new ComboBox();
             menuSuperior1 = new MenuSuperior();
+            CFDI = new Label();
+            CB_CFDI = new ComboBox();
+            Regimenfiscal = new Label();
+            CB_RegimenFiscal = new ComboBox();
+            label13 = new Label();
+            TBT_Domicilio = new TextBox();
+            TBT_Codigopostal = new TextBox();
+            label14 = new Label();
             SuspendLayout();
             // 
             // DTP_RegClientes
@@ -68,7 +76,7 @@
             // button1
             // 
             button1.BackColor = Color.Thistle;
-            button1.Location = new Point(304, 488);
+            button1.Location = new Point(304, 612);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 45;
@@ -78,7 +86,7 @@
             // 
             // TB_RegRFCCli
             // 
-            TB_RegRFCCli.Location = new Point(80, 440);
+            TB_RegRFCCli.Location = new Point(82, 505);
             TB_RegRFCCli.Name = "TB_RegRFCCli";
             TB_RegRFCCli.Size = new Size(297, 23);
             TB_RegRFCCli.TabIndex = 42;
@@ -87,7 +95,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(38, 446);
+            label9.Location = new Point(40, 511);
             label9.Name = "label9";
             label9.Size = new Size(31, 15);
             label9.TabIndex = 41;
@@ -285,11 +293,85 @@
             menuSuperior1.Size = new Size(416, 24);
             menuSuperior1.TabIndex = 55;
             // 
+            // CFDI
+            // 
+            CFDI.AutoSize = true;
+            CFDI.Location = new Point(40, 547);
+            CFDI.Name = "CFDI";
+            CFDI.Size = new Size(35, 15);
+            CFDI.TabIndex = 56;
+            CFDI.Text = "CFDI:";
+            // 
+            // CB_CFDI
+            // 
+            CB_CFDI.FormattingEnabled = true;
+            CB_CFDI.Location = new Point(82, 544);
+            CB_CFDI.Name = "CB_CFDI";
+            CB_CFDI.Size = new Size(296, 23);
+            CB_CFDI.TabIndex = 57;
+            // 
+            // Regimenfiscal
+            // 
+            Regimenfiscal.AutoSize = true;
+            Regimenfiscal.Location = new Point(40, 584);
+            Regimenfiscal.Name = "Regimenfiscal";
+            Regimenfiscal.Size = new Size(86, 15);
+            Regimenfiscal.TabIndex = 58;
+            Regimenfiscal.Text = "Regimen Fiscal";
+            // 
+            // CB_RegimenFiscal
+            // 
+            CB_RegimenFiscal.FormattingEnabled = true;
+            CB_RegimenFiscal.Location = new Point(132, 581);
+            CB_RegimenFiscal.Name = "CB_RegimenFiscal";
+            CB_RegimenFiscal.Size = new Size(246, 23);
+            CB_RegimenFiscal.TabIndex = 59;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(38, 442);
+            label13.Name = "label13";
+            label13.Size = new Size(58, 15);
+            label13.TabIndex = 60;
+            label13.Text = "Domicilio";
+            // 
+            // TBT_Domicilio
+            // 
+            TBT_Domicilio.Location = new Point(102, 439);
+            TBT_Domicilio.Name = "TBT_Domicilio";
+            TBT_Domicilio.Size = new Size(274, 23);
+            TBT_Domicilio.TabIndex = 61;
+            // 
+            // TBT_Codigopostal
+            // 
+            TBT_Codigopostal.Location = new Point(121, 471);
+            TBT_Codigopostal.Name = "TBT_Codigopostal";
+            TBT_Codigopostal.Size = new Size(100, 23);
+            TBT_Codigopostal.TabIndex = 62;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(34, 474);
+            label14.Name = "label14";
+            label14.Size = new Size(81, 15);
+            label14.TabIndex = 63;
+            label14.Text = "Codigo postal";
+            // 
             // Registro_de_clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(410, 540);
+            ClientSize = new Size(410, 641);
+            Controls.Add(label14);
+            Controls.Add(TBT_Codigopostal);
+            Controls.Add(TBT_Domicilio);
+            Controls.Add(label13);
+            Controls.Add(CB_RegimenFiscal);
+            Controls.Add(Regimenfiscal);
+            Controls.Add(CB_CFDI);
+            Controls.Add(CFDI);
             Controls.Add(menuSuperior1);
             Controls.Add(CB_RegEstCivilC);
             Controls.Add(TB_RegPaisC);
@@ -356,5 +438,13 @@
         private ComboBox CB_RegEstCivilC;
         private MenuStrip menuStrip1;
         private MenuSuperior menuSuperior1;
+        private Label CFDI;
+        private ComboBox CB_CFDI;
+        private Label Regimenfiscal;
+        private ComboBox CB_RegimenFiscal;
+        private Label label13;
+        private TextBox TBT_Domicilio;
+        private TextBox TBT_Codigopostal;
+        private Label label14;
     }
 }

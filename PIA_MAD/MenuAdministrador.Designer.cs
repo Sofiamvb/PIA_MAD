@@ -38,15 +38,20 @@
             reporteDeOcupaciónToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             registroEmpleadoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            cancelacionReservacionToolStripMenuItem = new ToolStripMenuItem();
+            modificarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
+            administrativosToolStripMenuItem = new ToolStripMenuItem();
+            operativosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, toolStripMenuItem2, registroEmpleadoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, toolStripMenuItem2, registroEmpleadoToolStripMenuItem, toolStripMenuItem3, cancelacionReservacionToolStripMenuItem, modificarEmpleadoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(999, 24);
+            menuStrip1.Size = new Size(1107, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -115,13 +120,46 @@
             registroEmpleadoToolStripMenuItem.Text = "Registro Empleado";
             registroEmpleadoToolStripMenuItem.Click += registroEmpleadoToolStripMenuItem_Click_1;
             // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(12, 20);
+            // 
+            // cancelacionReservacionToolStripMenuItem
+            // 
+            cancelacionReservacionToolStripMenuItem.Name = "cancelacionReservacionToolStripMenuItem";
+            cancelacionReservacionToolStripMenuItem.Size = new Size(150, 20);
+            cancelacionReservacionToolStripMenuItem.Text = "Cancelacion Reservacion";
+            cancelacionReservacionToolStripMenuItem.Click += cancelacionReservacionToolStripMenuItem_Click;
+            // 
+            // modificarEmpleadoToolStripMenuItem
+            // 
+            modificarEmpleadoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administrativosToolStripMenuItem, operativosToolStripMenuItem });
+            modificarEmpleadoToolStripMenuItem.Name = "modificarEmpleadoToolStripMenuItem";
+            modificarEmpleadoToolStripMenuItem.Size = new Size(131, 20);
+            modificarEmpleadoToolStripMenuItem.Text = "Modificar Empleados";
+            // 
+            // administrativosToolStripMenuItem
+            // 
+            administrativosToolStripMenuItem.Name = "administrativosToolStripMenuItem";
+            administrativosToolStripMenuItem.Size = new Size(180, 22);
+            administrativosToolStripMenuItem.Text = "Administrativos";
+            administrativosToolStripMenuItem.Click += administrativosToolStripMenuItem_Click;
+            // 
+            // operativosToolStripMenuItem
+            // 
+            operativosToolStripMenuItem.Name = "operativosToolStripMenuItem";
+            operativosToolStripMenuItem.Size = new Size(180, 22);
+            operativosToolStripMenuItem.Text = "Operativos";
+            operativosToolStripMenuItem.Click += operativosToolStripMenuItem_Click;
+            // 
             // MenuAdministrador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(menuStrip1);
             Name = "MenuAdministrador";
-            Size = new Size(999, 47);
+            Size = new Size(1107, 47);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -141,5 +179,10 @@
         private ToolStripMenuItem modificarRegistroDeHabitaciónToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem registroEmpleadoToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem cancelacionReservacionToolStripMenuItem;
+        private ToolStripMenuItem modificarEmpleadoToolStripMenuItem;
+        private ToolStripMenuItem administrativosToolStripMenuItem;
+        private ToolStripMenuItem operativosToolStripMenuItem;
     }
 }

@@ -65,12 +65,12 @@ namespace PIA_MAD
 
         private void modificarRegistroDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (GestorVentanas.VentanaModCliente == null || GestorVentanas.VentanaModCliente.IsDisposed)
-                GestorVentanas.VentanaModCliente = new Mod_Clientes();
-
-            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaModCliente);
-            GestorVentanas.VentanaModCliente.Show();
-            GestorVentanas.VentanaModCliente.Focus();
+            if (GestorVentanas.VentanaModificarCliente == null || GestorVentanas.VentanaModificarCliente.IsDisposed)
+                GestorVentanas.VentanaModificarCliente = new ModificarCliente();
+            
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaModificarCliente);
+            GestorVentanas.VentanaModificarCliente.Show();
+            GestorVentanas.VentanaModificarCliente.Focus();
         }
     }
 }

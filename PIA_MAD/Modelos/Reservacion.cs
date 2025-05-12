@@ -29,8 +29,11 @@ namespace PIA_MAD.Modelos
         public DateTime FechaSal { get; set; }
 
         public DateTime FechaReserva { get; set; } = DateTime.Now;
+        public DateTime? FechaCheckIn { get; set; }
 
         public bool CheckInRealizado { get; set; } = false;
+
+        public bool CheckOUtRealizado { get; set; } = false;
 
         public List<HabitacionReservada> HabitacionReservada { get; set; }
     }

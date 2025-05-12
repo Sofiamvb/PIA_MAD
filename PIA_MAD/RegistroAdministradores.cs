@@ -192,9 +192,24 @@ namespace PIA_MAD
                         FechaRegistro = DateTime.Now,
                         FechaModificacion = DateTime.Now,
                     };
+
                     context.Administradores.Add(admin);
                     context.SaveChanges();
-                    Debug.WriteLine("Administrador agregado correctamente.");
+
+                    var registro = new RegistroContra
+                    {
+                        AdministradorId = admin.id,
+                        ContraPasada = Contra 
+                    };
+
+                    context.RegistroContra.Add(registro);
+                    context.SaveChanges(); 
+
+                    Debug.WriteLine("Administrador y contraseña registrada correctamente.");
+                    this.Hide();
+                    var nuevoFormulario = new RegistroAdministradores();
+                    nuevoFormulario.Show();
+                    this.Close();
                 }
             }
 
@@ -246,6 +261,15 @@ namespace PIA_MAD
                     };
 
                     context.Operativos.Add(operativo);
+                    context.SaveChanges();
+
+                    var registro = new RegistroContra
+                    {
+                        OperativoId = operativo.id,
+                        ContraPasada = Contra
+                    };
+
+                    context.RegistroContra.Add(registro);
                     context.SaveChanges();
 
                     this.Hide();

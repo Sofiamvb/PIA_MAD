@@ -28,84 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            comboBox1 = new ComboBox();
+            BTN_Filtrar = new Button();
+            CB_Hoteles = new ComboBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            TB_Ciudad = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            TB_Anio = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            TB_Pais = new TextBox();
             label1 = new Label();
             label5 = new Label();
-            listBox1 = new ListBox();
+            LV_ReporteVentas = new ListView();
+            LBL_IngresosTotales = new Label();
+            LBL_IngresosHospedaje = new Label();
+            LBL_IngresosServicios = new Label();
+            BTN_ObtenerTodo = new Button();
             SuspendLayout();
             // 
-            // button1
+            // BTN_Filtrar
             // 
-            button1.Location = new Point(407, 119);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 17;
-            button1.Text = "Filtrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BTN_Filtrar.Location = new Point(908, 115);
+            BTN_Filtrar.Name = "BTN_Filtrar";
+            BTN_Filtrar.Size = new Size(75, 23);
+            BTN_Filtrar.TabIndex = 17;
+            BTN_Filtrar.Text = "Filtrar";
+            BTN_Filtrar.UseVisualStyleBackColor = true;
+            BTN_Filtrar.Click += BTN_Filtrar_Click;
             // 
-            // comboBox1
+            // CB_Hoteles
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(692, 72);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(139, 23);
-            comboBox1.TabIndex = 16;
+            CB_Hoteles.FormattingEnabled = true;
+            CB_Hoteles.Location = new Point(844, 72);
+            CB_Hoteles.Name = "CB_Hoteles";
+            CB_Hoteles.Size = new Size(139, 23);
+            CB_Hoteles.TabIndex = 16;
+            CB_Hoteles.SelectedIndexChanged += CB_Hoteles_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(647, 75);
+            label4.Location = new Point(799, 75);
             label4.Name = "label4";
             label4.Size = new Size(39, 15);
             label4.TabIndex = 15;
             label4.Text = "Hotel:";
             // 
-            // textBox3
+            // TB_Ciudad
             // 
-            textBox3.Location = new Point(488, 72);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(130, 23);
-            textBox3.TabIndex = 14;
+            TB_Ciudad.Location = new Point(329, 72);
+            TB_Ciudad.Name = "TB_Ciudad";
+            TB_Ciudad.Size = new Size(130, 23);
+            TB_Ciudad.TabIndex = 14;
+            TB_Ciudad.TextChanged += TB_Ciudad_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(434, 75);
+            label3.Location = new Point(275, 75);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 13;
             label3.Text = "Ciudad:";
             // 
-            // textBox2
+            // TB_Anio
             // 
-            textBox2.Location = new Point(273, 72);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 23);
-            textBox2.TabIndex = 12;
+            TB_Anio.Location = new Point(582, 72);
+            TB_Anio.Name = "TB_Anio";
+            TB_Anio.Size = new Size(130, 23);
+            TB_Anio.TabIndex = 12;
+            TB_Anio.TextChanged += TB_Anio_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(236, 75);
+            label2.Location = new Point(545, 75);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 11;
             label2.Text = "Año:";
             // 
-            // textBox1
+            // TB_Pais
             // 
-            textBox1.Location = new Point(81, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(130, 23);
-            textBox1.TabIndex = 10;
+            TB_Pais.Location = new Point(81, 72);
+            TB_Pais.Name = "TB_Pais";
+            TB_Pais.Size = new Size(130, 23);
+            TB_Pais.TabIndex = 10;
+            TB_Pais.TextChanged += TB_Pais_TextChanged;
             // 
             // label1
             // 
@@ -119,36 +127,76 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(418, 183);
+            label5.Location = new Point(44, 115);
             label5.Name = "label5";
             label5.Size = new Size(51, 15);
             label5.TabIndex = 19;
             label5.Text = "Reporte:";
             // 
-            // listBox1
+            // LV_ReporteVentas
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(273, 222);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(345, 94);
-            listBox1.TabIndex = 18;
+            LV_ReporteVentas.Location = new Point(44, 155);
+            LV_ReporteVentas.Name = "LV_ReporteVentas";
+            LV_ReporteVentas.Size = new Size(939, 163);
+            LV_ReporteVentas.TabIndex = 20;
+            LV_ReporteVentas.UseCompatibleStateImageBehavior = false;
+            // 
+            // LBL_IngresosTotales
+            // 
+            LBL_IngresosTotales.AutoSize = true;
+            LBL_IngresosTotales.Location = new Point(735, 400);
+            LBL_IngresosTotales.Name = "LBL_IngresosTotales";
+            LBL_IngresosTotales.Size = new Size(92, 15);
+            LBL_IngresosTotales.TabIndex = 21;
+            LBL_IngresosTotales.Text = "Ingresos totales:";
+            // 
+            // LBL_IngresosHospedaje
+            // 
+            LBL_IngresosHospedaje.AutoSize = true;
+            LBL_IngresosHospedaje.Location = new Point(735, 367);
+            LBL_IngresosHospedaje.Name = "LBL_IngresosHospedaje";
+            LBL_IngresosHospedaje.Size = new Size(113, 15);
+            LBL_IngresosHospedaje.TabIndex = 22;
+            LBL_IngresosHospedaje.Text = "Ingresos Hospedaje:";
+            // 
+            // LBL_IngresosServicios
+            // 
+            LBL_IngresosServicios.AutoSize = true;
+            LBL_IngresosServicios.Location = new Point(735, 339);
+            LBL_IngresosServicios.Name = "LBL_IngresosServicios";
+            LBL_IngresosServicios.Size = new Size(103, 15);
+            LBL_IngresosServicios.TabIndex = 23;
+            LBL_IngresosServicios.Text = "Ingresos Servicios:";
+            // 
+            // BTN_ObtenerTodo
+            // 
+            BTN_ObtenerTodo.Location = new Point(827, 115);
+            BTN_ObtenerTodo.Name = "BTN_ObtenerTodo";
+            BTN_ObtenerTodo.Size = new Size(75, 23);
+            BTN_ObtenerTodo.TabIndex = 24;
+            BTN_ObtenerTodo.Text = "Obtener todo";
+            BTN_ObtenerTodo.UseVisualStyleBackColor = true;
+            BTN_ObtenerTodo.Click += BTN_ObtenerTodo_Click;
             // 
             // Reporte_de_ventas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 347);
+            ClientSize = new Size(995, 430);
+            Controls.Add(BTN_ObtenerTodo);
+            Controls.Add(LBL_IngresosServicios);
+            Controls.Add(LBL_IngresosHospedaje);
+            Controls.Add(LBL_IngresosTotales);
+            Controls.Add(LV_ReporteVentas);
             Controls.Add(label5);
-            Controls.Add(listBox1);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
+            Controls.Add(BTN_Filtrar);
+            Controls.Add(CB_Hoteles);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(TB_Ciudad);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(TB_Anio);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(TB_Pais);
             Controls.Add(label1);
             Name = "Reporte_de_ventas";
             Text = "Reporte de ventas";
@@ -159,16 +207,20 @@
 
         #endregion
 
-        private Button button1;
-        private ComboBox comboBox1;
+        private Button BTN_Filtrar;
+        private ComboBox CB_Hoteles;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox TB_Ciudad;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox TB_Anio;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox TB_Pais;
         private Label label1;
         private Label label5;
-        private ListBox listBox1;
+        private ListView LV_ReporteVentas;
+        private Label LBL_IngresosTotales;
+        private Label LBL_IngresosHospedaje;
+        private Label LBL_IngresosServicios;
+        private Button BTN_ObtenerTodo;
     }
 }

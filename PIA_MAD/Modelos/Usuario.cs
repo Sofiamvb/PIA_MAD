@@ -21,11 +21,16 @@ namespace PIA_MAD.Modelos
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string RFC { get; set; }
+        public string Cfdi { get; set; }
+        public string RegimenFiscal { get; set; }
         public DateTime fechaNa { get; set; }
         public string EstadoCivil { get; set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }
         public string Estado { get; set; }
+        public string Domicilio { get; set; }
+        public string Codigopostal { get; set; }
+
         public DateTime FechaRegistro { get; set; }
         public DateTime FechaModifacion { get; set; }
     }

@@ -15,6 +15,7 @@ namespace PIA_MAD
 {
     public partial class Cancelacion_de_reservación : Form
     {
+        Empleado empleado = Empleado.ObtenerInstancia();
         private Guid codigoreserva;
         public Cancelacion_de_reservación()
         {
@@ -73,7 +74,7 @@ namespace PIA_MAD
             using (var DB = new ApplicationDbContext()) 
             {
                 var servicio = new ReservacionService(DB);
-                bool reservacioncancelada = servicio.CancelarReservacionManual(codigoreserva);
+                bool reservacioncancelada = servicio.CancelarReservacionManual(codigoreserva, empleado.GetId());
                 if (reservacioncancelada == true)
                 {
                     MessageBox.Show("Se ha cancelado la reservacion.");

@@ -18,6 +18,6 @@ namespace PIA_MAD.Modelos
 
         public List<Reservacion> reservaciones { get; set; }
 
-        public int PagosT { get; set; }
+        public decimal PagosT { get; set; }
     }
 }

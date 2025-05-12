@@ -13,7 +13,8 @@ namespace PIA_MAD
         public static Reservaciones VentanaReservaciones;
         public static Check_In VentanaCheckIn;
         public static Check_Out VentanaCheckOut;
-        public static Mod_Clientes VentanaModCliente;
+        public static ModificarCliente VentanaModificarCliente;
+        
 
 
         public static void CerrarTodasMenos(Form actual)

@@ -12,6 +12,6 @@ namespace PIA_MAD.Modelos
         public int HotelId { get; set; }
         public Hoteles Hotel { get; set; }
         public string Nombre { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
     }
 }   

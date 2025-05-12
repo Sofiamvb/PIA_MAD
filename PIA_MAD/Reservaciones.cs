@@ -30,16 +30,19 @@ namespace PIA_MAD
         private string patronNombre = @"^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$";
         private string patronTelefono = @"^\d+$";
         private string patronContrasenia = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).+$";
-        private decimal anticipofijo = 1000.00m;
+        private decimal anticipofijo = 999.00m;
         private int clientid;
         private int hotelid;
         private int maxcapacidadhab;
         private int cantidadpersonas;
+        private int cantPersonasHab;
         private decimal anticipo;
         Empleado empleado = Empleado.ObtenerInstancia();
         private List<Habitaciones> habitacionesdisponibles;
         private List<Habitaciones> habitacionesreservadas = new List<Habitaciones>();
         private List<Habitaciones> habitacionesEncontradas;
+        private List<(Habitaciones habitacion, int cantidadPersonas)> habitacionesReservadasConPersonas = new List<(Habitaciones, int)>();
+
 
         public Reservaciones()
         {
@@ -61,6 +64,7 @@ namespace PIA_MAD
             CB_SeleccionNivelHab.Enabled = false;
             BTN_BuscarHabitaciones.Enabled = false;
             TB_CantidadPersonas.Enabled = false;
+            TB_Anticipo.Text = Utilidades.FormatearComoMoneda(1000.00m);
             TB_Anticipo.Enabled = false;
 
             LV_MostrarCliente.View = View.Details;
@@ -144,7 +148,6 @@ namespace PIA_MAD
 
         private decimal ObtenerAnticipoLimpio()
         {
-            // Elimina todos los símbolos de moneda y separadores
             string texto = TB_Anticipo.Text.Replace("$", "").Replace(",", "").Trim();
 
             if (decimal.TryParse(texto, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal resultado))
@@ -157,6 +160,32 @@ namespace PIA_MAD
             }
         }
 
+        private void ObtenerlistViewDatos()
+        {
+            try
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    var usuarios = context.Vista_UsuariosBasica
+                        .Take(20) // Limita a 20 desde C#
+                        .ToList();
+                    LV_MostrarCliente.Items.Clear();
+                    foreach (var u in usuarios)
+                    {
+                        var item = new ListViewItem(u.id.ToString());
+                        item.SubItems.Add(u.Nombre);
+                        item.SubItems.Add(u.AP);
+                        item.SubItems.Add(u.AM);
+                        item.SubItems.Add(u.Celular);
+                        LV_MostrarCliente.Items.Add(item);
+                    }
+                }
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"Hubo un error: {ex.Message}");
+            }
+        }
         private void LimpiarFormulario(Control parent = null)
         {
             if (parent == null)
@@ -202,7 +231,7 @@ namespace PIA_MAD
 
         private void Reservaciones_Load(object sender, EventArgs e)
         {
-
+            ObtenerlistViewDatos();
         }
 
         private void BTN_BusquedaClientes_Click(object sender, EventArgs e)
@@ -365,7 +394,7 @@ namespace PIA_MAD
                     TB_CantidadPersonas.Text = "0";
                     return;
                 }
-
+                cantPersonasHab = cantper;
                 BTN_AgregarHabitacion.Enabled = true;
             }
             catch (FormatException error)
@@ -399,12 +428,14 @@ namespace PIA_MAD
                 int cantPer = int.TryParse(TB_CantidadPersonas.Text, out var cp) ? cp : 0;
                 cantidadpersonas += cantPer;
 
+                habitacionesReservadasConPersonas.Add((habitacionAEliminar, cantPer));
+
                 TB_CantidadPersonas.Text = "";
                 BTN_AgregarHabitacion.Enabled = false;
             }
             if (LB_HabSeleccionadas.Items.Count > 0)
             {
-                TB_Anticipo.Enabled = true;
+                BTN_Reservar.Enabled = true;
             }
         }
 
@@ -469,10 +500,10 @@ namespace PIA_MAD
                     var nuevaReservacion = new Reservacion
                     {
                         OperativoId = empleado.GetId(),
-                        ClienteId = clientid, // ID de usuario existente
-                        HotelId = hotelid,   // ID del hotel seleccionado
+                        ClienteId = clientid, 
+                        HotelId = hotelid, 
                         CantPersonas = cantidadpersonas,
-                        Anticipo = anticipo,
+                        Anticipo = 1000.00m,
                         FechaEnt = DTP_FechaEntrada.Value.Date.AddHours(14),
                         FechaSal = DTP_FechaSalida.Value.Date.AddHours(12),
                         FechaReserva = DateTime.Now,
@@ -480,14 +511,25 @@ namespace PIA_MAD
                         HabitacionReservada = new List<HabitacionReservada>()
                     };
 
-
-                    foreach (var hab in habitacionesreservadas)
+                    int totalPorHabitaciones = habitacionesReservadasConPersonas.Sum(x => x.cantidadPersonas);
+                    if (totalPorHabitaciones != cantidadpersonas)
                     {
+                        MessageBox.Show("El total de personas por habitación no coincide con el total general.");
+                        return;
+                    }
+
+                    foreach (var tuple in habitacionesReservadasConPersonas)
+                    {
+                        var habitacion = tuple.habitacion;
+                        var personas = tuple.cantidadPersonas;
+
                         nuevaReservacion.HabitacionReservada.Add(new HabitacionReservada
                         {
-                            HabitacionId = hab.id
+                            HabitacionId = habitacion.id,
+                            CantidadPersonas = personas
                         });
                     }
+
 
                     DB.Reservaciones.Add(nuevaReservacion);
                     DB.SaveChanges();
@@ -522,6 +564,13 @@ namespace PIA_MAD
             if (habitacionesreservadas != null && habitacionAEliminar != null)
             {
                 habitacionesdisponibles.Add(habitacionAEliminar);
+                var entrada = habitacionesReservadasConPersonas
+                    .FirstOrDefault(x => x.habitacion.id == idSeleccionado);
+                if (entrada.habitacion != null)
+                {
+                    habitacionesReservadasConPersonas.Remove(entrada);
+                    cantidadpersonas -= entrada.cantidadPersonas;
+                }
                 LB_MostrarHabitaciones.DataSource = null;
                 LB_MostrarHabitaciones.DataSource = habitacionesdisponibles;
                 LB_MostrarHabitaciones.DisplayMember = "id";
@@ -545,38 +594,27 @@ namespace PIA_MAD
 
         private void TB_Anticipo_TextChanged(object sender, EventArgs e)
         {
-            if (isFormatting) return; // Si estamos formateando, no hacer nada
+            if (isFormatting) return; 
 
             TextBox textBox = (TextBox)sender;
 
             if (string.IsNullOrWhiteSpace(textBox.Text))
                 return;
-
-            // Guardar posición del cursor
             int selectionStart = textBox.SelectionStart;
             int lengthBefore = textBox.Text.Length;
-
-            // Eliminar cualquier símbolo que no sea número
             string onlyDigits = new string(textBox.Text.Where(char.IsDigit).ToArray());
 
             if (decimal.TryParse(onlyDigits, out decimal value))
             {
-                isFormatting = true; // Evitar reentradas
-
-                // Dividir para respetar dos decimales
+                isFormatting = true; 
                 value /= 100;
-
-                // Formatear
                 textBox.Text = value.ToString("C2", new CultureInfo("es-MX"));
-
-                // Restaurar cursor (ajustar por diferencia de longitud)
                 int lengthAfter = textBox.Text.Length;
                 selectionStart += (lengthAfter - lengthBefore);
                 if (selectionStart < 0) selectionStart = 0;
                 if (selectionStart > textBox.Text.Length) selectionStart = textBox.Text.Length;
                 textBox.SelectionStart = selectionStart;
-
-                isFormatting = false; // Volver a permitir formateo
+                isFormatting = false; 
             }
         }
 

@@ -15,6 +15,6 @@ namespace PIA_MAD.Modelos
 
         public int ReservacionId { get; set; }
         public Reservacion Reservacion { get; set; }
-
+        public int CantidadPersonas { get; set; }
     }
 }

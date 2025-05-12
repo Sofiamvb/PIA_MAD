@@ -157,61 +157,73 @@ namespace PIA_MAD
                 MessageBox.Show("La contrasenia debe tener al menos 8 caracteres");
                 return;
             }
-
-
-            using (var context = new ApplicationDbContext())
+            try
             {
-                var ultimoad = context.Administradores
-                    .OrderByDescending(a => a.Nomina)
-                    .FirstOrDefault();
-                var ultimoop = context.Operativos
-                    .OrderByDescending(a => a.Nomina)
-                    .FirstOrDefault();
-                if (ultimoad != null && ultimoop == null)
+                using (var context = new ApplicationDbContext())
                 {
-                    numeronomina = ultimoad.Nomina + 1;
-                }
-                if (ultimoop != null && ultimoad == null)
-                {
-                    numeronomina = ultimoop.Nomina + 1;
-                }
-                if (ultimoad != null && ultimoop != null)
-                {
-                    if (ultimoad.Nomina > ultimoop.Nomina)
+                    var ultimoad = context.Administradores
+                        .OrderByDescending(a => a.Nomina)
+                        .FirstOrDefault();
+                    var ultimoop = context.Operativos
+                        .OrderByDescending(a => a.Nomina)
+                        .FirstOrDefault();
+                    if (ultimoad != null && ultimoop == null)
                     {
                         numeronomina = ultimoad.Nomina + 1;
                     }
-                    else if (ultimoop.Nomina > ultimoad.Nomina)
+                    if (ultimoop != null && ultimoad == null)
                     {
                         numeronomina = ultimoop.Nomina + 1;
                     }
+                    if (ultimoad != null && ultimoop != null)
+                    {
+                        if (ultimoad.Nomina > ultimoop.Nomina)
+                        {
+                            numeronomina = ultimoad.Nomina + 1;
+                        }
+                        else if (ultimoop.Nomina > ultimoad.Nomina)
+                        {
+                            numeronomina = ultimoop.Nomina + 1;
+                        }
+                    }
+                    var admin = new Administrador
+                    {
+                        Nombre = Nombre,
+                        AP = AP,
+                        AM = AM,
+                        Correo = Correo,
+                        Telefono = Tel,
+                        Celular = Cel,
+                        Nomina = numeronomina,
+                        fechaNa = FechNa,
+                        Contra = Contra,
+                        FechaRegistro = DateTime.Now,
+                        FechaModificacion = DateTime.Now,
+                    };
+
+                    context.Administradores.Add(admin);
+                    context.SaveChanges();
+
+                    var registro = new RegistroContra
+                    {
+                        AdministradorId = admin.id,
+                        ContraPasada = Contra
+                    };
+
+                    context.RegistroContra.Add(registro);
+                    context.SaveChanges();
+
+                    Debug.WriteLine("Administrador y contraseña registrada correctamente.");
+                    this.Hide();
+                    var nuevoFormulario = new Form1();
+                    nuevoFormulario.Show();
+                    this.Close();
                 }
-                var admin = new Administrador
-                {
-                    Nombre = Nombre,
-                    AP = AP,
-                    AM = AM,
-                    Correo = Correo,
-                    Telefono = Tel,
-                    Celular = Cel,
-                    Nomina = numeronomina,
-                    fechaNa = FechNa,
-                    Contra = Contra,
-                    FechaRegistro = DateTime.Now,
-                    FechaModificacion = DateTime.Now,
-                };
-
-                context.Administradores.Add(admin);
-                context.SaveChanges();
-
-                Debug.WriteLine("Administrador agregado correctamente.");
             }
-
-            Form1 IniSesion = new Form1();
-            IniSesion.Show();
-            this.Hide();
-
-            Debug.WriteLine(Nombre);
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Hubo un error: {ex.Message}");
+            }
         }
 
         private void TB_NumNoRegEmp_TextChanged(object sender, EventArgs e)

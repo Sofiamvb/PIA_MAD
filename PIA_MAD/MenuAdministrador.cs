@@ -115,5 +115,35 @@ namespace PIA_MAD
             GestorVentanasAdm.VentanaRegEmpl.Show();
             GestorVentanasAdm.VentanaRegEmpl.Focus();
         }
+
+        private void cancelacionReservacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanasAdm.VentanaCancelacionReservacion == null || GestorVentanasAdm.VentanaCancelacionReservacion.IsDisposed)
+                GestorVentanasAdm.VentanaCancelacionReservacion = new Cancelacion_de_reservación();
+
+            GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaCancelacionReservacion);
+            GestorVentanasAdm.VentanaCancelacionReservacion.Show();
+            GestorVentanasAdm.VentanaCancelacionReservacion.Focus();
+        }
+
+        private void administrativosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanasAdm.VentanaModificarAdministradores == null || GestorVentanasAdm.VentanaModificarAdministradores.IsDisposed)
+                GestorVentanasAdm.VentanaModificarAdministradores = new ModificarAdministradores();
+
+            GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaModificarAdministradores);
+            GestorVentanasAdm.VentanaModificarAdministradores.Show();
+            GestorVentanasAdm.VentanaModificarAdministradores.Focus();
+        }
+
+        private void operativosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanasAdm.VentanaModificarOperativos == null || GestorVentanasAdm.VentanaModificarOperativos.IsDisposed)
+                GestorVentanasAdm.VentanaModificarOperativos = new ModificarOperativos();
+
+            GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaModificarOperativos);
+            GestorVentanasAdm.VentanaModificarOperativos.Show();
+            GestorVentanasAdm.VentanaModificarOperativos.Focus();
+        }
     }
 }

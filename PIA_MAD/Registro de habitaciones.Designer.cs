@@ -48,8 +48,6 @@
             TB_RegCaractHb = new TextBox();
             label10 = new Label();
             CB_RegHotelDHb = new ComboBox();
-            TB_RegCantHhb = new TextBox();
-            label1 = new Label();
             LBL_CantHabDisponible = new Label();
             LV_MostrarAm = new ListView();
             BTN_AgregarAm = new Button();
@@ -57,6 +55,8 @@
             LV_MostrarChar = new ListView();
             BTN_AgregarChar = new Button();
             BTN_EliminarChar = new Button();
+            TB_RegCantHhb = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // label2
@@ -228,23 +228,6 @@
             CB_RegHotelDHb.TabIndex = 23;
             CB_RegHotelDHb.SelectedIndexChanged += CB_RegHotelDHb_SelectedIndexChanged;
             // 
-            // TB_RegCantHhb
-            // 
-            TB_RegCantHhb.Location = new Point(191, 120);
-            TB_RegCantHhb.Name = "TB_RegCantHhb";
-            TB_RegCantHhb.Size = new Size(82, 23);
-            TB_RegCantHhb.TabIndex = 1;
-            TB_RegCantHhb.TextChanged += TB_RegCantHhb_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(41, 123);
-            label1.Name = "label1";
-            label1.Size = new Size(144, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Cantidad de habitaciones:";
-            // 
             // LBL_CantHabDisponible
             // 
             LBL_CantHabDisponible.AutoSize = true;
@@ -311,6 +294,23 @@
             BTN_EliminarChar.UseVisualStyleBackColor = true;
             BTN_EliminarChar.Click += BTN_EliminarChar_Click;
             // 
+            // TB_RegCantHhb
+            // 
+            TB_RegCantHhb.Location = new Point(191, 120);
+            TB_RegCantHhb.Name = "TB_RegCantHhb";
+            TB_RegCantHhb.Size = new Size(82, 23);
+            TB_RegCantHhb.TabIndex = 1;
+            TB_RegCantHhb.TextChanged += TB_RegCantHhb_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(41, 123);
+            label1.Name = "label1";
+            label1.Size = new Size(144, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Cantidad de habitaciones:";
+            // 
             // Registro_de_habitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -373,8 +373,6 @@
         private TextBox TB_RegCaractHb;
         private Label label10;
         private ComboBox CB_RegHotelDHb;
-        private TextBox TB_RegCantHhb;
-        private Label label1;
         private Label LBL_CantHabDisponible;
         private ListView LV_MostrarAm;
         private Button BTN_AgregarAm;
@@ -382,5 +380,7 @@
         private ListView LV_MostrarChar;
         private Button BTN_AgregarChar;
         private Button BTN_EliminarChar;
+        private TextBox TB_RegCantHhb;
+        private Label label1;
     }
 }

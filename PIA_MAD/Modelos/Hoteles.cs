@@ -11,7 +11,6 @@ namespace PIA_MAD.Modelos
         public int id { get; set; }
         public int CreadorAdministradorId { get; set; }
         public Administrador Creador { get; set; }
-
         public int? ModificadorAdministradorId { get; set; }
         public Administrador Modificador { get; set; }
         public string Nombre { get; set; }
@@ -24,14 +23,11 @@ namespace PIA_MAD.Modelos
         public string caracteristicas { get; set; }
         public string amenidades { get; set; }
         public int cantHab { get; set; }
-
         public bool FrentePlaya { get; set; }
         public int CantPiscina { get; set; }
         public bool SalonEv { get; set; }
         public DateTime FechaRegistro { get; set; }
-
         public DateTime FechaModificacion { get; set; }
-
         public List<ServicioAdicionalHotel> ServiciosAdicionales { get; set; }
     }
 }

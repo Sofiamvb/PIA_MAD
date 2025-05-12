@@ -29,96 +29,100 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            listBox1 = new ListBox();
+            TB_Busqueda = new TextBox();
+            BTN_Busqueda = new Button();
             label2 = new Label();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
-            listBox2 = new ListBox();
+            BTN_Filtrar = new Button();
+            CB_Anio = new ComboBox();
+            LV_Clientes = new ListView();
+            LV_Historial = new ListView();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 59);
+            label1.Location = new Point(252, 63);
             label1.Name = "label1";
             label1.Size = new Size(82, 15);
             label1.TabIndex = 0;
             label1.Text = "Dato a buscar:";
             // 
-            // textBox1
+            // TB_Busqueda
             // 
-            textBox1.Location = new Point(120, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(220, 23);
-            textBox1.TabIndex = 1;
+            TB_Busqueda.Location = new Point(342, 60);
+            TB_Busqueda.Name = "TB_Busqueda";
+            TB_Busqueda.Size = new Size(532, 23);
+            TB_Busqueda.TabIndex = 1;
+            TB_Busqueda.TextChanged += TB_Busqueda_TextChanged;
             // 
-            // button1
+            // BTN_Busqueda
             // 
-            button1.Location = new Point(359, 56);
-            button1.Name = "button1";
-            button1.Size = new Size(72, 24);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(32, 109);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(399, 94);
-            listBox1.TabIndex = 3;
+            BTN_Busqueda.Location = new Point(899, 60);
+            BTN_Busqueda.Name = "BTN_Busqueda";
+            BTN_Busqueda.Size = new Size(72, 24);
+            BTN_Busqueda.TabIndex = 2;
+            BTN_Busqueda.Text = "Buscar";
+            BTN_Busqueda.UseVisualStyleBackColor = true;
+            BTN_Busqueda.Click += BTN_Busqueda_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(110, 224);
+            label2.Location = new Point(500, 267);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 4;
             label2.Text = "Año:";
             // 
-            // button2
+            // BTN_Filtrar
             // 
-            button2.Location = new Point(268, 220);
-            button2.Name = "button2";
-            button2.Size = new Size(72, 24);
-            button2.TabIndex = 6;
-            button2.Text = "Filtrar";
-            button2.UseVisualStyleBackColor = true;
+            BTN_Filtrar.Location = new Point(689, 264);
+            BTN_Filtrar.Name = "BTN_Filtrar";
+            BTN_Filtrar.Size = new Size(72, 24);
+            BTN_Filtrar.TabIndex = 6;
+            BTN_Filtrar.Text = "Filtrar";
+            BTN_Filtrar.UseVisualStyleBackColor = true;
+            BTN_Filtrar.Click += BTN_Filtrar_Click;
             // 
-            // comboBox1
+            // CB_Anio
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(148, 221);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(114, 23);
-            comboBox1.TabIndex = 7;
+            CB_Anio.FormattingEnabled = true;
+            CB_Anio.Location = new Point(538, 264);
+            CB_Anio.Name = "CB_Anio";
+            CB_Anio.Size = new Size(114, 23);
+            CB_Anio.TabIndex = 7;
+            CB_Anio.SelectedIndexChanged += CB_Anio_SelectedIndexChanged;
             // 
-            // listBox2
+            // LV_Clientes
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(32, 265);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(399, 319);
-            listBox2.TabIndex = 8;
+            LV_Clientes.Location = new Point(256, 104);
+            LV_Clientes.MultiSelect = false;
+            LV_Clientes.Name = "LV_Clientes";
+            LV_Clientes.Size = new Size(715, 97);
+            LV_Clientes.TabIndex = 9;
+            LV_Clientes.UseCompatibleStateImageBehavior = false;
+            LV_Clientes.SelectedIndexChanged += LV_Clientes_SelectedIndexChanged;
+            // 
+            // LV_Historial
+            // 
+            LV_Historial.Location = new Point(27, 316);
+            LV_Historial.Name = "LV_Historial";
+            LV_Historial.Size = new Size(1183, 230);
+            LV_Historial.TabIndex = 10;
+            LV_Historial.UseCompatibleStateImageBehavior = false;
             // 
             // Historial_del_cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(462, 632);
-            Controls.Add(listBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(button2);
+            ClientSize = new Size(1254, 574);
+            Controls.Add(LV_Historial);
+            Controls.Add(LV_Clientes);
+            Controls.Add(CB_Anio);
+            Controls.Add(BTN_Filtrar);
             Controls.Add(label2);
-            Controls.Add(listBox1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(BTN_Busqueda);
+            Controls.Add(TB_Busqueda);
             Controls.Add(label1);
             Name = "Historial_del_cliente";
             Text = "Historial del cliente";
@@ -130,12 +134,12 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
-        private ListBox listBox1;
+        private TextBox TB_Busqueda;
+        private Button BTN_Busqueda;
         private Label label2;
-        private Button button2;
-        private ComboBox comboBox1;
-        private ListBox listBox2;
+        private Button BTN_Filtrar;
+        private ComboBox CB_Anio;
+        private ListView LV_Clientes;
+        private ListView LV_Historial;
     }
 }

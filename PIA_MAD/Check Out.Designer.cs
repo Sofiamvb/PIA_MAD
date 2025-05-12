@@ -42,12 +42,15 @@
             label7 = new Label();
             TB_AnticipoCO = new TextBox();
             BTN_CheckOut = new Button();
-            BTN_Factura = new Button();
             label10 = new Label();
             LV_ServiciosAgregados = new ListView();
             BTN_AgregarServicio = new Button();
             BTN_EliminarServicio = new Button();
             LV_ServiciosAdicionales = new ListView();
+            CB_FormaDePago = new ComboBox();
+            FormaDePago = new Label();
+            CB_MetodoDePago = new ComboBox();
+            CB_MetodoPago = new Label();
             SuspendLayout();
             // 
             // label1
@@ -133,7 +136,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(46, 405);
+            label6.Location = new Point(32, 387);
             label6.Name = "label6";
             label6.Size = new Size(73, 15);
             label6.TabIndex = 11;
@@ -141,7 +144,7 @@
             // 
             // TB_MontoTotal
             // 
-            TB_MontoTotal.Location = new Point(126, 402);
+            TB_MontoTotal.Location = new Point(112, 384);
             TB_MontoTotal.Name = "TB_MontoTotal";
             TB_MontoTotal.Size = new Size(89, 23);
             TB_MontoTotal.TabIndex = 12;
@@ -164,22 +167,13 @@
             // 
             // BTN_CheckOut
             // 
-            BTN_CheckOut.Location = new Point(326, 436);
+            BTN_CheckOut.Location = new Point(467, 622);
             BTN_CheckOut.Name = "BTN_CheckOut";
             BTN_CheckOut.Size = new Size(75, 23);
             BTN_CheckOut.TabIndex = 19;
             BTN_CheckOut.Text = "Check Out";
             BTN_CheckOut.UseVisualStyleBackColor = true;
             BTN_CheckOut.Click += BTN_CheckOut_Click;
-            // 
-            // BTN_Factura
-            // 
-            BTN_Factura.Location = new Point(410, 436);
-            BTN_Factura.Name = "BTN_Factura";
-            BTN_Factura.Size = new Size(121, 23);
-            BTN_Factura.TabIndex = 20;
-            BTN_Factura.Text = "Generar factura";
-            BTN_Factura.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -193,9 +187,9 @@
             // 
             // LV_ServiciosAgregados
             // 
-            LV_ServiciosAgregados.Location = new Point(322, 230);
+            LV_ServiciosAgregados.Location = new Point(349, 230);
             LV_ServiciosAgregados.Name = "LV_ServiciosAgregados";
-            LV_ServiciosAgregados.Size = new Size(195, 109);
+            LV_ServiciosAgregados.Size = new Size(264, 109);
             LV_ServiciosAgregados.TabIndex = 23;
             LV_ServiciosAgregados.UseCompatibleStateImageBehavior = false;
             LV_ServiciosAgregados.SelectedIndexChanged += LV_ServiciosAgregados_SelectedIndexChanged;
@@ -212,7 +206,7 @@
             // 
             // BTN_EliminarServicio
             // 
-            BTN_EliminarServicio.Location = new Point(366, 345);
+            BTN_EliminarServicio.Location = new Point(421, 345);
             BTN_EliminarServicio.Name = "BTN_EliminarServicio";
             BTN_EliminarServicio.Size = new Size(110, 23);
             BTN_EliminarServicio.TabIndex = 25;
@@ -224,22 +218,61 @@
             // 
             LV_ServiciosAdicionales.Location = new Point(32, 230);
             LV_ServiciosAdicionales.Name = "LV_ServiciosAdicionales";
-            LV_ServiciosAdicionales.Size = new Size(253, 109);
+            LV_ServiciosAdicionales.Size = new Size(294, 109);
             LV_ServiciosAdicionales.TabIndex = 26;
             LV_ServiciosAdicionales.UseCompatibleStateImageBehavior = false;
             LV_ServiciosAdicionales.SelectedIndexChanged += LV_ServiciosAdicionales_SelectedIndexChanged;
+            // 
+            // CB_FormaDePago
+            // 
+            CB_FormaDePago.FormattingEnabled = true;
+            CB_FormaDePago.Location = new Point(133, 433);
+            CB_FormaDePago.Name = "CB_FormaDePago";
+            CB_FormaDePago.Size = new Size(121, 23);
+            CB_FormaDePago.TabIndex = 27;
+            CB_FormaDePago.SelectedIndexChanged += CB_FormaDePago_SelectedIndexChanged;
+            // 
+            // FormaDePago
+            // 
+            FormaDePago.AutoSize = true;
+            FormaDePago.Location = new Point(32, 433);
+            FormaDePago.Name = "FormaDePago";
+            FormaDePago.Size = new Size(87, 15);
+            FormaDePago.TabIndex = 28;
+            FormaDePago.Text = "Forma de pago";
+            // 
+            // CB_MetodoDePago
+            // 
+            CB_MetodoDePago.FormattingEnabled = true;
+            CB_MetodoDePago.Location = new Point(384, 433);
+            CB_MetodoDePago.Name = "CB_MetodoDePago";
+            CB_MetodoDePago.Size = new Size(121, 23);
+            CB_MetodoDePago.TabIndex = 29;
+            CB_MetodoDePago.SelectedIndexChanged += CB_MetodoDePago_SelectedIndexChanged;
+            // 
+            // CB_MetodoPago
+            // 
+            CB_MetodoPago.AutoSize = true;
+            CB_MetodoPago.Location = new Point(283, 433);
+            CB_MetodoPago.Name = "CB_MetodoPago";
+            CB_MetodoPago.Size = new Size(95, 15);
+            CB_MetodoPago.TabIndex = 30;
+            CB_MetodoPago.Text = "Metodo de pago";
             // 
             // Check_Out
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(625, 470);
+            ClientSize = new Size(625, 657);
+            Controls.Add(CB_MetodoPago);
+            Controls.Add(CB_MetodoDePago);
+            Controls.Add(FormaDePago);
+            Controls.Add(CB_FormaDePago);
             Controls.Add(LV_ServiciosAdicionales);
             Controls.Add(BTN_EliminarServicio);
             Controls.Add(BTN_AgregarServicio);
             Controls.Add(LV_ServiciosAgregados);
             Controls.Add(label10);
-            Controls.Add(BTN_Factura);
             Controls.Add(BTN_CheckOut);
             Controls.Add(TB_AnticipoCO);
             Controls.Add(label7);
@@ -295,9 +328,12 @@
         private TextBox TB_AnticipoCO;
         private DateTimePicker DTP_CheckOut;
         private Button BTN_CheckOut;
-        private Button BTN_Factura;
         private ListView LV_ServiciosAgregados;
         private Button BTN_EliminarServicio;
         private ListView LV_ServiciosAdicionales;
+        private ComboBox CB_FormaDePago;
+        private Label FormaDePago;
+        private ComboBox CB_MetodoDePago;
+        private Label CB_MetodoPago;
     }
 }

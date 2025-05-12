@@ -10,12 +10,13 @@ namespace PIA_MAD.Modelos
     {
         public int id { get; set; }
 
-        public int UsuarioId { get; set; }
+        public int? OperativoId { get; set; }
+        public Operativos Operativo { get; set; }
 
-        public Usuario Usuario { get; set; }
+        public int? AdministradorId { get; set; }
+        public Administrador Administrador { get; set; }
 
         public string ContraPasada { get; set; }
-
        
     }
 }
