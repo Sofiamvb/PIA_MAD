@@ -69,6 +69,7 @@
             Controls.Add(label1);
             Name = "Ini_Clave";
             Text = "Clave";
+            Load += Ini_Clave_Load;
             ResumeLayout(false);
             PerformLayout();
         }

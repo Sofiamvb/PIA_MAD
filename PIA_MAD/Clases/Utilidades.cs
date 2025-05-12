@@ -278,16 +278,16 @@ namespace PIA_MAD.Clases
 
         public static string FormatearTextoComoMoneda(string texto)
         {
-            // Eliminar cualquier símbolo que no sea número
+ 
             string onlyDigits = new string(texto.Where(char.IsDigit).ToArray());
 
             if (decimal.TryParse(onlyDigits, out decimal value))
             {
-                value /= 100; // Para respetar dos decimales
+                value /= 100; 
                 return FormatearComoMoneda(value);
             }
 
-            return texto; // Si no es válido, regresar el texto original
+            return texto; 
         }
 
         private static string ToText(long value)

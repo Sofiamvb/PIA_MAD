@@ -35,5 +35,10 @@ namespace PIA_MAD
             }
 
         }
+
+        private void Ini_Clave_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

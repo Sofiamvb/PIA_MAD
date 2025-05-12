@@ -226,10 +226,8 @@ namespace PIA_MAD
 
             listaCaracteristicas.Add(nuevochar);
 
-            // Agrega al ListView
             LV_MostrarChar.Items.Add(nuevochar);
 
-            // Limpia el textbox y desactiva el botón
             TB_RegChar.Text = "";
             BTN_AgregarChar.Enabled = false;
         }
@@ -270,10 +268,8 @@ namespace PIA_MAD
 
             listaAmenidades.Add(nuevaam);
 
-            // Agrega al ListView
             LV_MostrarAm.Items.Add(nuevaam);
 
-            // Limpia el textbox y desactiva el botón
             TB_RegAm.Text = "";
             BTN_AgregarAm.Enabled = false;
         }
@@ -472,7 +468,6 @@ namespace PIA_MAD
 
         private void BTN_EliminarServicio_Click(object sender, EventArgs e)
         {
-            // Asegúrate de que haya algo seleccionado
             if (LV_ServiciosAgregados.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Selecciona al menos un servicio para eliminar.");
@@ -483,18 +478,15 @@ namespace PIA_MAD
             {
                 string nombre = item.SubItems[0].Text;
 
-                // Buscar el servicio por nombre y eliminarlo
                 var servicioAEliminar = servicioAdicionalHotel.FirstOrDefault(s => s.Nombre == nombre);
                 if (servicioAEliminar != null)
                 {
                     servicioAdicionalHotel.Remove(servicioAEliminar);
                 }
 
-                // Quitar del ListView
                 LV_ServiciosAgregados.Items.Remove(item);
             }
 
-            // Desactivar botón si ya no hay selección
             BTN_EliminarServicio.Enabled = false;
         }
 

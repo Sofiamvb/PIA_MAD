@@ -118,7 +118,6 @@ namespace PIA_MAD
 
         private decimal ObtenerNumeroLimpio(string numero)
         {
-            // Elimina todos los símbolos de moneda y separadores
             string texto = numero.Replace("$", "").Replace(",", "").Trim();
 
             if (decimal.TryParse(texto, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal resultado))
@@ -199,10 +198,8 @@ namespace PIA_MAD
 
             listaAmenidades.Add(nuevaam);
 
-            // Agrega al ListView
             LV_MostrarAm.Items.Add(nuevaam);
 
-            // Limpia el textbox y desactiva el botón
             TB_RegAmeHb.Text = "";
             BTN_AgregarAm.Enabled = false;
         }
@@ -270,10 +267,8 @@ namespace PIA_MAD
 
             listaCaracteristicas.Add(nuevochar);
 
-            // Agrega al ListView
             LV_MostrarChar.Items.Add(nuevochar);
 
-            // Limpia el textbox y desactiva el botón
             TB_RegCaractHb.Text = "";
             BTN_AgregarChar.Enabled = false;
         }
@@ -439,38 +434,36 @@ namespace PIA_MAD
 
         private void TB_RegPNHb_TextChanged(object sender, EventArgs e)
         {
-            if (isFormatting) return; // Si estamos formateando, no hacer nada
+            if (isFormatting) return; 
 
             TextBox textBox = (TextBox)sender;
 
             if (string.IsNullOrWhiteSpace(textBox.Text))
                 return;
 
-            // Guardar posición del cursor
+
             int selectionStart = textBox.SelectionStart;
             int lengthBefore = textBox.Text.Length;
 
-            // Eliminar cualquier símbolo que no sea número
             string onlyDigits = new string(textBox.Text.Where(char.IsDigit).ToArray());
 
             if (decimal.TryParse(onlyDigits, out decimal value))
             {
-                isFormatting = true; // Evitar reentradas
+                isFormatting = true; 
 
-                // Dividir para respetar dos decimales
+
                 value /= 100;
 
-                // Formatear
+
                 textBox.Text = value.ToString("C2", new CultureInfo("es-MX"));
 
-                // Restaurar cursor (ajustar por diferencia de longitud)
                 int lengthAfter = textBox.Text.Length;
                 selectionStart += (lengthAfter - lengthBefore);
                 if (selectionStart < 0) selectionStart = 0;
                 if (selectionStart > textBox.Text.Length) selectionStart = textBox.Text.Length;
                 textBox.SelectionStart = selectionStart;
 
-                isFormatting = false; // Volver a permitir formateo
+                isFormatting = false; 
             }
         }
     }

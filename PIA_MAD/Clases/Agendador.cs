@@ -16,7 +16,7 @@ namespace PIA_MAD.Clases
 
         public Agendador()
         {
-            _reloj = new Timer(60 * 1000); // Ejecutar cada minuto
+            _reloj = new Timer(60 * 1000); 
             _reloj.Elapsed += VerificarHora;
             _reloj.Start();
         }

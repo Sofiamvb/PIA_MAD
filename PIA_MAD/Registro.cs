@@ -167,6 +167,17 @@ namespace PIA_MAD
                     var ultimoop = context.Operativos
                         .OrderByDescending(a => a.Nomina)
                         .FirstOrDefault();
+                    string correoNormalizado = Correo.Trim().ToLower();
+
+                    bool correoExiste = context.Administradores.Any(a => a.Correo.ToLower() == correoNormalizado)
+                                     || context.Operativos.Any(o => o.Correo.ToLower() == correoNormalizado)
+                                     || context.Usuarios.Any(u => u.Correo.ToLower() == correoNormalizado); 
+
+                    if (correoExiste)
+                    {
+                        MessageBox.Show("El correo ya está registrado para otro usuario.");
+                        return;
+                    }
                     if (ultimoad != null && ultimoop == null)
                     {
                         numeronomina = ultimoad.Nomina + 1;
@@ -202,15 +213,6 @@ namespace PIA_MAD
                     };
 
                     context.Administradores.Add(admin);
-                    context.SaveChanges();
-
-                    var registro = new RegistroContra
-                    {
-                        AdministradorId = admin.id,
-                        ContraPasada = Contra
-                    };
-
-                    context.RegistroContra.Add(registro);
                     context.SaveChanges();
 
                     Debug.WriteLine("Administrador y contraseña registrada correctamente.");

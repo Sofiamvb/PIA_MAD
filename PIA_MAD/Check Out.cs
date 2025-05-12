@@ -194,7 +194,7 @@ namespace PIA_MAD
                                 HabitacionNivelHab = hr.Habitacion.nivelHab,
                                 HabitacionTipoCama = hr.Habitacion.tipoCama,
                             }))
-                            .ToList(); // Si hay varias habitaciones, obtendrás una lista
+                            .ToList();
 
 
                         if (resultado.Count == 0)
@@ -203,7 +203,7 @@ namespace PIA_MAD
                             return;
                         }
 
-                        var reserva = resultado.First(); // Ya validaste que Count > 0
+                        var reserva = resultado.First();
                         int noches = (reserva.FechaSal.Date - reserva.FechaEnt.Date).Days;
                         DateTime horaLimite = reserva.FechaSal.Date;
                         DateTime ahora = DateTime.Now;
@@ -278,7 +278,7 @@ namespace PIA_MAD
 
                         foreach (var servicio in servicioAdicionalHotel)
                         {
-                            var item = new ListViewItem(servicio.Nombre); // Columna 0
+                            var item = new ListViewItem(servicio.Nombre); 
 
                             item.SubItems.Add(Utilidades.FormatearComoMoneda(servicio.Precio));
 
@@ -517,28 +517,25 @@ namespace PIA_MAD
                         {
                             TB_MontoTotal.Text = Utilidades.FormatearComoMoneda(montoTotal);
                         }
-                        // Agregar a la lista de agregados
                         var nuevoItem = new ListViewItem(servicio.Nombre);
                         nuevoItem.SubItems.Add(Utilidades.FormatearComoMoneda(servicio.Precio));
                         nuevoItem.Tag = servicio.id;
                         LV_ServiciosAgregados.Items.Add(nuevoItem);
                         var conceptoServicio = GeneradorConceptoFacturas(
-                            1,                                     // cantidad (servicio único)
-                            "Servicio",                            // Unidad
-                            "E48",                                 // ClaveUnidadSAT (puedes validar si aplica otro)
-                            "90101800",                            // ClaveProductoServicio (ejemplo: servicios de hotel)
-                            $"Servicio adicional: {servicio.Nombre}", // Descripción
+                            1,                                    
+                            "Servicio",                           
+                            "E48",                                
+                            "90101800",                           
+                            $"Servicio adicional: {servicio.Nombre}", 
                             servicio.Precio,
-                            0m,                                    // Descuentos (ajustar si aplicas)
-                            servicio.Precio * 0.16m,               // Impuestos (asumiendo 16%)
-                            servicio.Precio                        // Importe (sin impuestos si ya está incluido)
+                            0m,                                  
+                            servicio.Precio * 0.16m,              
+                            servicio.Precio                       
                         );
-                        // Marcar para quitar del original
                         itemsToRemove.Add(item);
                     }
                 }
 
-                // Quitar los seleccionados del listview original
                 foreach (var item in itemsToRemove)
                 {
                     LV_ServiciosAdicionales.Items.Remove(item);
@@ -587,19 +584,16 @@ namespace PIA_MAD
                         {
                             TB_MontoTotal.Text = Utilidades.FormatearComoMoneda(montoTotal);
                         }
-                        // Regresar al listview original
                         var nuevoItem = new ListViewItem(servicio.Nombre);
                         nuevoItem.SubItems.Add(Utilidades.FormatearComoMoneda(servicio.Precio));
                         nuevoItem.Tag = servicio.id;
                         LV_ServiciosAdicionales.Items.Add(nuevoItem);
                         EliminarConceptoFacturaPorDescripcion($"Servicio adicional: {servicio.Nombre}");
 
-                        // Marcar para quitar
                         itemsToRemove.Add(item);
                     }
                 }
 
-                // Quitar de la lista agregada
                 foreach (var item in itemsToRemove)
                 {
                     LV_ServiciosAgregados.Items.Remove(item);

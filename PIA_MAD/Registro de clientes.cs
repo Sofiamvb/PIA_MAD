@@ -235,6 +235,17 @@ namespace PIA_MAD
             {
                 using (var context = new ApplicationDbContext())
                 {
+                    string correoNormalizado = CorreoC.Trim().ToLower();
+
+                    bool correoExiste = context.Administradores.Any(a => a.Correo.ToLower() == correoNormalizado)
+                                     || context.Operativos.Any(o => o.Correo.ToLower() == correoNormalizado)
+                                     || context.Usuarios.Any(u => u.Correo.ToLower() == correoNormalizado); 
+
+                    if (correoExiste)
+                    {
+                        MessageBox.Show("El correo ya está registrado para otro usuario.");
+                        return;
+                    }
                     var Us = new Usuario
                     {
                         CreadorAdministradorId = empleado.GetId(),

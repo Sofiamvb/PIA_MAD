@@ -151,132 +151,159 @@ namespace PIA_MAD
             }
 
             if (RB_AdmRegEmp.Checked) {
-                using (var context = new ApplicationDbContext())
+                try
                 {
-                    var ultimoad = context.Administradores
-                        .OrderByDescending(a => a.Nomina)
-                        .FirstOrDefault();
-                    var ultimoop = context.Operativos
-                        .OrderByDescending(a => a.Nomina)
-                        .FirstOrDefault();
-                    if (ultimoad != null && ultimoop == null)
+                    using (var context = new ApplicationDbContext())
                     {
-                        numeronomina = ultimoad.Nomina + 1;
-                    }
-                    if (ultimoop != null && ultimoad == null)
-                    {
-                        numeronomina = ultimoop.Nomina + 1;
-                    }
-                    if (ultimoad != null && ultimoop != null)
-                    {
-                        if (ultimoad.Nomina > ultimoop.Nomina)
+                        var ultimoad = context.Administradores
+                            .OrderByDescending(a => a.Nomina)
+                            .FirstOrDefault();
+                        var ultimoop = context.Operativos
+                            .OrderByDescending(a => a.Nomina)
+                            .FirstOrDefault();
+                        string correoNormalizado = Correo.Trim().ToLower();
+
+                        bool correoExiste = context.Administradores.Any(a => a.Correo.ToLower() == correoNormalizado)
+                                         || context.Operativos.Any(o => o.Correo.ToLower() == correoNormalizado)
+                                         || context.Usuarios.Any(u => u.Correo.ToLower() == correoNormalizado);
+
+                        if (correoExiste)
+                        {
+                            MessageBox.Show("El correo ya está registrado para otro usuario.");
+                            return;
+                        }
+                        if (ultimoad != null && ultimoop == null)
                         {
                             numeronomina = ultimoad.Nomina + 1;
                         }
-                        else if (ultimoop.Nomina > ultimoad.Nomina)
+                        if (ultimoop != null && ultimoad == null)
                         {
                             numeronomina = ultimoop.Nomina + 1;
                         }
+                        if (ultimoad != null && ultimoop != null)
+                        {
+                            if (ultimoad.Nomina > ultimoop.Nomina)
+                            {
+                                numeronomina = ultimoad.Nomina + 1;
+                            }
+                            else if (ultimoop.Nomina > ultimoad.Nomina)
+                            {
+                                numeronomina = ultimoop.Nomina + 1;
+                            }
+                        }
+                        var admin = new Administrador
+                        {
+                            Nombre = Nombre,
+                            AP = AP,
+                            AM = AM,
+                            Correo = Correo,
+                            Telefono = Tel,
+                            Celular = Cel,
+                            Nomina = numeronomina,
+                            fechaNa = FechNa,
+                            Contra = Contra,
+                            FechaRegistro = DateTime.Now,
+                            FechaModificacion = DateTime.Now,
+                        };
+
+                        context.Administradores.Add(admin);
+                        context.SaveChanges();
+
+                        MessageBox.Show($"Empleado que hizo el registro: {empleado.GetNombreCompleto()} - Rol: {empleado.GetRol()}");
+                        this.Hide();
+                        var nuevoFormulario = new RegistroAdministradores();
+                        nuevoFormulario.Show();
+                        this.Close();
                     }
-                    var admin = new Administrador
-                    {
-                        Nombre = Nombre,
-                        AP = AP,
-                        AM = AM,
-                        Correo = Correo,
-                        Telefono = Tel,
-                        Celular = Cel,
-                        Nomina = numeronomina,
-                        fechaNa = FechNa,
-                        Contra = Contra,
-                        FechaRegistro = DateTime.Now,
-                        FechaModificacion = DateTime.Now,
-                    };
-
-                    context.Administradores.Add(admin);
-                    context.SaveChanges();
-
-                    var registro = new RegistroContra
-                    {
-                        AdministradorId = admin.id,
-                        ContraPasada = Contra 
-                    };
-
-                    context.RegistroContra.Add(registro);
-                    context.SaveChanges(); 
-
-                    Debug.WriteLine("Administrador y contraseña registrada correctamente.");
+                }catch(Exception ex)
+                {
                     this.Hide();
                     var nuevoFormulario = new RegistroAdministradores();
                     nuevoFormulario.Show();
                     this.Close();
+                    return;
                 }
             }
 
             if (RB_OpRegEmp.Checked) {
-                using (var context = new ApplicationDbContext())
+                try
                 {
-                    var ultimoad = context.Administradores
-                        .OrderByDescending(a => a.Nomina)
-                        .FirstOrDefault();
-                    var ultimoop = context.Operativos
-                        .OrderByDescending(a => a.Nomina)
-                        .FirstOrDefault();
-                    if (ultimoad != null && ultimoop == null)
+                    using (var context = new ApplicationDbContext())
                     {
-                        numeronomina = ultimoad.Nomina + 1;
-                    }
-                    if (ultimoop != null && ultimoad == null)
-                    {
-                        numeronomina = ultimoop.Nomina + 1;
-                    }
-                    if (ultimoad != null && ultimoop != null)
-                    {
-                        if (ultimoad.Nomina > ultimoop.Nomina)
+                        var ultimoad = context.Administradores
+                            .OrderByDescending(a => a.Nomina)
+                            .FirstOrDefault();
+                        var ultimoop = context.Operativos
+                            .OrderByDescending(a => a.Nomina)
+                            .FirstOrDefault();
+                        string correoNormalizado = Correo.Trim().ToLower();
+
+                        bool correoExiste = context.Administradores.Any(a => a.Correo.ToLower() == correoNormalizado)
+                                         || context.Operativos.Any(o => o.Correo.ToLower() == correoNormalizado)
+                                         || context.Usuarios.Any(u => u.Correo.ToLower() == correoNormalizado);
+
+                        if (correoExiste)
+                        {
+                            MessageBox.Show("El correo ya está registrado para otro usuario.");
+                            return;
+                        }
+                        if (ultimoad != null && ultimoop == null)
                         {
                             numeronomina = ultimoad.Nomina + 1;
                         }
-                        else if (ultimoop.Nomina > ultimoad.Nomina)
+                        if (ultimoop != null && ultimoad == null)
                         {
                             numeronomina = ultimoop.Nomina + 1;
                         }
+                        if (ultimoad != null && ultimoop != null)
+                        {
+                            if (ultimoad.Nomina > ultimoop.Nomina)
+                            {
+                                numeronomina = ultimoad.Nomina + 1;
+                            }
+                            else if (ultimoop.Nomina > ultimoad.Nomina)
+                            {
+                                numeronomina = ultimoop.Nomina + 1;
+                            }
+                        }
+
+                        int empleadoid = empleado.GetId();
+                        var operativo = new Operativos
+                        {
+                            Nombre = Nombre,
+                            CreadorAdministradorId = empleadoid,
+                            ModificadorAdministradorId = empleado.GetId(),
+                            AP = AP,
+                            AM = AM,
+                            Correo = Correo,
+                            Telefono = Tel,
+                            Celular = Cel,
+                            Nomina = numeronomina,
+                            fechaNa = FechNa,
+                            Contra = Contra,
+                            FechaRegistro = DateTime.Now,
+                            FechaModificacion = DateTime.Now,
+                        };
+
+                        context.Operativos.Add(operativo);
+                        context.SaveChanges();
+
+                        MessageBox.Show($"Empleado que hizo el registro: {empleado.GetNombreCompleto()} - Rol: {empleado.GetRol()}");
+                        this.Hide();
+                        var nuevoFormulario = new RegistroAdministradores();
+                        nuevoFormulario.Show();
+                        this.Close();
                     }
-                    MessageBox.Show($"Empleado que hizo el registro: {empleado.GetNombreCompleto()} - Rol: {empleado.GetRol()}");
-                    int empleadoid = empleado.GetId();
-                    var operativo = new Operativos
-                    {
-                        Nombre = Nombre,
-                        CreadorAdministradorId = empleadoid,
-                        ModificadorAdministradorId = empleado.GetId(),
-                        AP = AP,
-                        AM = AM,
-                        Correo = Correo,
-                        Telefono = Tel,
-                        Celular = Cel,
-                        Nomina = numeronomina,
-                        fechaNa = FechNa,
-                        Contra = Contra,
-                        FechaRegistro = DateTime.Now,
-                        FechaModificacion = DateTime.Now,
-                    };
-
-                    context.Operativos.Add(operativo);
-                    context.SaveChanges();
-
-                    var registro = new RegistroContra
-                    {
-                        OperativoId = operativo.id,
-                        ContraPasada = Contra
-                    };
-
-                    context.RegistroContra.Add(registro);
-                    context.SaveChanges();
-
+                }
+                catch(Exception ex)
+                {
                     this.Hide();
                     var nuevoFormulario = new RegistroAdministradores();
                     nuevoFormulario.Show();
                     this.Close();
+                    return;
                 }
+               
             }
 
         }
