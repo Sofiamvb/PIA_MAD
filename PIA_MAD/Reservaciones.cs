@@ -167,7 +167,7 @@ namespace PIA_MAD
                 using (var context = new ApplicationDbContext())
                 {
                     var usuarios = context.Vista_UsuariosBasica
-                        .Take(20) // Limita a 20 desde C#
+                        .Take(20)
                         .ToList();
                     LV_MostrarCliente.Items.Clear();
                     foreach (var u in usuarios)

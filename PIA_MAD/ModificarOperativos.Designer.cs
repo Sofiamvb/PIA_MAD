@@ -81,6 +81,7 @@
             TB_Busqueda.Name = "TB_Busqueda";
             TB_Busqueda.Size = new Size(272, 23);
             TB_Busqueda.TabIndex = 79;
+            TB_Busqueda.TextChanged += TB_Busqueda_TextChanged;
             // 
             // BTN_Busqueda
             // 
@@ -90,6 +91,7 @@
             BTN_Busqueda.TabIndex = 78;
             BTN_Busqueda.Text = "Buscar";
             BTN_Busqueda.UseVisualStyleBackColor = true;
+            BTN_Busqueda.Click += BTN_Busqueda_Click;
             // 
             // ModificarOperativos
             // 

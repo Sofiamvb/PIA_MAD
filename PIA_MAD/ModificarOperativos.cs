@@ -14,6 +14,7 @@ namespace PIA_MAD
     public partial class ModificarOperativos : Form
     {
         private int operativoId;
+        private string busqueda;
         public ModificarOperativos()
         {
             InitializeComponent();
@@ -121,6 +122,56 @@ namespace PIA_MAD
             {
                 MessageBox.Show($"Hubo un error en la base de datos: {ex.Message}");
                 return;
+            }
+        }
+
+        private void BTN_Busqueda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    var cliente = context.Operativos
+                    .FirstOrDefault(h => h.Nombre == busqueda);
+
+                    if (cliente != null)
+                    {
+                        LV_Operativos.Items.Clear();
+                        var item = new ListViewItem(cliente.id.ToString());
+                        item.SubItems.Add(cliente.Nombre);
+                        item.SubItems.Add(cliente.AP);
+                        item.SubItems.Add(cliente.AM);
+                        item.SubItems.Add(cliente.Correo);
+                        item.SubItems.Add(cliente.Celular);
+                        item.SubItems.Add(cliente.Nomina.ToString());
+                        item.SubItems.Add(cliente.fechaNa.ToShortDateString());
+
+                        LV_Operativos.Items.Add(item);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo encontrar el usuario");
+                        ObtenerTodosRegistros();
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hubo un error: {ex.Message}");
+            }
+        }
+
+        private void TB_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+            busqueda = TB_Busqueda.Text;
+            if (!string.IsNullOrEmpty(busqueda))
+            {
+                BTN_Busqueda.Enabled = true;
+            }
+            else
+            {
+                BTN_Busqueda.Enabled = false;
             }
         }
     }
