@@ -486,12 +486,7 @@ namespace PIA_MAD
             {
                 MessageBox.Show("Todos los campos deben estar llenos");
                 return;
-            }
-            if (anticipo < anticipofijo)
-            {
-                MessageBox.Show("El anticipo debe ser igual o mayor a 1000");
-                return;
-            }
+            }   
 
             try
             {
