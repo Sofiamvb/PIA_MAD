@@ -34,11 +34,12 @@
             BTN_Modificar = new Button();
             TB_Busqueda = new TextBox();
             BTN_Busqueda = new Button();
+            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // BTN_VerTodos
             // 
-            BTN_VerTodos.Location = new Point(644, 37);
+            BTN_VerTodos.Location = new Point(716, 68);
             BTN_VerTodos.Name = "BTN_VerTodos";
             BTN_VerTodos.Size = new Size(75, 23);
             BTN_VerTodos.TabIndex = 77;
@@ -48,7 +49,7 @@
             // 
             // LV_Clientes
             // 
-            LV_Clientes.Location = new Point(40, 73);
+            LV_Clientes.Location = new Point(112, 104);
             LV_Clientes.MultiSelect = false;
             LV_Clientes.Name = "LV_Clientes";
             LV_Clientes.Size = new Size(841, 287);
@@ -59,7 +60,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 41);
+            label1.Location = new Point(112, 72);
             label1.Name = "label1";
             label1.Size = new Size(35, 15);
             label1.TabIndex = 75;
@@ -67,7 +68,7 @@
             // 
             // BTN_Modificar
             // 
-            BTN_Modificar.Location = new Point(806, 37);
+            BTN_Modificar.Location = new Point(878, 68);
             BTN_Modificar.Name = "BTN_Modificar";
             BTN_Modificar.Size = new Size(75, 23);
             BTN_Modificar.TabIndex = 74;
@@ -77,7 +78,7 @@
             // 
             // TB_Busqueda
             // 
-            TB_Busqueda.Location = new Point(81, 37);
+            TB_Busqueda.Location = new Point(153, 68);
             TB_Busqueda.Name = "TB_Busqueda";
             TB_Busqueda.Size = new Size(272, 23);
             TB_Busqueda.TabIndex = 73;
@@ -85,7 +86,7 @@
             // 
             // BTN_Busqueda
             // 
-            BTN_Busqueda.Location = new Point(725, 37);
+            BTN_Busqueda.Location = new Point(797, 68);
             BTN_Busqueda.Name = "BTN_Busqueda";
             BTN_Busqueda.Size = new Size(75, 23);
             BTN_Busqueda.TabIndex = 72;
@@ -93,11 +94,19 @@
             BTN_Busqueda.UseVisualStyleBackColor = true;
             BTN_Busqueda.Click += BTN_Busqueda_Click;
             // 
+            // menuSuperior1
+            // 
+            menuSuperior1.Location = new Point(312, 0);
+            menuSuperior1.Name = "menuSuperior1";
+            menuSuperior1.Size = new Size(459, 33);
+            menuSuperior1.TabIndex = 78;
+            // 
             // ModificarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(926, 387);
+            ClientSize = new Size(1079, 425);
+            Controls.Add(menuSuperior1);
             Controls.Add(BTN_VerTodos);
             Controls.Add(LV_Clientes);
             Controls.Add(label1);
@@ -119,5 +128,6 @@
         private Button BTN_Modificar;
         private TextBox TB_Busqueda;
         private Button BTN_Busqueda;
+        private MenuSuperior menuSuperior1;
     }
 }

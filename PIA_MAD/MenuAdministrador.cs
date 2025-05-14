@@ -145,5 +145,15 @@ namespace PIA_MAD
             GestorVentanasAdm.VentanaModificarOperativos.Show();
             GestorVentanasAdm.VentanaModificarOperativos.Focus();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanasAdm.VentanaRegresarIni == null || GestorVentanasAdm.VentanaRegresarIni.IsDisposed)
+                GestorVentanasAdm.VentanaRegresarIni = new Form1();
+
+            GestorVentanasAdm.CerrarTodasMenos(GestorVentanasAdm.VentanaRegresarIni);
+            GestorVentanasAdm.VentanaRegresarIni.Show();
+            GestorVentanasAdm.VentanaRegresarIni.Focus();
+        }
     }
 }

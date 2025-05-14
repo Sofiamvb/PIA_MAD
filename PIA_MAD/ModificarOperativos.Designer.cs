@@ -34,11 +34,12 @@
             BTN_Modificar = new Button();
             TB_Busqueda = new TextBox();
             BTN_Busqueda = new Button();
+            menuAdministrador1 = new MenuAdministrador();
             SuspendLayout();
             // 
             // BTN_VerTodos
             // 
-            BTN_VerTodos.Location = new Point(688, 30);
+            BTN_VerTodos.Location = new Point(764, 60);
             BTN_VerTodos.Name = "BTN_VerTodos";
             BTN_VerTodos.Size = new Size(75, 23);
             BTN_VerTodos.TabIndex = 83;
@@ -48,7 +49,7 @@
             // 
             // LV_Operativos
             // 
-            LV_Operativos.Location = new Point(84, 66);
+            LV_Operativos.Location = new Point(160, 96);
             LV_Operativos.MultiSelect = false;
             LV_Operativos.Name = "LV_Operativos";
             LV_Operativos.Size = new Size(841, 287);
@@ -59,7 +60,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(84, 34);
+            label1.Location = new Point(160, 64);
             label1.Name = "label1";
             label1.Size = new Size(35, 15);
             label1.TabIndex = 81;
@@ -67,7 +68,7 @@
             // 
             // BTN_Modificar
             // 
-            BTN_Modificar.Location = new Point(850, 30);
+            BTN_Modificar.Location = new Point(926, 60);
             BTN_Modificar.Name = "BTN_Modificar";
             BTN_Modificar.Size = new Size(75, 23);
             BTN_Modificar.TabIndex = 80;
@@ -77,7 +78,7 @@
             // 
             // TB_Busqueda
             // 
-            TB_Busqueda.Location = new Point(125, 30);
+            TB_Busqueda.Location = new Point(201, 60);
             TB_Busqueda.Name = "TB_Busqueda";
             TB_Busqueda.Size = new Size(272, 23);
             TB_Busqueda.TabIndex = 79;
@@ -85,7 +86,7 @@
             // 
             // BTN_Busqueda
             // 
-            BTN_Busqueda.Location = new Point(769, 30);
+            BTN_Busqueda.Location = new Point(845, 60);
             BTN_Busqueda.Name = "BTN_Busqueda";
             BTN_Busqueda.Size = new Size(75, 23);
             BTN_Busqueda.TabIndex = 78;
@@ -93,11 +94,19 @@
             BTN_Busqueda.UseVisualStyleBackColor = true;
             BTN_Busqueda.Click += BTN_Busqueda_Click;
             // 
+            // menuAdministrador1
+            // 
+            menuAdministrador1.Location = new Point(0, 0);
+            menuAdministrador1.Name = "menuAdministrador1";
+            menuAdministrador1.Size = new Size(1171, 47);
+            menuAdministrador1.TabIndex = 84;
+            // 
             // ModificarOperativos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1003, 387);
+            ClientSize = new Size(1159, 410);
+            Controls.Add(menuAdministrador1);
             Controls.Add(BTN_VerTodos);
             Controls.Add(LV_Operativos);
             Controls.Add(label1);
@@ -119,5 +128,6 @@
         private Button BTN_Modificar;
         private TextBox TB_Busqueda;
         private Button BTN_Busqueda;
+        private MenuAdministrador menuAdministrador1;
     }
 }

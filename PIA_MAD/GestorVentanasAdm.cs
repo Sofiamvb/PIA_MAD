@@ -23,7 +23,7 @@ namespace PIA_MAD
         public static Informacion_de_habitaciones VentanaInformacionHabitaciones;
         public static ModificarAdministradores VentanaModificarAdministradores;
         public static ModificarOperativos VentanaModificarOperativos;
-
+        public static Form1 VentanaRegresarIni;
         public static void CerrarTodasMenos(Form actual)
         {
                 foreach (Form f in Application.OpenForms)

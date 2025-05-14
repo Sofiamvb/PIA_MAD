@@ -46,7 +46,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 66);
+            label1.Location = new Point(82, 67);
             label1.Name = "label1";
             label1.Size = new Size(31, 15);
             label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // TB_Pais
             // 
-            TB_Pais.Location = new Point(72, 63);
+            TB_Pais.Location = new Point(119, 64);
             TB_Pais.Name = "TB_Pais";
             TB_Pais.Size = new Size(130, 23);
             TB_Pais.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(523, 66);
+            label2.Location = new Point(570, 67);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // TB_Anio
             // 
-            TB_Anio.Location = new Point(560, 63);
+            TB_Anio.Location = new Point(607, 64);
             TB_Anio.Name = "TB_Anio";
             TB_Anio.Size = new Size(130, 23);
             TB_Anio.TabIndex = 3;
@@ -80,7 +80,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(260, 66);
+            label3.Location = new Point(307, 67);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             // TB_Ciudad
             // 
-            TB_Ciudad.Location = new Point(314, 63);
+            TB_Ciudad.Location = new Point(361, 64);
             TB_Ciudad.Name = "TB_Ciudad";
             TB_Ciudad.Size = new Size(130, 23);
             TB_Ciudad.TabIndex = 5;
@@ -97,7 +97,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(828, 66);
+            label4.Location = new Point(875, 67);
             label4.Name = "label4";
             label4.Size = new Size(39, 15);
             label4.TabIndex = 6;
@@ -106,7 +106,7 @@
             // CB_Hoteles
             // 
             CB_Hoteles.FormattingEnabled = true;
-            CB_Hoteles.Location = new Point(873, 63);
+            CB_Hoteles.Location = new Point(920, 64);
             CB_Hoteles.Name = "CB_Hoteles";
             CB_Hoteles.Size = new Size(139, 23);
             CB_Hoteles.TabIndex = 7;
@@ -114,7 +114,7 @@
             // 
             // BTN_Filtrar
             // 
-            BTN_Filtrar.Location = new Point(1101, 63);
+            BTN_Filtrar.Location = new Point(1148, 64);
             BTN_Filtrar.Name = "BTN_Filtrar";
             BTN_Filtrar.Size = new Size(75, 23);
             BTN_Filtrar.TabIndex = 8;
@@ -125,7 +125,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(36, 143);
+            label5.Location = new Point(83, 144);
             label5.Name = "label5";
             label5.Size = new Size(128, 15);
             label5.TabIndex = 10;
@@ -135,7 +135,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(631, 143);
+            label6.Location = new Point(678, 144);
             label6.Name = "label6";
             label6.Size = new Size(59, 15);
             label6.TabIndex = 12;
@@ -143,7 +143,7 @@
             // 
             // LV_InfoCompleta
             // 
-            LV_InfoCompleta.Location = new Point(36, 174);
+            LV_InfoCompleta.Location = new Point(83, 175);
             LV_InfoCompleta.Name = "LV_InfoCompleta";
             LV_InfoCompleta.Size = new Size(567, 128);
             LV_InfoCompleta.TabIndex = 13;
@@ -151,7 +151,7 @@
             // 
             // LV_Resumen
             // 
-            LV_Resumen.Location = new Point(631, 174);
+            LV_Resumen.Location = new Point(678, 175);
             LV_Resumen.Name = "LV_Resumen";
             LV_Resumen.Size = new Size(545, 128);
             LV_Resumen.TabIndex = 14;
@@ -161,7 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1188, 343);
+            ClientSize = new Size(1300, 343);
             Controls.Add(LV_Resumen);
             Controls.Add(LV_InfoCompleta);
             Controls.Add(label6);

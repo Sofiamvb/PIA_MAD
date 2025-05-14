@@ -14,7 +14,7 @@ namespace PIA_MAD
         public static Check_In VentanaCheckIn;
         public static Check_Out VentanaCheckOut;
         public static ModificarCliente VentanaModificarCliente;
-        
+        public static Form1 VentanaRegresoInicio;
 
 
         public static void CerrarTodasMenos(Form actual)

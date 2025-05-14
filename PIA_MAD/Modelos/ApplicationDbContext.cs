@@ -198,7 +198,7 @@ namespace PIA_MAD.Modelos
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=LAPTOP-2JLT5J0B\\MSSQLSERVER01;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
+            var connectionString = "Server=DESKTOP-EB9COQ9;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
             optionsBuilder.UseSqlServer(connectionString);
 
             try

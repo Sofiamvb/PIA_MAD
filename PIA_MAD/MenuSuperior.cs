@@ -67,10 +67,20 @@ namespace PIA_MAD
         {
             if (GestorVentanas.VentanaModificarCliente == null || GestorVentanas.VentanaModificarCliente.IsDisposed)
                 GestorVentanas.VentanaModificarCliente = new ModificarCliente();
-            
+
             GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaModificarCliente);
             GestorVentanas.VentanaModificarCliente.Show();
             GestorVentanas.VentanaModificarCliente.Focus();
+        }
+
+        private void cerrarSesónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (GestorVentanas.VentanaRegresoInicio == null || GestorVentanas.VentanaRegresoInicio.IsDisposed)
+                GestorVentanas.VentanaRegresoInicio = new Form1();
+
+            GestorVentanas.CerrarTodasMenos(GestorVentanas.VentanaRegresoInicio);
+            GestorVentanas.VentanaRegresoInicio.Show();
+            GestorVentanas.VentanaRegresoInicio.Focus();
         }
     }
 }

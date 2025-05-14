@@ -73,6 +73,7 @@
             label32 = new Label();
             TB_RegNomH = new TextBox();
             label33 = new Label();
+            menuAdministrador1 = new MenuAdministrador();
             SuspendLayout();
             // 
             // label11
@@ -85,7 +86,7 @@
             // 
             // TB_RegAm
             // 
-            TB_RegAm.Location = new Point(316, 380);
+            TB_RegAm.Location = new Point(628, 368);
             TB_RegAm.Name = "TB_RegAm";
             TB_RegAm.Size = new Size(163, 23);
             TB_RegAm.TabIndex = 122;
@@ -93,7 +94,7 @@
             // 
             // TB_RegChar
             // 
-            TB_RegChar.Location = new Point(59, 380);
+            TB_RegChar.Location = new Point(371, 368);
             TB_RegChar.Name = "TB_RegChar";
             TB_RegChar.Size = new Size(159, 23);
             TB_RegChar.TabIndex = 121;
@@ -101,7 +102,7 @@
             // 
             // BTN_EliminarAm
             // 
-            BTN_EliminarAm.Location = new Point(485, 438);
+            BTN_EliminarAm.Location = new Point(797, 426);
             BTN_EliminarAm.Name = "BTN_EliminarAm";
             BTN_EliminarAm.Size = new Size(75, 23);
             BTN_EliminarAm.TabIndex = 120;
@@ -111,7 +112,7 @@
             // 
             // BTN_AgregarAm
             // 
-            BTN_AgregarAm.Location = new Point(485, 409);
+            BTN_AgregarAm.Location = new Point(797, 397);
             BTN_AgregarAm.Name = "BTN_AgregarAm";
             BTN_AgregarAm.Size = new Size(75, 23);
             BTN_AgregarAm.TabIndex = 119;
@@ -121,7 +122,7 @@
             // 
             // BTN_EliminarChar
             // 
-            BTN_EliminarChar.Location = new Point(224, 438);
+            BTN_EliminarChar.Location = new Point(536, 426);
             BTN_EliminarChar.Name = "BTN_EliminarChar";
             BTN_EliminarChar.Size = new Size(75, 23);
             BTN_EliminarChar.TabIndex = 118;
@@ -131,7 +132,7 @@
             // 
             // BTN_AgregarChar
             // 
-            BTN_AgregarChar.Location = new Point(224, 409);
+            BTN_AgregarChar.Location = new Point(536, 397);
             BTN_AgregarChar.Name = "BTN_AgregarChar";
             BTN_AgregarChar.Size = new Size(75, 23);
             BTN_AgregarChar.TabIndex = 117;
@@ -141,7 +142,7 @@
             // 
             // LV_MostrarAm
             // 
-            LV_MostrarAm.Location = new Point(316, 409);
+            LV_MostrarAm.Location = new Point(628, 397);
             LV_MostrarAm.Name = "LV_MostrarAm";
             LV_MostrarAm.Size = new Size(163, 97);
             LV_MostrarAm.TabIndex = 116;
@@ -150,7 +151,7 @@
             // 
             // LV_MostrarChar
             // 
-            LV_MostrarChar.Location = new Point(58, 409);
+            LV_MostrarChar.Location = new Point(370, 397);
             LV_MostrarChar.Name = "LV_MostrarChar";
             LV_MostrarChar.Size = new Size(159, 97);
             LV_MostrarChar.TabIndex = 115;
@@ -159,16 +160,16 @@
             // 
             // LV_ServiciosAgregados
             // 
-            LV_ServiciosAgregados.Location = new Point(59, 606);
+            LV_ServiciosAgregados.Location = new Point(371, 594);
             LV_ServiciosAgregados.Name = "LV_ServiciosAgregados";
-            LV_ServiciosAgregados.Size = new Size(321, 97);
+            LV_ServiciosAgregados.Size = new Size(361, 97);
             LV_ServiciosAgregados.TabIndex = 114;
             LV_ServiciosAgregados.UseCompatibleStateImageBehavior = false;
             LV_ServiciosAgregados.SelectedIndexChanged += LV_ServiciosAgregados_SelectedIndexChanged;
             // 
             // BTN_EliminarServicio
             // 
-            BTN_EliminarServicio.Location = new Point(392, 606);
+            BTN_EliminarServicio.Location = new Point(756, 591);
             BTN_EliminarServicio.Name = "BTN_EliminarServicio";
             BTN_EliminarServicio.Size = new Size(75, 23);
             BTN_EliminarServicio.TabIndex = 113;
@@ -178,7 +179,7 @@
             // 
             // BTN_AgregarServicio
             // 
-            BTN_AgregarServicio.Location = new Point(444, 563);
+            BTN_AgregarServicio.Location = new Point(756, 551);
             BTN_AgregarServicio.Name = "BTN_AgregarServicio";
             BTN_AgregarServicio.Size = new Size(75, 23);
             BTN_AgregarServicio.TabIndex = 112;
@@ -188,7 +189,7 @@
             // 
             // TB_RegServAdHPr
             // 
-            TB_RegServAdHPr.Location = new Point(316, 563);
+            TB_RegServAdHPr.Location = new Point(628, 551);
             TB_RegServAdHPr.Name = "TB_RegServAdHPr";
             TB_RegServAdHPr.Size = new Size(100, 23);
             TB_RegServAdHPr.TabIndex = 111;
@@ -197,7 +198,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(265, 566);
+            label18.Location = new Point(577, 554);
             label18.Name = "label18";
             label18.Size = new Size(40, 15);
             label18.TabIndex = 110;
@@ -206,7 +207,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(58, 567);
+            label12.Location = new Point(370, 555);
             label12.Name = "label12";
             label12.Size = new Size(51, 15);
             label12.TabIndex = 109;
@@ -215,7 +216,7 @@
             // ChB_RegFrentePlayaH
             // 
             ChB_RegFrentePlayaH.AutoSize = true;
-            ChB_RegFrentePlayaH.Location = new Point(141, 718);
+            ChB_RegFrentePlayaH.Location = new Point(450, 706);
             ChB_RegFrentePlayaH.Name = "ChB_RegFrentePlayaH";
             ChB_RegFrentePlayaH.Size = new Size(15, 14);
             ChB_RegFrentePlayaH.TabIndex = 108;
@@ -224,7 +225,7 @@
             // ChB_RegZTH
             // 
             ChB_RegZTH.AutoSize = true;
-            ChB_RegZTH.Location = new Point(140, 331);
+            ChB_RegZTH.Location = new Point(452, 319);
             ChB_RegZTH.Name = "ChB_RegZTH";
             ChB_RegZTH.Size = new Size(15, 14);
             ChB_RegZTH.TabIndex = 107;
@@ -233,7 +234,7 @@
             // RB_SEventNo
             // 
             RB_SEventNo.AutoSize = true;
-            RB_SEventNo.Location = new Point(224, 749);
+            RB_SEventNo.Location = new Point(536, 737);
             RB_SEventNo.Name = "RB_SEventNo";
             RB_SEventNo.Size = new Size(41, 19);
             RB_SEventNo.TabIndex = 106;
@@ -244,7 +245,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(59, 752);
+            label19.Location = new Point(371, 740);
             label19.Name = "label19";
             label19.Size = new Size(96, 15);
             label19.TabIndex = 105;
@@ -253,7 +254,7 @@
             // RB_SEventSi
             // 
             RB_SEventSi.AutoSize = true;
-            RB_SEventSi.Location = new Point(160, 749);
+            RB_SEventSi.Location = new Point(472, 737);
             RB_SEventSi.Name = "RB_SEventSi";
             RB_SEventSi.Size = new Size(34, 19);
             RB_SEventSi.TabIndex = 104;
@@ -263,7 +264,7 @@
             // 
             // TB_RegChabH
             // 
-            TB_RegChabH.Location = new Point(420, 287);
+            TB_RegChabH.Location = new Point(732, 275);
             TB_RegChabH.Name = "TB_RegChabH";
             TB_RegChabH.Size = new Size(96, 23);
             TB_RegChabH.TabIndex = 103;
@@ -271,7 +272,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(265, 290);
+            label20.Location = new Point(577, 278);
             label20.Name = "label20";
             label20.Size = new Size(144, 15);
             label20.TabIndex = 102;
@@ -280,7 +281,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(316, 362);
+            label21.Location = new Point(628, 350);
             label21.Name = "label21";
             label21.Size = new Size(76, 15);
             label21.TabIndex = 101;
@@ -289,7 +290,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(59, 362);
+            label22.Location = new Point(371, 350);
             label22.Name = "label22";
             label22.Size = new Size(86, 15);
             label22.TabIndex = 100;
@@ -298,7 +299,7 @@
             // button1
             // 
             button1.BackColor = Color.Thistle;
-            button1.Location = new Point(278, 774);
+            button1.Location = new Point(590, 762);
             button1.Name = "button1";
             button1.Size = new Size(85, 23);
             button1.TabIndex = 99;
@@ -308,14 +309,14 @@
             // 
             // DTP_RegHotel
             // 
-            DTP_RegHotel.Location = new Point(308, 91);
+            DTP_RegHotel.Location = new Point(472, 80);
             DTP_RegHotel.Name = "DTP_RegHotel";
             DTP_RegHotel.Size = new Size(239, 23);
             DTP_RegHotel.TabIndex = 98;
             // 
             // TB_RegCantPisH
             // 
-            TB_RegCantPisH.Location = new Point(317, 711);
+            TB_RegCantPisH.Location = new Point(648, 704);
             TB_RegCantPisH.Name = "TB_RegCantPisH";
             TB_RegCantPisH.Size = new Size(84, 23);
             TB_RegCantPisH.TabIndex = 97;
@@ -323,7 +324,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(190, 718);
+            label23.Location = new Point(499, 706);
             label23.Name = "label23";
             label23.Size = new Size(116, 15);
             label23.TabIndex = 96;
@@ -332,7 +333,7 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(59, 716);
+            label24.Location = new Point(368, 704);
             label24.Name = "label24";
             label24.Size = new Size(80, 15);
             label24.TabIndex = 95;
@@ -340,7 +341,7 @@
             // 
             // TB_RegServAdH
             // 
-            TB_RegServAdH.Location = new Point(117, 563);
+            TB_RegServAdH.Location = new Point(429, 551);
             TB_RegServAdH.Name = "TB_RegServAdH";
             TB_RegServAdH.Size = new Size(114, 23);
             TB_RegServAdH.TabIndex = 94;
@@ -349,7 +350,7 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(245, 538);
+            label25.Location = new Point(557, 526);
             label25.Name = "label25";
             label25.Size = new Size(118, 15);
             label25.TabIndex = 93;
@@ -358,7 +359,7 @@
             // label26
             // 
             label26.AutoSize = true;
-            label26.Location = new Point(58, 330);
+            label26.Location = new Point(370, 318);
             label26.Name = "label26";
             label26.Size = new Size(79, 15);
             label26.TabIndex = 92;
@@ -366,7 +367,7 @@
             // 
             // TB_RegNumPH
             // 
-            TB_RegNumPH.Location = new Point(167, 287);
+            TB_RegNumPH.Location = new Point(479, 275);
             TB_RegNumPH.Name = "TB_RegNumPH";
             TB_RegNumPH.Size = new Size(75, 23);
             TB_RegNumPH.TabIndex = 91;
@@ -374,7 +375,7 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(58, 290);
+            label27.Location = new Point(370, 278);
             label27.Name = "label27";
             label27.Size = new Size(100, 15);
             label27.TabIndex = 90;
@@ -382,7 +383,7 @@
             // 
             // TB_RegDomH
             // 
-            TB_RegDomH.Location = new Point(132, 250);
+            TB_RegDomH.Location = new Point(444, 238);
             TB_RegDomH.Name = "TB_RegDomH";
             TB_RegDomH.Size = new Size(412, 23);
             TB_RegDomH.TabIndex = 89;
@@ -390,7 +391,7 @@
             // label28
             // 
             label28.AutoSize = true;
-            label28.Location = new Point(58, 250);
+            label28.Location = new Point(370, 238);
             label28.Name = "label28";
             label28.Size = new Size(61, 15);
             label28.TabIndex = 88;
@@ -398,21 +399,21 @@
             // 
             // TB_RegPaisH
             // 
-            TB_RegPaisH.Location = new Point(167, 210);
+            TB_RegPaisH.Location = new Point(479, 198);
             TB_RegPaisH.Name = "TB_RegPaisH";
             TB_RegPaisH.Size = new Size(102, 23);
             TB_RegPaisH.TabIndex = 87;
             // 
             // TB_RegEstH
             // 
-            TB_RegEstH.Location = new Point(307, 210);
+            TB_RegEstH.Location = new Point(619, 198);
             TB_RegEstH.Name = "TB_RegEstH";
             TB_RegEstH.Size = new Size(102, 23);
             TB_RegEstH.TabIndex = 86;
             // 
             // TB_RegCuH
             // 
-            TB_RegCuH.Location = new Point(444, 210);
+            TB_RegCuH.Location = new Point(756, 198);
             TB_RegCuH.Name = "TB_RegCuH";
             TB_RegCuH.Size = new Size(102, 23);
             TB_RegCuH.TabIndex = 85;
@@ -420,7 +421,7 @@
             // label29
             // 
             label29.AutoSize = true;
-            label29.Location = new Point(338, 192);
+            label29.Location = new Point(650, 180);
             label29.Name = "label29";
             label29.Size = new Size(42, 15);
             label29.TabIndex = 84;
@@ -429,7 +430,7 @@
             // label30
             // 
             label30.AutoSize = true;
-            label30.Location = new Point(473, 192);
+            label30.Location = new Point(785, 180);
             label30.Name = "label30";
             label30.Size = new Size(45, 15);
             label30.TabIndex = 83;
@@ -438,7 +439,7 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(203, 192);
+            label31.Location = new Point(515, 180);
             label31.Name = "label31";
             label31.Size = new Size(28, 15);
             label31.TabIndex = 82;
@@ -447,7 +448,7 @@
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(58, 210);
+            label32.Location = new Point(370, 198);
             label32.Name = "label32";
             label32.Size = new Size(63, 15);
             label32.TabIndex = 81;
@@ -455,7 +456,7 @@
             // 
             // TB_RegNomH
             // 
-            TB_RegNomH.Location = new Point(168, 148);
+            TB_RegNomH.Location = new Point(480, 136);
             TB_RegNomH.Name = "TB_RegNomH";
             TB_RegNomH.Size = new Size(289, 23);
             TB_RegNomH.TabIndex = 80;
@@ -463,17 +464,25 @@
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(59, 151);
+            label33.Location = new Point(371, 139);
             label33.Name = "label33";
             label33.Size = new Size(103, 15);
             label33.TabIndex = 79;
             label33.Text = "Nombre del hotel:";
             // 
+            // menuAdministrador1
+            // 
+            menuAdministrador1.Location = new Point(0, 0);
+            menuAdministrador1.Name = "menuAdministrador1";
+            menuAdministrador1.Size = new Size(1171, 47);
+            menuAdministrador1.TabIndex = 123;
+            // 
             // Informacion_Hotel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(614, 815);
+            ClientSize = new Size(1164, 815);
+            Controls.Add(menuAdministrador1);
             Controls.Add(TB_RegAm);
             Controls.Add(TB_RegChar);
             Controls.Add(BTN_EliminarAm);
@@ -572,5 +581,6 @@
         private Label label32;
         private TextBox TB_RegNomH;
         private Label label33;
+        private MenuAdministrador menuAdministrador1;
     }
 }

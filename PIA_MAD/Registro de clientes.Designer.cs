@@ -55,7 +55,6 @@
             label11 = new Label();
             label12 = new Label();
             CB_RegEstCivilC = new ComboBox();
-            menuSuperior1 = new MenuSuperior();
             CFDI = new Label();
             CB_CFDI = new ComboBox();
             Regimenfiscal = new Label();
@@ -64,11 +63,12 @@
             TBT_Domicilio = new TextBox();
             TBT_Codigopostal = new TextBox();
             label14 = new Label();
+            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // DTP_RegClientes
             // 
-            DTP_RegClientes.Location = new Point(144, 40);
+            DTP_RegClientes.Location = new Point(168, 40);
             DTP_RegClientes.Name = "DTP_RegClientes";
             DTP_RegClientes.Size = new Size(232, 23);
             DTP_RegClientes.TabIndex = 46;
@@ -76,7 +76,7 @@
             // button1
             // 
             button1.BackColor = Color.Thistle;
-            button1.Location = new Point(304, 612);
+            button1.Location = new Point(328, 612);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 45;
@@ -86,7 +86,7 @@
             // 
             // TB_RegRFCCli
             // 
-            TB_RegRFCCli.Location = new Point(82, 505);
+            TB_RegRFCCli.Location = new Point(106, 505);
             TB_RegRFCCli.Name = "TB_RegRFCCli";
             TB_RegRFCCli.Size = new Size(297, 23);
             TB_RegRFCCli.TabIndex = 42;
@@ -95,7 +95,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(40, 511);
+            label9.Location = new Point(64, 511);
             label9.Name = "label9";
             label9.Size = new Size(31, 15);
             label9.TabIndex = 41;
@@ -103,28 +103,28 @@
             // 
             // TB_RegCelC
             // 
-            TB_RegCelC.Location = new Point(90, 329);
+            TB_RegCelC.Location = new Point(114, 329);
             TB_RegCelC.Name = "TB_RegCelC";
             TB_RegCelC.Size = new Size(289, 23);
             TB_RegCelC.TabIndex = 39;
             // 
             // TB_RegTelC
             // 
-            TB_RegTelC.Location = new Point(99, 296);
+            TB_RegTelC.Location = new Point(123, 296);
             TB_RegTelC.Name = "TB_RegTelC";
             TB_RegTelC.Size = new Size(280, 23);
             TB_RegTelC.TabIndex = 38;
             // 
             // TB_RegCorreoC
             // 
-            TB_RegCorreoC.Location = new Point(90, 259);
+            TB_RegCorreoC.Location = new Point(114, 259);
             TB_RegCorreoC.Name = "TB_RegCorreoC";
             TB_RegCorreoC.Size = new Size(289, 23);
             TB_RegCorreoC.TabIndex = 37;
             // 
             // DTP_FechNacC
             // 
-            DTP_FechNacC.Location = new Point(162, 404);
+            DTP_FechNacC.Location = new Point(186, 404);
             DTP_FechNacC.Name = "DTP_FechNacC";
             DTP_FechNacC.Size = new Size(217, 23);
             DTP_FechNacC.TabIndex = 36;
@@ -132,7 +132,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(36, 406);
+            label8.Location = new Point(60, 406);
             label8.Name = "label8";
             label8.Size = new Size(120, 15);
             label8.TabIndex = 35;
@@ -141,7 +141,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(36, 332);
+            label6.Location = new Point(60, 332);
             label6.Name = "label6";
             label6.Size = new Size(47, 15);
             label6.TabIndex = 33;
@@ -150,16 +150,16 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 299);
+            label5.Location = new Point(62, 299);
             label5.Name = "label5";
-            label5.Size = new Size(56, 15);
+            label5.Size = new Size(55, 15);
             label5.TabIndex = 32;
             label5.Text = "Teléfono:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(38, 262);
+            label4.Location = new Point(62, 262);
             label4.Name = "label4";
             label4.Size = new Size(46, 15);
             label4.TabIndex = 31;
@@ -167,21 +167,21 @@
             // 
             // TB_regAPc
             // 
-            TB_regAPc.Location = new Point(140, 128);
+            TB_regAPc.Location = new Point(164, 128);
             TB_regAPc.Name = "TB_regAPc";
             TB_regAPc.Size = new Size(236, 23);
             TB_regAPc.TabIndex = 30;
             // 
             // TB_regAMc
             // 
-            TB_regAMc.Location = new Point(144, 168);
+            TB_regAMc.Location = new Point(168, 168);
             TB_regAMc.Name = "TB_regAMc";
             TB_regAMc.Size = new Size(235, 23);
             TB_regAMc.TabIndex = 29;
             // 
             // TB_RegNomC
             // 
-            TB_RegNomC.Location = new Point(112, 88);
+            TB_RegNomC.Location = new Point(136, 88);
             TB_RegNomC.Name = "TB_RegNomC";
             TB_RegNomC.Size = new Size(267, 23);
             TB_RegNomC.TabIndex = 28;
@@ -189,7 +189,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(32, 128);
+            label3.Location = new Point(56, 128);
             label3.Name = "label3";
             label3.Size = new Size(98, 15);
             label3.TabIndex = 27;
@@ -198,7 +198,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 171);
+            label2.Location = new Point(60, 171);
             label2.Name = "label2";
             label2.Size = new Size(102, 15);
             label2.TabIndex = 26;
@@ -207,7 +207,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 91);
+            label1.Location = new Point(60, 91);
             label1.Name = "label1";
             label1.Size = new Size(70, 15);
             label1.TabIndex = 25;
@@ -216,7 +216,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(320, 298);
+            linkLabel1.Location = new Point(344, 298);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(0, 15);
             linkLabel1.TabIndex = 24;
@@ -224,7 +224,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(36, 369);
+            label7.Location = new Point(60, 369);
             label7.Name = "label7";
             label7.Size = new Size(69, 15);
             label7.TabIndex = 34;
@@ -232,21 +232,21 @@
             // 
             // TB_RegPaisC
             // 
-            TB_RegPaisC.Location = new Point(58, 218);
+            TB_RegPaisC.Location = new Point(82, 218);
             TB_RegPaisC.Name = "TB_RegPaisC";
             TB_RegPaisC.Size = new Size(102, 23);
             TB_RegPaisC.TabIndex = 53;
             // 
             // TB_RegEstC
             // 
-            TB_RegEstC.Location = new Point(169, 218);
+            TB_RegEstC.Location = new Point(193, 218);
             TB_RegEstC.Name = "TB_RegEstC";
             TB_RegEstC.Size = new Size(102, 23);
             TB_RegEstC.TabIndex = 52;
             // 
             // TB_RegCiuClie
             // 
-            TB_RegCiuClie.Location = new Point(277, 218);
+            TB_RegCiuClie.Location = new Point(301, 218);
             TB_RegCiuClie.Name = "TB_RegCiuClie";
             TB_RegCiuClie.Size = new Size(102, 23);
             TB_RegCiuClie.TabIndex = 51;
@@ -254,7 +254,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(200, 200);
+            label10.Location = new Point(224, 200);
             label10.Name = "label10";
             label10.Size = new Size(42, 15);
             label10.TabIndex = 50;
@@ -263,7 +263,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(306, 200);
+            label11.Location = new Point(330, 200);
             label11.Name = "label11";
             label11.Size = new Size(45, 15);
             label11.TabIndex = 49;
@@ -272,7 +272,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(94, 200);
+            label12.Location = new Point(118, 200);
             label12.Name = "label12";
             label12.Size = new Size(28, 15);
             label12.TabIndex = 48;
@@ -281,22 +281,15 @@
             // CB_RegEstCivilC
             // 
             CB_RegEstCivilC.FormattingEnabled = true;
-            CB_RegEstCivilC.Location = new Point(121, 366);
+            CB_RegEstCivilC.Location = new Point(145, 366);
             CB_RegEstCivilC.Name = "CB_RegEstCivilC";
             CB_RegEstCivilC.Size = new Size(121, 23);
             CB_RegEstCivilC.TabIndex = 54;
             // 
-            // menuSuperior1
-            // 
-            menuSuperior1.Location = new Point(0, 0);
-            menuSuperior1.Name = "menuSuperior1";
-            menuSuperior1.Size = new Size(416, 24);
-            menuSuperior1.TabIndex = 55;
-            // 
             // CFDI
             // 
             CFDI.AutoSize = true;
-            CFDI.Location = new Point(40, 547);
+            CFDI.Location = new Point(64, 547);
             CFDI.Name = "CFDI";
             CFDI.Size = new Size(35, 15);
             CFDI.TabIndex = 56;
@@ -305,7 +298,7 @@
             // CB_CFDI
             // 
             CB_CFDI.FormattingEnabled = true;
-            CB_CFDI.Location = new Point(82, 544);
+            CB_CFDI.Location = new Point(106, 544);
             CB_CFDI.Name = "CB_CFDI";
             CB_CFDI.Size = new Size(296, 23);
             CB_CFDI.TabIndex = 57;
@@ -313,7 +306,7 @@
             // Regimenfiscal
             // 
             Regimenfiscal.AutoSize = true;
-            Regimenfiscal.Location = new Point(40, 584);
+            Regimenfiscal.Location = new Point(64, 584);
             Regimenfiscal.Name = "Regimenfiscal";
             Regimenfiscal.Size = new Size(86, 15);
             Regimenfiscal.TabIndex = 58;
@@ -322,7 +315,7 @@
             // CB_RegimenFiscal
             // 
             CB_RegimenFiscal.FormattingEnabled = true;
-            CB_RegimenFiscal.Location = new Point(132, 581);
+            CB_RegimenFiscal.Location = new Point(156, 581);
             CB_RegimenFiscal.Name = "CB_RegimenFiscal";
             CB_RegimenFiscal.Size = new Size(246, 23);
             CB_RegimenFiscal.TabIndex = 59;
@@ -330,7 +323,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(38, 442);
+            label13.Location = new Point(62, 442);
             label13.Name = "label13";
             label13.Size = new Size(58, 15);
             label13.TabIndex = 60;
@@ -338,14 +331,14 @@
             // 
             // TBT_Domicilio
             // 
-            TBT_Domicilio.Location = new Point(102, 439);
+            TBT_Domicilio.Location = new Point(126, 439);
             TBT_Domicilio.Name = "TBT_Domicilio";
             TBT_Domicilio.Size = new Size(274, 23);
             TBT_Domicilio.TabIndex = 61;
             // 
             // TBT_Codigopostal
             // 
-            TBT_Codigopostal.Location = new Point(121, 471);
+            TBT_Codigopostal.Location = new Point(145, 471);
             TBT_Codigopostal.Name = "TBT_Codigopostal";
             TBT_Codigopostal.Size = new Size(100, 23);
             TBT_Codigopostal.TabIndex = 62;
@@ -353,17 +346,25 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(34, 474);
+            label14.Location = new Point(58, 474);
             label14.Name = "label14";
             label14.Size = new Size(81, 15);
             label14.TabIndex = 63;
             label14.Text = "Codigo postal";
             // 
+            // menuSuperior1
+            // 
+            menuSuperior1.Location = new Point(0, 0);
+            menuSuperior1.Name = "menuSuperior1";
+            menuSuperior1.Size = new Size(459, 33);
+            menuSuperior1.TabIndex = 64;
+            // 
             // Registro_de_clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(410, 641);
+            ClientSize = new Size(451, 641);
+            Controls.Add(menuSuperior1);
             Controls.Add(label14);
             Controls.Add(TBT_Codigopostal);
             Controls.Add(TBT_Domicilio);
@@ -372,7 +373,6 @@
             Controls.Add(Regimenfiscal);
             Controls.Add(CB_CFDI);
             Controls.Add(CFDI);
-            Controls.Add(menuSuperior1);
             Controls.Add(CB_RegEstCivilC);
             Controls.Add(TB_RegPaisC);
             Controls.Add(TB_RegEstC);
@@ -437,7 +437,6 @@
         private Label label12;
         private ComboBox CB_RegEstCivilC;
         private MenuStrip menuStrip1;
-        private MenuSuperior menuSuperior1;
         private Label CFDI;
         private ComboBox CB_CFDI;
         private Label Regimenfiscal;
@@ -446,5 +445,6 @@
         private TextBox TBT_Domicilio;
         private TextBox TBT_Codigopostal;
         private Label label14;
+        private MenuSuperior menuSuperior1;
     }
 }

@@ -47,7 +47,7 @@
             // 
             // BTN_Filtrar
             // 
-            BTN_Filtrar.Location = new Point(908, 115);
+            BTN_Filtrar.Location = new Point(950, 107);
             BTN_Filtrar.Name = "BTN_Filtrar";
             BTN_Filtrar.Size = new Size(75, 23);
             BTN_Filtrar.TabIndex = 17;
@@ -58,7 +58,7 @@
             // CB_Hoteles
             // 
             CB_Hoteles.FormattingEnabled = true;
-            CB_Hoteles.Location = new Point(844, 72);
+            CB_Hoteles.Location = new Point(886, 64);
             CB_Hoteles.Name = "CB_Hoteles";
             CB_Hoteles.Size = new Size(139, 23);
             CB_Hoteles.TabIndex = 16;
@@ -67,7 +67,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(799, 75);
+            label4.Location = new Point(841, 67);
             label4.Name = "label4";
             label4.Size = new Size(39, 15);
             label4.TabIndex = 15;
@@ -75,7 +75,7 @@
             // 
             // TB_Ciudad
             // 
-            TB_Ciudad.Location = new Point(329, 72);
+            TB_Ciudad.Location = new Point(371, 64);
             TB_Ciudad.Name = "TB_Ciudad";
             TB_Ciudad.Size = new Size(130, 23);
             TB_Ciudad.TabIndex = 14;
@@ -84,7 +84,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(275, 75);
+            label3.Location = new Point(317, 67);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 13;
@@ -92,7 +92,7 @@
             // 
             // TB_Anio
             // 
-            TB_Anio.Location = new Point(582, 72);
+            TB_Anio.Location = new Point(624, 64);
             TB_Anio.Name = "TB_Anio";
             TB_Anio.Size = new Size(130, 23);
             TB_Anio.TabIndex = 12;
@@ -101,7 +101,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(545, 75);
+            label2.Location = new Point(587, 67);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 11;
@@ -109,7 +109,7 @@
             // 
             // TB_Pais
             // 
-            TB_Pais.Location = new Point(81, 72);
+            TB_Pais.Location = new Point(123, 64);
             TB_Pais.Name = "TB_Pais";
             TB_Pais.Size = new Size(130, 23);
             TB_Pais.TabIndex = 10;
@@ -118,7 +118,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 75);
+            label1.Location = new Point(86, 67);
             label1.Name = "label1";
             label1.Size = new Size(31, 15);
             label1.TabIndex = 9;
@@ -127,7 +127,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(44, 115);
+            label5.Location = new Point(86, 107);
             label5.Name = "label5";
             label5.Size = new Size(51, 15);
             label5.TabIndex = 19;
@@ -135,7 +135,7 @@
             // 
             // LV_ReporteVentas
             // 
-            LV_ReporteVentas.Location = new Point(44, 155);
+            LV_ReporteVentas.Location = new Point(86, 147);
             LV_ReporteVentas.Name = "LV_ReporteVentas";
             LV_ReporteVentas.Size = new Size(939, 163);
             LV_ReporteVentas.TabIndex = 20;
@@ -144,7 +144,7 @@
             // LBL_IngresosTotales
             // 
             LBL_IngresosTotales.AutoSize = true;
-            LBL_IngresosTotales.Location = new Point(735, 400);
+            LBL_IngresosTotales.Location = new Point(799, 392);
             LBL_IngresosTotales.Name = "LBL_IngresosTotales";
             LBL_IngresosTotales.Size = new Size(92, 15);
             LBL_IngresosTotales.TabIndex = 21;
@@ -153,7 +153,7 @@
             // LBL_IngresosHospedaje
             // 
             LBL_IngresosHospedaje.AutoSize = true;
-            LBL_IngresosHospedaje.Location = new Point(735, 367);
+            LBL_IngresosHospedaje.Location = new Point(777, 359);
             LBL_IngresosHospedaje.Name = "LBL_IngresosHospedaje";
             LBL_IngresosHospedaje.Size = new Size(113, 15);
             LBL_IngresosHospedaje.TabIndex = 22;
@@ -162,7 +162,7 @@
             // LBL_IngresosServicios
             // 
             LBL_IngresosServicios.AutoSize = true;
-            LBL_IngresosServicios.Location = new Point(735, 339);
+            LBL_IngresosServicios.Location = new Point(777, 331);
             LBL_IngresosServicios.Name = "LBL_IngresosServicios";
             LBL_IngresosServicios.Size = new Size(103, 15);
             LBL_IngresosServicios.TabIndex = 23;
@@ -170,7 +170,7 @@
             // 
             // BTN_ObtenerTodo
             // 
-            BTN_ObtenerTodo.Location = new Point(827, 115);
+            BTN_ObtenerTodo.Location = new Point(869, 107);
             BTN_ObtenerTodo.Name = "BTN_ObtenerTodo";
             BTN_ObtenerTodo.Size = new Size(75, 23);
             BTN_ObtenerTodo.TabIndex = 24;
@@ -182,7 +182,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(995, 430);
+            ClientSize = new Size(1105, 437);
             Controls.Add(BTN_ObtenerTodo);
             Controls.Add(LBL_IngresosServicios);
             Controls.Add(LBL_IngresosHospedaje);

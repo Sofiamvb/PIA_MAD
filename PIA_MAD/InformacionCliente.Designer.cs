@@ -63,6 +63,7 @@
             label2 = new Label();
             label1 = new Label();
             linkLabel1 = new LinkLabel();
+            menuSuperior1 = new MenuSuperior();
             SuspendLayout();
             // 
             // label14
@@ -281,7 +282,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(59, 306);
             label5.Name = "label5";
-            label5.Size = new Size(56, 15);
+            label5.Size = new Size(55, 15);
             label5.TabIndex = 72;
             label5.Text = "Teléfono:";
             // 
@@ -350,11 +351,19 @@
             linkLabel1.Size = new Size(0, 15);
             linkLabel1.TabIndex = 64;
             // 
+            // menuSuperior1
+            // 
+            menuSuperior1.Location = new Point(-8, 0);
+            menuSuperior1.Name = "menuSuperior1";
+            menuSuperior1.Size = new Size(459, 33);
+            menuSuperior1.TabIndex = 99;
+            // 
             // InformacionCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(432, 651);
+            ClientSize = new Size(439, 651);
+            Controls.Add(menuSuperior1);
             Controls.Add(label14);
             Controls.Add(TBT_Codigopostal);
             Controls.Add(TBT_Domicilio);
@@ -434,5 +443,6 @@
         private Label label2;
         private Label label1;
         private LinkLabel linkLabel1;
+        private MenuSuperior menuSuperior1;
     }
 }

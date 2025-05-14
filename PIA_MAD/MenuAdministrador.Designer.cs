@@ -43,15 +43,16 @@
             modificarEmpleadoToolStripMenuItem = new ToolStripMenuItem();
             administrativosToolStripMenuItem = new ToolStripMenuItem();
             operativosToolStripMenuItem = new ToolStripMenuItem();
+            cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, toolStripMenuItem2, registroEmpleadoToolStripMenuItem, toolStripMenuItem3, cancelacionReservacionToolStripMenuItem, modificarEmpleadoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { registroDeHotelesToolStripMenuItem, toolStripMenuItem1, cancelarReservaciónToolStripMenuItem, reporteDeVentasToolStripMenuItem, reporteDeOcupaciónToolStripMenuItem, toolStripMenuItem2, registroEmpleadoToolStripMenuItem, toolStripMenuItem3, cancelacionReservacionToolStripMenuItem, modificarEmpleadoToolStripMenuItem, cerrarSesiónToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1107, 24);
+            menuStrip1.Size = new Size(1171, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -142,16 +143,23 @@
             // administrativosToolStripMenuItem
             // 
             administrativosToolStripMenuItem.Name = "administrativosToolStripMenuItem";
-            administrativosToolStripMenuItem.Size = new Size(180, 22);
+            administrativosToolStripMenuItem.Size = new Size(157, 22);
             administrativosToolStripMenuItem.Text = "Administrativos";
             administrativosToolStripMenuItem.Click += administrativosToolStripMenuItem_Click;
             // 
             // operativosToolStripMenuItem
             // 
             operativosToolStripMenuItem.Name = "operativosToolStripMenuItem";
-            operativosToolStripMenuItem.Size = new Size(180, 22);
+            operativosToolStripMenuItem.Size = new Size(157, 22);
             operativosToolStripMenuItem.Text = "Operativos";
             operativosToolStripMenuItem.Click += operativosToolStripMenuItem_Click;
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            cerrarSesiónToolStripMenuItem.Size = new Size(88, 20);
+            cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
             // MenuAdministrador
             // 
@@ -159,7 +167,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(menuStrip1);
             Name = "MenuAdministrador";
-            Size = new Size(1107, 47);
+            Size = new Size(1171, 47);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -184,5 +192,6 @@
         private ToolStripMenuItem modificarEmpleadoToolStripMenuItem;
         private ToolStripMenuItem administrativosToolStripMenuItem;
         private ToolStripMenuItem operativosToolStripMenuItem;
+        private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
     }
 }
