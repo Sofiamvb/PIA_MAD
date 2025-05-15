@@ -159,7 +159,7 @@ namespace PIA_MAD
                         ModificadorAdministradorId = {9}
                     WHERE id = {10}",
                         Nombre, AP, AM, Correo, Tel, Cel,
-                        FechNa, Contra, DateTime.Now, adminId, adminId
+                        FechNa, Contra, DateTime.Now, adminId, operativoId
                     );
 
                     context.Database.ExecuteSqlRaw(@"
