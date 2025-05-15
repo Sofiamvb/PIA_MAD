@@ -414,7 +414,8 @@ namespace PIA_MAD
                             ServiciosAdicionales = servicioAdicionalesSeleccionados
                                 .Select(s => new CheckOutServicioAdicional
                                 {
-                                    ServicioAdicionalHotelId = s.id,
+                                    Nombre = s.Nombre,
+                                    Precio = s.Precio,
                                     Cantidad = 1
                                 }).ToList()
                         };

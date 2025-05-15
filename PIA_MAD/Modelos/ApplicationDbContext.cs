@@ -156,11 +156,6 @@ namespace PIA_MAD.Modelos
                 .HasForeignKey(csa => csa.CheckOutId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<CheckOutServicioAdicional>()
-                .HasOne(csa => csa.ServicioAdicionalHotel)
-                .WithMany()
-                .HasForeignKey(csa => csa.ServicioAdicionalHotelId)
-                .OnDelete(DeleteBehavior.Restrict);
 
 
             // --- HabitacionCheckout---
@@ -198,7 +193,7 @@ namespace PIA_MAD.Modelos
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=DESKTOP-EB9COQ9;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
+            var connectionString = "Server=LAPTOP-2JLT5J0B\\MSSQLSERVER01;Database=CadenaHotelera;Trusted_Connection=True;TrustServerCertificate=True;";
             optionsBuilder.UseSqlServer(connectionString);
 
             try

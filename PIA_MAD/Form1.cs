@@ -15,15 +15,39 @@ namespace PIA_MAD
 
             using (var context = new ApplicationDbContext())
             {
+                bool puedeConectar = context.Database.CanConnect();
+
+                if (!puedeConectar)
+                {
+                    bool baseCreada = context.Database.EnsureCreated();
+                    if (!baseCreada)
+                    {
+                        MessageBox.Show("No se pudo crear la base de datos.");
+                        this.Close();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Base de datos creada correctamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La base de datos ya existe y está accesible.");
+                }
+
                 var servicio = new ReservacionService(context);
+
                 bool adminExistente = servicio.RevisarOCrearUsuarioSistema();
-                if(adminExistente == false)
+                if (!adminExistente)
                 {
                     MessageBox.Show("El admin no existe y no se pudo crear, intenta de nuevo en otro momento.");
                     this.Close();
+                    return;
                 }
+
                 servicio.CancelarReservacionesNoCheckIn();
-                context.Database.EnsureCreated();
+
             }
 
             InitializeComponent();

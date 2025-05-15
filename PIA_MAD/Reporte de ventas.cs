@@ -73,7 +73,7 @@ namespace PIA_MAD
 
                     foreach (var item in reporte)
                     {
-                        decimal totalVenta = item.Monto + item.ServiciosAdicionales - item.CantidadDescuento;
+                        decimal totalVenta = item.Monto + item.Anticipo + item.ServiciosAdicionales - item.CantidadDescuento;
 
                         var listItem = new ListViewItem(item.Tipo);
                         listItem.SubItems.Add(item.NombreHotel);

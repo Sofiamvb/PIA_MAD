@@ -13,9 +13,9 @@
             public int CheckOutId { get; set; }
             public CheckOut CheckOut { get; set; }
 
-            public int ServicioAdicionalHotelId { get; set; }
-            public ServicioAdicionalHotel ServicioAdicionalHotel { get; set; }
+            public string Nombre { get; set; }
+            public decimal Precio { get; set; }
 
-            public int Cantidad { get; set; } // Por si el cliente usó más de una vez ese servicio
+        public int Cantidad { get; set; } // Por si el cliente usó más de una vez ese servicio
         }
     }
