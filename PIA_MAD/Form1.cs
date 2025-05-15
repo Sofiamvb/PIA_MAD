@@ -15,25 +15,16 @@ namespace PIA_MAD
 
             using (var context = new ApplicationDbContext())
             {
-                bool puedeConectar = context.Database.CanConnect();
-
-                if (!puedeConectar)
+                try
                 {
-                    bool baseCreada = context.Database.EnsureCreated();
-                    if (!baseCreada)
-                    {
-                        MessageBox.Show("No se pudo crear la base de datos.");
-                        this.Close();
-                        return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Base de datos creada correctamente.");
-                    }
+                    context.Database.Migrate();
+                    MessageBox.Show("Base de datos creada y migraciones aplicadas correctamente.");
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("La base de datos ya existe y está accesible.");
+                    MessageBox.Show("No se pudo crear o migrar la base de datos. Error: " + ex.Message);
+                    this.Close();
+                    return;
                 }
 
                 var servicio = new ReservacionService(context);
