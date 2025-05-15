@@ -282,7 +282,7 @@ namespace PIA_MAD
                     listItem.SubItems.Add(item.Anticipo.ToString("C"));
                     listItem.SubItems.Add(item.CantidadDescuento.ToString("C"));
                     listItem.SubItems.Add(item.ServiciosAdicionales.ToString("C"));
-                    listItem.SubItems.Add((item.Monto + item.Anticipo).ToString("C"));
+                    listItem.SubItems.Add((item.Monto + item.ServiciosAdicionales +  item.Anticipo).ToString("C"));
 
                     LV_ReporteVentas.Items.Add(listItem);
                 }
