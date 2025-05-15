@@ -159,12 +159,12 @@ namespace PIA_MAD
                         ModificadorAdministradorId = {9}
                     WHERE id = {10}",
                         Nombre, AP, AM, Correo, Tel, Cel,
-                        FechNa, Contra, DateTime.Now, adminId, operativoId
+                        FechNa, Contra, DateTime.Now, adminId, adminId
                     );
 
                     context.Database.ExecuteSqlRaw(@"
                     INSERT INTO RegistroContra (OperativoId, ContraPasada)
-                    VALUES ({0}, {1})", adminId, Contra);
+                    VALUES ({0}, {1})", operativoId, Contra);
 
                     MessageBox.Show("Administrador actualizado y contraseña registrada.");
                     this.Hide();

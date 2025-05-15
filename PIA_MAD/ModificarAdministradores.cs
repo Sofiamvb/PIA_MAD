@@ -186,7 +186,7 @@ namespace PIA_MAD
                     INSERT INTO RegistroContra (AdministradorId, ContraPasada)
                     VALUES ({0}, {1})", adminId, Contra);
 
-                    MessageBox.Show("Administrador actualizado y contraseña registrada.");
+                    MessageBox.Show("Operativo actualizado y contraseña registrada.");
                     this.Hide();
                     var nuevoFormulario = new Registro_de_hoteles();
                     nuevoFormulario.Show();
